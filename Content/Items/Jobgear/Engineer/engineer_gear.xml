@@ -162,7 +162,10 @@
         <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="sufforinpoisoning" damagemultiplier="0.5" />
         <damagemodifier armorsector="0.0,360.0" afflictiontypes="damage" damagemultiplier="0.7" />
         <!-- Give the wearer pressure resistance, reduce visibility and muffle sounds -->
-        <StatusEffect type="OnWearing" target="Character" PressureProtection="10000.0" ObstructVision="true" LowPassMultiplier="0.2" setvalue="true" disabledeltatime="true" />
+        <StatusEffect type="OnWearing" target="Character" PressureProtection="6650.0" ObstructVision="true" LowPassMultiplier="0.2" setvalue="true" disabledeltatime="true">
+          <TriggerAnimation Type="Walk" FileName="HumanWalkDivingSuit" priority="1" ExpectedSpecies="Human" />
+          <TriggerAnimation Type="Run" FileName="HumanRunDivingSuit" priority="1" ExpectedSpecies="Human" />
+        </StatusEffect>
         <!-- Prevent the wearer from breathing hull oxygen, requiring them to use oxygen tanks -->
         <StatusEffect type="OnWearing" target="Character" OxygenAvailable="-100.0" UseHullOxygen="false" />
         <!-- Provide oxygen to wearer if any oxygensource is contained and drain the oxygen tank as fast as abyss diving suit -->
