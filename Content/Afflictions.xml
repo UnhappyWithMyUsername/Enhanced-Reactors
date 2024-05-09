@@ -29,7 +29,7 @@
         </StatusEffect>
         -->
       </Effect>
-      <icon texture="%ModDir%/Content/UI/IR-IconsAtlas.png" sourcerect="128,128,128,128" color="195,136,60,255" origin="0,0"/>
+      <icon texture="%ModDir:3045796581%/Content/UI/IR-IconsAtlas.png" sourcerect="128,128,128,128" color="195,136,60,255" origin="0,0"/>
     </Oily>
   </Override>
   <Override>
@@ -112,7 +112,7 @@
       <Effect minstrength="0" maxstrength="1" strengthchange="-1.0">
         <StatusEffect target="Character" duration="0.6">
           <Conditional contaminated="gte 10" />
-          <Sound file="%ModDir%/Content/Sounds/Damage/extremeradiation.ogg" volume="1.0" loop="true" range="350" />
+          <Sound file="%ModDir:3045796581%/Content/Sounds/Damage/extremeradiation.ogg" volume="1.0" loop="true" range="350" />
         </StatusEffect>
       </Effect>
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0"/>
@@ -137,27 +137,27 @@
           <Conditional radiationsounds="gte 0.1" />
           <Conditional radiationsounds="lt 1" />
           <ReduceAffliction identifier="radiationsounds" amount="1000" />
-          <Sound file="%ModDir%/Content/Sounds/Damage/lowradiation.ogg" volume="1.0" loop="true" range="350" />
+          <Sound file="%ModDir:3045796581%/Content/Sounds/Damage/lowradiation.ogg" volume="1.0" loop="true" range="350" />
         </StatusEffect>
         <StatusEffect target="Character" interval="0.0" duration="0.6" stackable="true" disabledeltatime="true" comparison="And">
           <Conditional HasStatusTag="hasgeigercounter" />
           <Conditional radiationsounds="gte 1" />
           <Conditional radiationsounds="lt 2" />
           <ReduceAffliction identifier="radiationsounds" amount="1000" />
-          <Sound file="%ModDir%/Content/Sounds/Damage/mediumradiation.ogg" volume="1.0" loop="true" range="350" />
+          <Sound file="%ModDir:3045796581%/Content/Sounds/Damage/mediumradiation.ogg" volume="1.0" loop="true" range="350" />
         </StatusEffect>
         <StatusEffect target="Character" interval="0.0" duration="0.6" stackable="true" disabledeltatime="true" comparison="And">
           <Conditional HasStatusTag="hasgeigercounter" />
           <Conditional radiationsounds="gte 2" />
           <Conditional radiationsounds="lt 3" />
           <ReduceAffliction identifier="radiationsounds" amount="1000" />
-          <Sound file="%ModDir%/Content/Sounds/Damage/highradiation.ogg" volume="1.0" loop="true" range="350" />
+          <Sound file="%ModDir:3045796581%/Content/Sounds/Damage/highradiation.ogg" volume="1.0" loop="true" range="350" />
         </StatusEffect>
         <StatusEffect target="Character" interval="0.0" duration="0.6" stackable="true" disabledeltatime="true" comparison="And">
           <Conditional HasStatusTag="hasgeigercounter" />
           <Conditional radiationsounds="gte 3" />
           <ReduceAffliction identifier="radiationsounds" amount="1000" />
-          <Sound file="%ModDir%/Content/Sounds/Damage/extremeradiation.ogg" volume="1.0" loop="true" range="350" />
+          <Sound file="%ModDir:3045796581%/Content/Sounds/Damage/extremeradiation.ogg" volume="1.0" loop="true" range="350" />
         </StatusEffect>
       </Effect>
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0"/>
@@ -180,7 +180,7 @@
         <StatusEffect target="Character" interval="0.5" duration="0.6" comparison="And">
           <!--Conditional IsLocalPlayer="True" /-->
           <Conditional HasStatusTag="hasgeigercounter" />
-          <Sound file="%ModDir%/Content/Sounds/Damage/lowradiation.ogg" volume="1.0" loop="true" range="350" />
+          <Sound file="%ModDir:3045796581%/Content/Sounds/Damage/lowradiation.ogg" volume="1.0" loop="true" range="350" />
         </StatusEffect>
       </Effect>
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0"/>
@@ -203,7 +203,7 @@
         <StatusEffect target="Character" interval="0.5" duration="0.6" comparison="And">
           <!--Conditional IsLocalPlayer="True" /-->
           <Conditional HasStatusTag="hasgeigercounter" />
-          <Sound file="%ModDir%/Content/Sounds/Damage/mediumradiation.ogg" volume="1.0" loop="true" range="350" />
+          <Sound file="%ModDir:3045796581%/Content/Sounds/Damage/mediumradiation.ogg" volume="1.0" loop="true" range="350" />
         </StatusEffect>
       </Effect>
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0"/>
@@ -226,7 +226,7 @@
         <StatusEffect target="Character" interval="0.5" duration="0.6" comparison="And">
           <!--Conditional IsLocalPlayer="True" /-->
           <Conditional HasStatusTag="hasgeigercounter" />
-          <Sound file="%ModDir%/Content/Sounds/Damage/highradiation.ogg" volume="1.0" loop="true" range="350" />
+          <Sound file="%ModDir:3045796581%/Content/Sounds/Damage/highradiation.ogg" volume="1.0" loop="true" range="350" />
         </StatusEffect>
       </Effect>
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0"/>
@@ -249,7 +249,7 @@
         <StatusEffect target="Character" interval="0.5" duration="0.6" comparison="And">
           <!--Conditional IsLocalPlayer="True" /-->
           <Conditional HasStatusTag="hasgeigercounter" />
-          <Sound file="%ModDir%/Content/Sounds/Damage/extremeradiation.ogg" volume="1.0" loop="true" range="350" />
+          <Sound file="%ModDir:3045796581%/Content/Sounds/Damage/extremeradiation.ogg" volume="1.0" loop="true" range="350" />
         </StatusEffect>
       </Effect>
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0"/>
@@ -311,7 +311,7 @@
           <ParticleEmitter particle="waterdrop" colormultiplier="255,255,255" copyentityangle="true" particlespersecond="3" anglemin="0" anglemax="360" distancemin="0" distancemax="15" scalemin="0.4" scalemax="0.8" velocitymin="0" velocitymax="10" highqualitycollisiondetection="false" />
         </StatusEffect>
       </Effect>
-      <icon texture="%ModDir%/Content/Items/spritesheet.png" sourcerect="312,95,128,128" color="195,104,60,255" origin="0,0" />
+      <icon texture="%ModDir:3045796581%/Content/Items/ER-ItemsAtlas.png" sourcerect="312,95,128,128" color="195,104,60,255" origin="0,0" />
     </Affliction>
   </Override>
   <Override>
@@ -401,7 +401,7 @@
       <Effect minstrength="0" maxstrength="300" strengthchange="-1.0" resistancefor="radiationsickness,contaminated" minresistance="0.35" maxresistance="0.50" />
       <Effect minstrength="300" maxstrength="600" strengthchange="-1.0" resistancefor="radiationsickness,contaminated" minresistance="0.50" maxresistance="0.50" />
       <Effect minstrength="600" maxstrength="900" strengthchange="-1.0" resistancefor="radiationsickness,contaminated" minresistance="0.50" maxresistance="0.50" />
-      <icon texture="%ModDir%/Content/Items/spritesheet.png" sourcerect="312,225,115,123" color="10,193,114,255" origin="0,0" />
+      <icon texture="%ModDir:3045796581%/Content/Items/ER-ItemsAtlas.png" sourcerect="312,225,115,123" color="10,193,114,255" origin="0,0" />
     </Affliction>
   </Override>
   <Override>
@@ -736,7 +736,7 @@
         </StatusEffect>
         <StatusEffect target="Character" interval="1" duration="1.1">
           <Conditional IsLocalPlayer="true" />
-          <Sound file="%ModDir%/Content/Sounds/Ambient/ShockLoop.ogg" volume="5" loop="true" dontmuffle="true" />
+          <Sound file="%ModDir:3045796581%/Content/Sounds/Ambient/ShockLoop.ogg" volume="5" loop="true" dontmuffle="true" />
         </StatusEffect>
       </Effect>
     </Affliction>
@@ -744,25 +744,25 @@
   <Override>
     <Affliction identifier="shock1" showiconthreshold="1000" showinhealthscannerthreshold="1000" maxstrength="100" afflictionoverlayalphaislinear="true">
       <Effect minstrength="0" maxstrength="100" strengthchange="-300" />
-      <AfflictionOverlay texture="%ModDir%/Content/UI/Shock1.png" />
+      <AfflictionOverlay texture="%ModDir:3045796581%/Content/UI/Shock1.png" />
     </Affliction>
   </Override>
   <Override>
     <Affliction identifier="shock2" showiconthreshold="1000" showinhealthscannerthreshold="1000" maxstrength="100" afflictionoverlayalphaislinear="true">
       <Effect minstrength="0" maxstrength="100" strengthchange="-300" />
-      <AfflictionOverlay texture="%ModDir%/Content/UI/Shock2.png" />
+      <AfflictionOverlay texture="%ModDir:3045796581%/Content/UI/Shock2.png" />
     </Affliction>
   </Override>
   <Override>
     <Affliction identifier="shock3" showiconthreshold="1000" showinhealthscannerthreshold="1000" maxstrength="100" afflictionoverlayalphaislinear="true">
       <Effect minstrength="0" maxstrength="100" strengthchange="-300" />
-      <AfflictionOverlay texture="%ModDir%/Content/UI/Shock3.png" />
+      <AfflictionOverlay texture="%ModDir:3045796581%/Content/UI/Shock3.png" />
     </Affliction>
   </Override>
   <Override>
     <Affliction identifier="shock4" showiconthreshold="1000" showinhealthscannerthreshold="1000" maxstrength="100" afflictionoverlayalphaislinear="true">
       <Effect minstrength="0" maxstrength="100" strengthchange="-300" />
-      <AfflictionOverlay texture="%ModDir%/Content/UI/Shock4.png" />
+      <AfflictionOverlay texture="%ModDir:3045796581%/Content/UI/Shock4.png" />
     </Affliction>
   </Override>
   <Override>
@@ -787,7 +787,7 @@
         </StatusEffect>
         <StatusEffect target="Character" interval="1" duration="1.1">
           <Conditional IsLocalPlayer="true" />
-          <Sound file="%ModDir%/Content/Sounds/Ambient/ShockLoop.ogg" volume="5" loop="true" dontmuffle="true" />
+          <Sound file="%ModDir:3045796581%/Content/Sounds/Ambient/ShockLoop.ogg" volume="5" loop="true" dontmuffle="true" />
         </StatusEffect>
         <StatusEffect target="Character" interval="0.8">
           <Conditional InWater="eq false" />

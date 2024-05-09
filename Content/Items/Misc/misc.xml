@@ -2,11 +2,11 @@
 <Override>
   <Items>
     <Item name="Decontamination Shower" identifier="deconshower" allowattachitems="false" width="463" height="398" texturescale="1.0,1.0" scale="0.5" category="Decorative" isshootable="true" requireaimtouse="true">
-      <sprite texture="%ModDir%/Content/Items/Misc/DeconShower.png" sourcerect="0,0,187,414" depth="0.761" premultiplyalpha="false" origin="0.5,0.5" />
-      <DecorativeSprite texture="%ModDir%/Content/Items/Misc/DeconShower.png" sourcerect="188,0,187,414" depth="0.76" origin="0.5,0.5">
+      <sprite texture="%ModDir:3045796581%/Content/Items/Misc/DeconShower.png" sourcerect="0,0,187,414" depth="0.761" premultiplyalpha="false" origin="0.5,0.5" />
+      <DecorativeSprite texture="%ModDir:3045796581%/Content/Items/Misc/DeconShower.png" sourcerect="188,0,187,414" depth="0.76" origin="0.5,0.5">
         <IsActiveConditional HasTag="deconsol" targetcontaineditem="true" />
       </DecorativeSprite>
-      <DecorativeSprite texture="%ModDir%/Content/Items/Misc/DeconShower.png" sourcerect="376,0,187,414" depth="0.77" origin="0.5,0.5" />
+      <DecorativeSprite texture="%ModDir:3045796581%/Content/Items/Misc/DeconShower.png" sourcerect="376,0,187,414" depth="0.77" origin="0.5,0.5" />
       <Price baseprice="180">
         <Price storeidentifier="merchantengineering" maxavailable="1" />
       </Price>
