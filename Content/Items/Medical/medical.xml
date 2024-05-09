@@ -34,19 +34,19 @@
       </Fabricate>
       <Deconstruct time="2"/>
       <SuitableTreatment type="contaminated" suitability="10" />
-      <InventoryIcon texture="%ModDir%/Content/Items/Medical/IodideTablets.png" sourcerect="0,0,94,94" origin="0.5,0.5" />
-      <Sprite texture="%ModDir%/Content/Items/Medical/IodideTablets.png" sourcerect="95,46,25,49" depth="0.6" origin="0.5,0.5" />
+       <InventoryIcon texture="%ModDir:3045796581%/Content/Items/ER-ItemsAtlas.png" sourcerect="1,1,94,94" origin="0.5,0.5" />
+      <Sprite texture="%ModDir:3045796581%/Content/Items/ER-ItemsAtlas.png" sourcerect="96,47,25,49" depth="0.6" origin="0.5,0.5" />
       <Body width="24" height="48" density="10.05" />
       <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="26,22" holdpos="30,-15" holdangle="0" handle1="0,-5" aimangle="105" aimable="false" swingwhenusing="true" swingamount="3,9" swingspeed="1.0" msg="ItemMsgPickUpSelect" />
       <RangedWeapon reload="2.0" HitOnlyCharacters="true">
         <StatusEffect type="OnSecondaryUse" target="This" interval="0.1">
           <Conditional HasStatusTag="neq opened" />
-          <Sound file="%ModDir%/Content/Items/Medical/OpenPillBottle1.ogg" range="500" selectionmode="Random" />
-          <Sound file="%ModDir%/Content/Items/Medical/OpenPillBottle2.ogg" range="500" volume="0.9" selectionmode="Random" />
+          <Sound file="%ModDir:3045796581%/Content/Items/Medical/OpenPillBottle1.ogg" range="500" selectionmode="Random" />
+          <Sound file="%ModDir:3045796581%/Content/Items/Medical/OpenPillBottle2.ogg" range="500" volume="0.9" selectionmode="Random" />
         </StatusEffect>
         <StatusEffect type="OnSecondaryUse" target="This" tags="opened" setvalue="true" duration="0.1" />
         <StatusEffect type="OnUse" target="This" Condition="-5.0" disabledeltatime="true">
-          <Sound file="%ModDir%/Content/Items/Medical/Swallow1.ogg" range="500" volume="4" />
+          <Sound file="%ModDir:3045796581%/Content/Items/Medical/Swallow1.ogg" range="500" volume="4" />
         </StatusEffect>
         <!-- Values of this StatusEffect are doubled when applied to a character since it uses and requires both character and usetarget as it would otherwise not be applicable to other characters in the health menu -->
         <StatusEffect type="OnUse" target="Character,UseTarget" duration="10.0">
@@ -91,19 +91,19 @@
       <SuitableTreatment type="poison" suitability="15" />
       <SuitableTreatment identifier="radiationsickness" suitability="15" />
       <SuitableTreatment identifier="trackcarbonintake" suitability="-50.5" />
-      <InventoryIcon texture="%ModDir%/Content/Items/Medical/CarbonTablets.png" sourcerect="0,0,94,94" origin="0.5,0.5" />
-      <Sprite texture="%ModDir%/Content/Items/Medical/CarbonTablets.png" sourcerect="95,46,25,49" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:3045796581%/Content/Items/ER-ItemsAtlas.png" sourcerect="122,1,94,94" origin="0.5,0.5" />
+      <Sprite texture="%ModDir:3045796581%/Content/Items/ER-ItemsAtlas.png" sourcerect="217,47,25,49" depth="0.6" origin="0.5,0.5" />
       <Body width="24" height="48" density="10.05" />
       <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="26,22" holdpos="30,-15" holdangle="0" handle1="0,-5" aimangle="105" aimable="false" swingwhenusing="true" swingamount="3,9" swingspeed="1.0" msg="ItemMsgPickUpSelect" />
       <RangedWeapon reload="2.0" HitOnlyCharacters="true">
         <StatusEffect type="OnSecondaryUse" target="This" interval="0.1">
           <Conditional HasStatusTag="neq opened" />
-          <Sound file="%ModDir%/Content/Items/Medical/OpenPillBottle1.ogg" range="500" selectionmode="Random" />
-          <Sound file="%ModDir%/Content/Items/Medical/OpenPillBottle2.ogg" range="500" volume="0.9" selectionmode="Random" />
+          <Sound file="%ModDir:3045796581%/Content/Items/Medical/OpenPillBottle1.ogg" range="500" selectionmode="Random" />
+          <Sound file="%ModDir:3045796581%/Content/Items/Medical/OpenPillBottle2.ogg" range="500" volume="0.9" selectionmode="Random" />
         </StatusEffect>
         <StatusEffect type="OnSecondaryUse" target="This" tags="opened" setvalue="true" duration="0.1" />
         <StatusEffect type="OnUse" target="This" Condition="-5.0" disabledeltatime="true">
-          <Sound file="%ModDir%/Content/Items/Medical/Swallow1.ogg" range="500" volume="4" />
+          <Sound file="%ModDir:3045796581%/Content/Items/Medical/Swallow1.ogg" range="500" volume="4" />
         </StatusEffect>
         <!-- Values of this StatusEffect are doubled when applied to a character since it uses and requires both character and usetarget as it would otherwise not be applicable to other characters in the health menu -->
         <StatusEffect type="OnUse" target="Character,UseTarget" duration="10.0">
@@ -223,8 +223,8 @@
         <RequiredItem identifier="potassium" amount="1" />
         <RequiredItem identifier="sodium" amount="1" />
       </Fabricate>
-      <InventoryIcon texture="%ModDir%/Content/Items/Medical/Deconsol.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
-      <Sprite texture="%ModDir%/Content/Items/Medical/Deconsol.png" sourcerect="65,0,24,63" depth="0.55" />
+      <InventoryIcon texture="%ModDir:3045796581%/Content/Items/ER-ItemsAtlas.png" sourcerect="243,1,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir:3045796581%/Content/Items/ER-ItemsAtlas.png" sourcerect="308,1,24,63" depth="0.6" origin="0.5,0.5" />
       <Body width="20" height="62" density="9.7" />
       <Holdable canbecombined="true" slots="Any,RightHand,LeftHand" holdpos="30,-15" handle1="0,5" handle2="0,-5" msg="ItemMsgPickUpSelect">
         <StatusEffect type="OnFire" target="This" Condition="-10.0" tags="onfire" duration="1" stackable="false" />
