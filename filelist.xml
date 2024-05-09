@@ -2,7 +2,8 @@
 <contentpackage name="Enhanced Reactors" modversion="1.0.25" corepackage="False" steamworkshopid="3045796581" gameversion="1.2.8.0">
   <Afflictions file="%ModDir%/Content/Afflictions.xml" />
   <Item file="%ModDir%/Content/Items/Containers/containers.xml" />
-  <Item file="%ModDir%/Content/Items/Effects/EffectItems.xml" />
+  <Item file="%ModDir%/Content/Items/Effects/effects.xml" />
+  <Item file="%ModDir%/Content/Items/Effects/TriggerEffectItems.xml" />
   <Item file="%ModDir%/Content/Items/Electricity/poweritems.xml" />
   <Item file="%ModDir%/Content/Items/Jobgear/Clown/clown.xml" />
   <Item file="%ModDir%/Content/Items/Jobgear/Engineer/engineer_gear.xml" />
@@ -11,7 +12,6 @@
   <Item file="%ModDir%/Content/Items/Jobgear/Mechanic/mechanic_talent_items.xml" />
   <Item file="%ModDir%/Content/Items/Materials/minerals.xml" />
   <Item file="%ModDir%/Content/Items/Medical/medical.xml" />
-  <Item file="%ModDir%/Content/Items/Misc/effects.xml" />
   <Item file="%ModDir%/Content/Items/Misc/misc.xml" />
   <Item file="%ModDir%/Content/Items/Reactor/reactor.xml" />
   <Item file="%ModDir%/Content/Items/Reactor/reactor_ek.xml" />
