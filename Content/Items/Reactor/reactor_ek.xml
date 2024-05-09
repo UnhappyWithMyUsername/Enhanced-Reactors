@@ -3,10 +3,10 @@
   <Override>
     <Item name="Nuclear Reactor (Mini)" identifier="ekdockyard_reactor_mini" tags="reactor,containradiation" type="Reactor" scale="0.5" linkable="true" category="Machine" damagedbyexplosions="true" explosiondamagemultiplier="0.2" description="Usable device for generating electrical power. A successfull miniaturization of small-modular-reactor architecture, compact enough to see use on some shuttle craft for extended range.">
       <trigger />
-      <Sprite texture="%ModDir%/Content/Items/Reactor/reactor_mini.png" sourcerect="16,0,224,256" origin="0.5,0.5" depth="0.8" />
+      <Sprite texture="%ModDir:3045796581%/Content/Items/Reactor/reactor_mini.png" sourcerect="16,0,224,256" origin="0.5,0.5" depth="0.8" />
       <UpgradePreviewSprite scale="3.0" texture="Content/UI/WeaponUI.png" sourcerect="0,960,64,64" origin="0.5,0.45" />
-      <BrokenSprite texture="%ModDir%/Content/Items/Reactor/reactor_mini.png" sourcerect="272,0,224,256" depth="0.8" origin="0.5,0.5" maxcondition="80" fadein="true" />
-      <BrokenSprite texture="%ModDir%/Content/Items/Reactor/reactor_mini.png" sourcerect="16,256,224,256" depth="0.8" origin="0.5,0.5" maxcondition="0" />
+      <BrokenSprite texture="%ModDir:3045796581%/Content/Items/Reactor/reactor_mini.png" sourcerect="272,0,224,256" depth="0.8" origin="0.5,0.5" maxcondition="80" fadein="true" />
+      <BrokenSprite texture="%ModDir:3045796581%/Content/Items/Reactor/reactor_mini.png" sourcerect="16,256,224,256" depth="0.8" origin="0.5,0.5" maxcondition="0" />
       <aitarget sightrange="500" soundrange="2500" />
       <Reactor canbeselected="true" firedelay="15" meltdowndelay="30" maxpoweroutput="2500" fuelconsumptionrate="0.05" vulnerabletoemp="false" msg="ItemMsgInteractSelect">
         <StatusEffect type="InWater" target="This" condition="-1.0" comparison="And">
@@ -143,11 +143,11 @@
       </Reactor>
       <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="0" IsOn="false" castshadows="false" allowingameediting="false" alphablend="false">
         <IsActive targetitemcomponent="Reactor" temperature="gt 2" />
-        <sprite texture="%ModDir%/Content/Items/Reactor/reactor_mini.png" depth="0.025" sourcerect="272,257,224,254" origin="0.5,0.5" alpha="1.0" />
+        <sprite texture="%ModDir:3045796581%/Content/Items/Reactor/reactor_mini.png" depth="0.025" sourcerect="272,257,224,254" origin="0.5,0.5" alpha="1.0" />
       </LightComponent>
       <LightComponent range="10.0" lightcolor="255,25,15,0" powerconsumption="0" IsOn="false" castshadows="false" allowingameediting="false" blinkfrequency="1" alphablend="false">
         <IsActive targetitemcomponent="Reactor" temperaturecritical="eq true" />
-        <sprite texture="%ModDir%/Content/Items/Reactor/reactor_mini.png" depth="0.025" sourcerect="272,257,224,254" origin="0.5,0.5" alpha="1.0" />
+        <sprite texture="%ModDir:3045796581%/Content/Items/Reactor/reactor_mini.png" depth="0.025" sourcerect="272,257,224,254" origin="0.5,0.5" alpha="1.0" />
       </LightComponent>
       <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
         <GuiFrame relativesize="0.3,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
@@ -232,7 +232,7 @@
         <StatusEffect type="OnSuccess" target="This,Character" comparison="And">
           <Conditional temperature="gt 1" />
           <Conditional isPlayer="eq true" />
-          <SpawnItem identifier="effect_reactorcritical" spawnposition="ThisInventory" spawnifinventoryfull="false" spawnifcantbecontained="true" />
+          <SpawnItem identifier="effect_reactorcritical" spawnposition="ThisInventory" spawnifinventoryfull="false" spawnifcantbecontained="false" />
         </StatusEffect>
         <StatusEffect type="OnFailure" target="This,Character" condition="30.0" setvalue="true" comparison="And">
           <Conditional temperature="gt 1" />
@@ -242,7 +242,7 @@
         <StatusEffect type="OnFailure" target="This,Character" comparison="And">
           <Conditional temperature="gt 1" />
           <Conditional isPlayer="eq true" />
-          <SpawnItem identifier="effect_reactorcritical" spawnposition="ThisInventory" spawnifinventoryfull="false" spawnifcantbecontained="true" />
+          <SpawnItem identifier="effect_reactorcritical" spawnposition="ThisInventory" spawnifinventoryfull="false" spawnifcantbecontained="false" />
         </StatusEffect>
         <!-- explode if reactor is still outputting energy while trying to repair | DISABLED
         <StatusEffect type="OnSuccess" target="This,Character" condition="0.0" setvalue="true" comparison="And">
@@ -259,10 +259,10 @@
   <Override>
     <Item name="Nuclear Reactor (Small)" identifier="ekdockyard_reactor_small" tags="reactor,containradiation" type="Reactor" scale="0.5" linkable="true" category="Machine" damagedbyexplosions="true" explosiondamagemultiplier="0.2" description="Usable device for generating electrical power. An undersized reactor unit for vessels with lower power requirements.">
       <trigger />
-      <Sprite texture="%ModDir%/Content/Items/Reactor/reactor_small.png" sourcerect="0,0,384,344" origin="0.5,0.45" depth="0.8" />
+      <Sprite texture="%ModDir:3045796581%/Content/Items/Reactor/reactor_small.png" sourcerect="0,0,384,344" origin="0.5,0.45" depth="0.8" />
       <UpgradePreviewSprite scale="3.0" texture="Content/UI/WeaponUI.png" sourcerect="0,960,64,64" origin="0.5,0.45" />
-      <BrokenSprite texture="%ModDir%/Content/Items/Reactor/reactor_small.png" sourcerect="384,0,384,344" depth="0.8" origin="0.5,0.45" maxcondition="80" fadein="true" />
-      <BrokenSprite texture="%ModDir%/Content/Items/Reactor/reactor_small.png" sourcerect="0,352,384,344" depth="0.8" origin="0.5,0.45" maxcondition="0" />
+      <BrokenSprite texture="%ModDir:3045796581%/Content/Items/Reactor/reactor_small.png" sourcerect="384,0,384,344" depth="0.8" origin="0.5,0.45" maxcondition="80" fadein="true" />
+      <BrokenSprite texture="%ModDir:3045796581%/Content/Items/Reactor/reactor_small.png" sourcerect="0,352,384,344" depth="0.8" origin="0.5,0.45" maxcondition="0" />
       <aitarget sightrange="500" soundrange="2500" />
       <Reactor canbeselected="true" firedelay="17.5" meltdowndelay="60" maxpoweroutput="5000" fuelconsumptionrate="0.1" vulnerabletoemp="false" msg="ItemMsgInteractSelect">
         <StatusEffect type="InWater" target="This" condition="-0.5" comparison="And">
@@ -399,11 +399,11 @@
       </Reactor>
       <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="0" IsOn="false" castshadows="false" allowingameediting="false" alphablend="false">
         <IsActive targetitemcomponent="Reactor" temperature="gt 2" />
-        <sprite texture="%ModDir%/Content/Items/Reactor/reactor_small.png" depth="0.025" sourcerect="386,354,380,340" origin="0.5,0.45" alpha="1.0" />
+        <sprite texture="%ModDir:3045796581%/Content/Items/Reactor/reactor_small.png" depth="0.025" sourcerect="386,354,380,340" origin="0.5,0.45" alpha="1.0" />
       </LightComponent>
       <LightComponent range="10.0" lightcolor="255,25,15,0" powerconsumption="0" IsOn="false" castshadows="false" allowingameediting="false" blinkfrequency="1" alphablend="false">
         <IsActive targetitemcomponent="Reactor" temperaturecritical="eq true" />
-        <sprite texture="%ModDir%/Content/Items/Reactor/reactor_small.png" depth="0.025" sourcerect="386,354,380,340" origin="0.5,0.45" alpha="1.0" />
+        <sprite texture="%ModDir:3045796581%/Content/Items/Reactor/reactor_small.png" depth="0.025" sourcerect="386,354,380,340" origin="0.5,0.45" alpha="1.0" />
       </LightComponent>
       <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
         <GuiFrame relativesize="0.3,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
@@ -488,7 +488,7 @@
         <StatusEffect type="OnSuccess" target="This,Character" comparison="And">
           <Conditional temperature="gt 1" />
           <Conditional isPlayer="eq true" />
-          <SpawnItem identifier="effect_reactorcritical" spawnposition="ThisInventory" spawnifinventoryfull="false" spawnifcantbecontained="true" />
+          <SpawnItem identifier="effect_reactorcritical" spawnposition="ThisInventory" spawnifinventoryfull="false" spawnifcantbecontained="false" />
         </StatusEffect>
         <StatusEffect type="OnFailure" target="This,Character" condition="30.0" setvalue="true" comparison="And">
           <Conditional temperature="gt 1" />
@@ -498,7 +498,7 @@
         <StatusEffect type="OnFailure" target="This,Character" comparison="And">
           <Conditional temperature="gt 1" />
           <Conditional isPlayer="eq true" />
-          <SpawnItem identifier="effect_reactorcritical" spawnposition="ThisInventory" spawnifinventoryfull="false" spawnifcantbecontained="true" />
+          <SpawnItem identifier="effect_reactorcritical" spawnposition="ThisInventory" spawnifinventoryfull="false" spawnifcantbecontained="false" />
         </StatusEffect>
         <!-- explode if reactor is still outputting energy while trying to repair | DISABLED
         <StatusEffect type="OnSuccess" target="This,Character" condition="0.0" setvalue="true" comparison="And">
@@ -515,10 +515,10 @@
   <Override>
     <Item name="Slow Nuclear Reactor (Small)" identifier="ekdockyard_reactorslow_small" tags="reactor,containradiation" type="Reactor" scale="0.5" linkable="true" category="Machine" damagedbyexplosions="true" explosiondamagemultiplier="0.2" description="Nuclear power generation design which is designed for high-mass reaction and efficient usage of fuel at sub-critical levels.">
       <trigger />
-      <Sprite texture="%ModDir%/Content/Items/Reactor/reactorslow_small.png" sourcerect="0,0,384,344" origin="0.5,0.45" depth="0.8" />
+      <Sprite texture="%ModDir:3045796581%/Content/Items/Reactor/reactorslow_small.png" sourcerect="0,0,384,344" origin="0.5,0.45" depth="0.8" />
       <UpgradePreviewSprite scale="3.0" texture="Content/UI/WeaponUI.png" sourcerect="0,960,64,64" origin="0.5,0.45" />
-      <BrokenSprite texture="%ModDir%/Content/Items/Reactor/reactorslow_small.png" sourcerect="384,0,384,344" depth="0.8" origin="0.5,0.45" maxcondition="80" fadein="true" />
-      <BrokenSprite texture="%ModDir%/Content/Items/Reactor/reactorslow_small.png" sourcerect="0,352,384,344" depth="0.8" origin="0.5,0.45" maxcondition="0" />
+      <BrokenSprite texture="%ModDir:3045796581%/Content/Items/Reactor/reactorslow_small.png" sourcerect="384,0,384,344" depth="0.8" origin="0.5,0.45" maxcondition="80" fadein="true" />
+      <BrokenSprite texture="%ModDir:3045796581%/Content/Items/Reactor/reactorslow_small.png" sourcerect="0,352,384,344" depth="0.8" origin="0.5,0.45" maxcondition="0" />
       <aitarget sightrange="500" soundrange="2500" />
       <Reactor canbeselected="true" firedelay="17.5" meltdowndelay="60" maxpoweroutput="5000" fuelconsumptionrate="0.05" vulnerabletoemp="false" msg="ItemMsgInteractSelect">
         <StatusEffect type="InWater" target="This" condition="-0.5" comparison="And">
@@ -655,11 +655,11 @@
       </Reactor>
       <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="0" IsOn="false" castshadows="false" allowingameediting="false" alphablend="false">
         <IsActive targetitemcomponent="Reactor" temperature="gt 2" />
-        <sprite texture="%ModDir%/Content/Items/Reactor/reactorslow_small.png" depth="0.025" sourcerect="388,356,376,336" origin="0.5,0.45" alpha="1.0" />
+        <sprite texture="%ModDir:3045796581%/Content/Items/Reactor/reactorslow_small.png" depth="0.025" sourcerect="388,356,376,336" origin="0.5,0.45" alpha="1.0" />
       </LightComponent>
       <LightComponent range="10.0" lightcolor="255,25,15,0" powerconsumption="0" IsOn="false" castshadows="false" allowingameediting="false" blinkfrequency="1" alphablend="false">
         <IsActive targetitemcomponent="Reactor" temperaturecritical="eq true" />
-        <sprite texture="%ModDir%/Content/Items/Reactor/reactorslow_small.png" depth="0.025" sourcerect="388,356,376,336" origin="0.5,0.45" alpha="1.0" />
+        <sprite texture="%ModDir:3045796581%/Content/Items/Reactor/reactorslow_small.png" depth="0.025" sourcerect="388,356,376,336" origin="0.5,0.45" alpha="1.0" />
       </LightComponent>
       <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
         <GuiFrame relativesize="0.3,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
@@ -744,7 +744,7 @@
         <StatusEffect type="OnSuccess" target="This,Character" comparison="And">
           <Conditional temperature="gt 1" />
           <Conditional isPlayer="eq true" />
-          <SpawnItem identifier="effect_reactorcritical" spawnposition="ThisInventory" spawnifinventoryfull="false" spawnifcantbecontained="true" />
+          <SpawnItem identifier="effect_reactorcritical" spawnposition="ThisInventory" spawnifinventoryfull="false" spawnifcantbecontained="false" />
         </StatusEffect>
         <StatusEffect type="OnFailure" target="This,Character" condition="30.0" setvalue="true" comparison="And">
           <Conditional temperature="gt 1" />
@@ -754,7 +754,7 @@
         <StatusEffect type="OnFailure" target="This,Character" comparison="And">
           <Conditional temperature="gt 1" />
           <Conditional isPlayer="eq true" />
-          <SpawnItem identifier="effect_reactorcritical" spawnposition="ThisInventory" spawnifinventoryfull="false" spawnifcantbecontained="true" />
+          <SpawnItem identifier="effect_reactorcritical" spawnposition="ThisInventory" spawnifinventoryfull="false" spawnifcantbecontained="false" />
         </StatusEffect>
         <!-- explode if reactor is still outputting energy while trying to repair | DISABLED
         <StatusEffect type="OnSuccess" target="This,Character" condition="0.0" setvalue="true" comparison="And">
