@@ -305,6 +305,9 @@
         <Containable items="fulguriumfuelrodvolatile">
           <StatusEffect type="OnContaining" target="This" AvailableFuel="150.0" disabledeltatime="true" />
         </Containable>
+        <Containable items="huskfigurine">
+          <StatusEffect type="OnContaining" target="This" AvailableFuel="0" disabledeltatime="true" />
+        </Containable>
       </ItemContainer>
       <!-- invisible inventory slot for the critical state effect item -->
       <ItemContainer capacity="1" maxstacksize="1" canbeselected="false">
@@ -329,9 +332,9 @@
           <Affliction identifier="burn" strength="5" />
         </StatusEffect>
         <!-- set reactor condition to 30 and spawn an item inside it which damages it every second if repaired while active -->
-        <StatusEffect type="OnSuccess" target="This,Character" condition="30.0" setvalue="true" comparison="And">
+        <StatusEffect type="OnSuccess" target="This,Character" condition="40.0" setvalue="true" comparison="And">
           <Conditional temperature="gt 1" />
-          <Conditional condition="gte 30" />
+          <Conditional condition="gte 40" />
           <Conditional isPlayer="eq true" />
         </StatusEffect>
         <StatusEffect type="OnSuccess" target="This,Character" comparison="And">
@@ -339,9 +342,9 @@
           <Conditional isPlayer="eq true" />
           <SpawnItem identifier="effect_reactorcritical" spawnposition="ThisInventory" spawnifinventoryfull="false" spawnifcantbecontained="false" />
         </StatusEffect>
-        <StatusEffect type="OnFailure" target="This,Character" condition="30.0" setvalue="true" comparison="And">
+        <StatusEffect type="OnFailure" target="This,Character" condition="40.0" setvalue="true" comparison="And">
           <Conditional temperature="gt 1" />
-          <Conditional condition="gte 30" />
+          <Conditional condition="gte 40" />
           <Conditional isPlayer="eq true" />
         </StatusEffect>
         <StatusEffect type="OnFailure" target="This,Character" comparison="And">
@@ -563,6 +566,9 @@
         <Containable items="fulguriumfuelrodvolatile">
           <StatusEffect type="OnContaining" target="This" AvailableFuel="150.0" disabledeltatime="true" />
         </Containable>
+        <Containable items="huskfigurine">
+          <StatusEffect type="OnContaining" target="This" AvailableFuel="0" disabledeltatime="true" />
+        </Containable>
       </ItemContainer>
       <!-- invisible inventory slot for the critical state effect item -->
       <ItemContainer capacity="1" maxstacksize="1" canbeselected="false">
@@ -587,9 +593,9 @@
           <Affliction identifier="burn" strength="5" />
         </StatusEffect>
         <!-- set reactor condition to 30 and spawn an item inside it which damages it every second if repaired while active -->
-        <StatusEffect type="OnSuccess" target="This,Character" condition="30.0" setvalue="true" comparison="And">
+        <StatusEffect type="OnSuccess" target="This,Character" condition="40.0" setvalue="true" comparison="And">
           <Conditional temperature="gt 1" />
-          <Conditional condition="gte 30" />
+          <Conditional condition="gte 40" />
           <Conditional isPlayer="eq true" />
         </StatusEffect>
         <StatusEffect type="OnSuccess" target="This,Character" comparison="And">
@@ -597,9 +603,9 @@
           <Conditional isPlayer="eq true" />
           <SpawnItem identifier="effect_reactorcritical" spawnposition="ThisInventory" spawnifinventoryfull="false" spawnifcantbecontained="false" />
         </StatusEffect>
-        <StatusEffect type="OnFailure" target="This,Character" condition="30.0" setvalue="true" comparison="And">
+        <StatusEffect type="OnFailure" target="This,Character" condition="40.0" setvalue="true" comparison="And">
           <Conditional temperature="gt 1" />
-          <Conditional condition="gte 30" />
+          <Conditional condition="gte 40" />
           <Conditional isPlayer="eq true" />
         </StatusEffect>
         <StatusEffect type="OnFailure" target="This,Character" comparison="And">
