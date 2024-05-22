@@ -16,7 +16,7 @@
       <Body width="144" height="80" density="25" />
       <Holdable slots="RightHand,LeftHand" holdpos="0,-30" handle1="0,-30" aimable="false" msg="ItemMsgPickUpSelect" />
       <ItemContainer capacity="9" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="true">
-        <Containable items="radioactivematerial" />
+        <Containable items="ore,radioactivematerial" />
       </ItemContainer>
     </Item>
   </Override>
