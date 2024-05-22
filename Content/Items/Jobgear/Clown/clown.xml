@@ -2,7 +2,7 @@
 <Items>
   <Override>
     <!--TODO: change the priority to 2.5 when the bots can switch the batteries-->
-    <Item name="" identifier="clownexosuit" category="Diving,Equipment" tags="clowngear,deepdiving,deepdivinglarge,clowns,provocative" scale="0.5" fireproof="true" description="" isshootable="true" allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy" botpriority="0.01" cargocontaineridentifier="">
+    <Item name="" identifier="clownexosuit" category="Diving,Equipment" tags="clowngear,diving,deepdiving,deepdivinglarge,clowns,human,containradiation" scale="0.5" fireproof="true" description="" isshootable="true" allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy" botpriority="0.01" cargocontaineridentifier="">
       <Price baseprice="1500" canbespecial="false" sold="false" />
       <Deconstruct time="30">
         <Item identifier="titaniumaluminiumalloy" />
@@ -42,42 +42,33 @@
         <sprite name="Clown Exosuit Right Shoe" texture="Content/Items/JobGear/Clown/ClownExosuit.png" limb="RightFoot" sound="footstep_armor_exosuit_clown" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" origin="0.2,0.5" inheritsourcerect="false" sourcerect="371,211,133,37" />
         <StatusEffect type="OnWearing" target="Character" OxygenAvailable="-100.0" UseHullOxygen="false" />
         <StatusEffect tags="clown" type="OnWearing" target="Character" HideFace="true" duration="0.1" stackable="false" />
-        <StatusEffect type="OnWearing" target="Character" HideFace="true" ObstructVision="true" PressureProtection="10000.0" SpeedMultiplier="0.4" PropulsionSpeedMultiplier="0.5" setvalue="true" disabledeltatime="true">
+        <StatusEffect type="OnWearing" target="Character" HideFace="true" ObstructVision="true" PressureProtection="7000.0" PropulsionSpeedMultiplier="0.5" setvalue="true" disabledeltatime="true">
           <Sound file="Content/Items/Diving/DivingSuitLoop1.ogg" range="500" loop="true"/>
           <Sound file="Content/Items/Diving/DivingSuitLoop2.ogg" range="500" loop="true"/>
+          <TriggerAnimation Type="Walk" FileName="HumanWalkExosuit" priority="1" ExpectedSpecies="Human" />
+          <TriggerAnimation Type="Run" FileName="HumanRunExosuit" priority="1" ExpectedSpecies="Human" />
         </StatusEffect>
         <!-- slow movement -->
-        <StatusEffect type="OnWearing" target="This,Character" SpeedMultiplier="0.4" setvalue="true" disabledeltatime="true">
+        <StatusEffect type="OnWearing" target="This,Character" setvalue="true" disabledeltatime="true">
           <Conditional Voltage="gt 0.5" />
         </StatusEffect>
         <!-- 0 movement speed when out of fuel-->
-        <StatusEffect type="OnWearing" target="This,Character" SpeedMultiplier="0.0" setvalue="true" disabledeltatime="true">
+        <StatusEffect type="OnWearing" target="This,Character" SpeedMultiplier="-10.0" setvalue="true" disabledeltatime="true">
           <Conditional Voltage="lte 0.5" />
-        </StatusEffect>
-        <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.15" targetslot="0">
-          <Conditional IsDead="false" />
-          <RequiredItem items="oxygensource" targetslot="0" type="Contained" />
-        </StatusEffect>
-        <StatusEffect type="OnWearing" target="Contained,Character" Oxygen="-10.0" Condition="-0.5" targetslot="0" interval="1" disabledeltatime="true">
-          <Conditional IsDead="false" />
-          <RequiredItem items="weldingfueltank" type="Contained" />
-        </StatusEffect>
-        <StatusEffect type="OnWearing" target="Contained,Character" targetlimbs="Torso" Oxygen="-10.0" Condition="-0.5" targetslot="0" interval="1" disabledeltatime="true">
-          <Conditional IsDead="false" />
-          <RequiredItem items="incendiumfueltank" type="Contained" />
-          <Affliction identifier="burn" amount="3.0" />
         </StatusEffect>
         <StatusEffect type="OnWearing" target="Contained,Character" Condition="-0.2" targetslot="1" comparison="Or">
           <Conditional IsDead="false" />
           <RequiredItem items="reactorfuel" type="Contained" />
         </StatusEffect>
         <sound file="Content/Items/Weapons/WEAPONS_chargeUp.ogg" type="OnWearing" range="500.0" volumeproperty="Speed" volume="0.2" loop="true" frequencymultiplier="0.5" />
-        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma,gunshotwound,bitewounds,lacerations,bleeding" damagemultiplier="0.3" damagesound="LimbArmor" deflectprojectiles="true" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma,gunshotwound,lacerations,explosiondamage" damagemultiplier="0.2" damagesound="LimbArmor" deflectprojectiles="true" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bitewounds, bleeding" damagemultiplier="0.25" probabilitymultiplier="0.5" damagesound="LimbArmor" deflectprojectiles="true" />
+        <damagemodifier armorsector="0.0,360.0" afflictiontypes="stun" damagemultiplier="0.5" probabilitymultiplier="0.25" damagesound="LimbArmor" deflectprojectiles="true" />
         <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="overheating" damagemultiplier="0.2" />
-        <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.1" damagesound="" deflectprojectiles="true" />
+        <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.5" damagesound="" deflectprojectiles="true" />
         <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="radiationsickness" damagemultiplier="0.75" damagesound="LimbArmor"/>
         <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="contaminated" damagemultiplier="0.75" damagesound="LimbArmor"/>
-        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="huskinfection" damagemultiplier="0.5" probabilitymultiplier="0.5" damagesound="LimbArmor"/>
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="huskinfection" probabilitymultiplier="0.1" damagesound="LimbArmor"/>
         <StatValue stattype="FlowResistance" value="0.9" />
       </Wearable>
       <Holdable slots="OuterClothes+RightHand" controlpose="true" aimpos="70,5" handle1="-25,-7" />
@@ -99,11 +90,6 @@
         <Containable items="none" />
         <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
         <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="192,448,64,64" origin="0.5,0.5" />
-        <StatusEffect type="OnWearing" target="Contained">
-          <RequiredItem items="oxygensource" type="Contained" />
-          <Conditional condition="lt 5.0" />
-          <Sound file="Content/Items/WarningBeepSlow.ogg" range="500" loop="true"/>
-        </StatusEffect>
         <StatusEffect type="OnWearing" target="Contained" playsoundonrequireditemfailure="true">
           <RequiredItem items="oxygensource" type="Contained" matchonempty="true" />
           <Conditional condition="lte 0.0" />
@@ -111,13 +97,57 @@
         </StatusEffect>
         <SubContainer capacity="1" maxstacksize="1">
           <Containable items="oxygensource,weldingtoolfuel" />
+          <Containable items="oxygensource">
+            <StatusEffect type="OnWearing" target="Character" OxygenAvailable="1000.0" />
+            <StatusEffect type="OnWearing" target="Contained" Condition="-0.2" comparison="And">
+              <Conditional TargetContainer="true" TargetGrandparent="true" IsDead="false" />
+              <Conditional TargetContainer="true" TargetGrandparent="true" DecreasedOxygenConsumption="lt 99" />
+              <Conditional TargetContainer="true" TargetGrandparent="true" NeedsAir="true" />
+            </StatusEffect>
+            <StatusEffect type="OnWearing" target="Contained">
+              <Conditional condition="lt 5.0" />
+              <Sound file="Content/Items/WarningBeepSlow.ogg" range="250" loop="true"/>
+            </StatusEffect>
+          </Containable>
+          <Containable items="oxygenitetank">
+            <StatusEffect type="OnWearing" target="Character" SpeedMultiplier="1.2" setvalue="true" targetslot="0" comparison="And">
+              <Conditional IsDead="false" />
+              <Conditional DecreasedOxygenConsumption="lt 99" />
+              <Conditional NeedsAir="true" />
+            </StatusEffect>
+          </Containable>
+          <Containable items="weldingfueltank">
+            <StatusEffect type="OnWearing" target="Contained" Condition="-0.5" comparison="And">
+              <Conditional TargetContainer="true" TargetGrandparent="true" IsDead="false" />
+              <Conditional TargetContainer="true" TargetGrandparent="true" DecreasedOxygenConsumption="lt 99" />
+              <Conditional TargetContainer="true" TargetGrandparent="true" NeedsAir="true" />
+            </StatusEffect>
+            <StatusEffect type="OnWearing" target="Character" OxygenAvailable="-100.0" Oxygen="-5.0" comparison="And">
+              <Conditional IsDead="false" />
+              <Conditional DecreasedOxygenConsumption="lt 99" />
+              <Conditional NeedsAir="true" />
+            </StatusEffect>
+          </Containable>
+          <Containable items="incendiumfueltank">
+            <StatusEffect type="OnWearing" target="Contained" Condition="-0.5" comparison="And">
+              <Conditional TargetContainer="true" TargetGrandparent="true" IsDead="false" />
+              <Conditional TargetContainer="true" TargetGrandparent="true" DecreasedOxygenConsumption="lt 99" />
+              <Conditional TargetContainer="true" TargetGrandparent="true" NeedsAir="true" />
+            </StatusEffect>
+            <StatusEffect type="OnWearing" target="Character" OxygenAvailable="-100.0" comparison="And" targetlimb="Torso">
+              <Affliction identifier="burn" amount="20.0"  />
+              <Conditional IsDead="false" />
+              <Conditional DecreasedOxygenConsumption="lt 99" />
+              <Conditional NeedsAir="true" />
+            </StatusEffect>
+          </Containable>
         </SubContainer>
         <SubContainer capacity="1" maxstacksize="1">
-        <Containable items="reactorfuel">
-          <StatusEffect type="OnContaining" target="This,Character" Voltage="1.0" setvalue="true">
-            <Conditional IsDead="false" />
-          </StatusEffect>
-        </Containable>
+          <Containable items="reactorfuel">
+            <StatusEffect type="OnContaining" target="This,Character" Voltage="1.0" setvalue="true">
+              <Conditional IsDead="false" />
+            </StatusEffect>
+          </Containable>
         </SubContainer>
       </ItemContainer>
       <ItemContainer capacity="1" maxstacksize="1" hideitems="true" spawnwithid="bananapeelprojectile">
