@@ -22,28 +22,28 @@
         <Item identifier="lead" amount="2" />
         <Item identifier="rubber" amount="2" />
       </Fabricate>
-      <InventoryIcon name="Engineer Hazmat Icon" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuitItem.png" sourcerect="0,0,190,116" origin="0.5,0.5" />
-      <Sprite name="Engineer Hazmat" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuitItem.png" sourcerect="0,0,190,116" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon name="Engineer Hazmat Icon" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit1.png" sourcerect="401,126,59,61" origin="0.5,0.5" />
+      <Sprite name="Engineer Hazmat" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit1.png" sourcerect="401,188,89,67" depth="0.6" origin="0.5,0.5" />
       <ContainedSprite name="Respawn Diving Suit In Vertical Locker" allowedcontainertags="divingsuitcontainervertical" texture="Content/Items/Diving/RespawnSuit_Items.png" sourcerect="181,0,70,192" depth="0.55" origin="0.5,0.5" />
       <ContainedSprite name="Respawn Diving Suit Behind Window" allowedcontainertags="divingsuitcontainerwindow" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit.png" sourcerect="523,21,77,214" depth="0.55" origin="-0.12,-0.13" />
       <ContainedSprite name="Respawn Diving Suit In Horizontal Locker" allowedcontainertags="divingsuitcontainerhorizontal" texture="Content/Items/Diving/RespawnSuit_Items.png" sourcerect="0,193,230,63" depth="0.55" origin="0.6,0.5" />
-      <Body width="133" radius="57" density="15" friction="0.8" restitution="0.01" />
+      <Body width="40" radius="27" density="15" friction="0.8" restitution="0.01" />
       <Wearable slots="OuterClothes" msg="ItemMsgPickUpSelect">
-        <sprite name="Engineer's Hazmat Head" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit.png" limb="Head" hidelimb="true" hidewearablesoftype="moustache,beard,hair" inheritlimbdepth="true" sourcerect="414,160,98,96" scale="0.3" origin="0.55,0.6" />
-        <sprite name="Engineer's Hazmat Torso" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit.png" limb="Torso" hidelimb="false" hideotherwearables="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-        <sprite name="Engineer's Hazmat Right Hand" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit.png" limb="RightHand" hidelimb="true" hideotherwearables="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-        <sprite name="Engineer's Hazmat Left Hand" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit.png" limb="LeftHand" hidelimb="true" hideotherwearables="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-        <sprite name="Engineer's Hazmat Right Lower Arm" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit.png" limb="RightArm" hidelimb="true" hideotherwearables="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-        <sprite name="Engineer's Hazmat Left Lower Arm" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit.png" limb="LeftArm" hidelimb="true" hideotherwearables="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-        <sprite name="Engineer's Hazmat Right Upper Arm" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit.png" limb="RightForearm" hidelimb="true" hideotherwearables="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-        <sprite name="Engineer's Hazmat Left Upper Arm" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit.png" limb="LeftForearm" hidelimb="true" hideotherwearables="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-        <sprite name="Engineer's Hazmat Waist" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit.png" limb="Waist" hidelimb="true" hideotherwearables="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-        <sprite name="Engineer's Hazmat Right Thigh" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit.png" limb="RightThigh" hidelimb="true" hideotherwearables="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-        <sprite name="Engineer's Hazmat Left Thigh" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit.png" limb="LeftThigh" hidelimb="true" hideotherwearables="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-        <sprite name="Engineer's Hazmat Right Leg" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit.png" limb="RightLeg" hidelimb="true" hideotherwearables="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-        <sprite name="Engineer's Hazmat Left Leg" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit.png" limb="LeftLeg" hidelimb="true" hideotherwearables="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-        <sprite name="Engineer's Hazmat Left Shoe" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit.png" limb="LeftFoot" hidelimb="true" hideotherwearables="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-        <sprite name="Engineer's Hazmat Right Shoe" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit.png" limb="RightFoot" hidelimb="true" hideotherwearables="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Engineer's Hazmat Head" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit1.png" limb="Head" hidelimb="true" hideotherwearables="true" hidewearablesoftype="moustache,beard,hair" inheritlimbdepth="true" sourcerect="0,0,1,1" scale="0.3" origin="0.55,0.6" />
+        <sprite name="Engineer's Hazmat Torso" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit1.png" limb="Torso" hidelimb="true" hideotherwearables="true" inherittexturescale="true" inheritorigin="false" inheritsourcerect="true" origin="0.1,0.5" />
+        <sprite name="Engineer's Hazmat Right Hand" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit1.png" limb="RightHand" hidelimb="true" hideotherwearables="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Engineer's Hazmat Left Hand" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit1.png" limb="LeftHand" hidelimb="true" hideotherwearables="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Engineer's Hazmat Right Lower Arm" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit1.png" limb="RightArm" hidelimb="true" hideotherwearables="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Engineer's Hazmat Left Lower Arm" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit1.png" limb="LeftArm" hidelimb="true" hideotherwearables="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Engineer's Hazmat Right Upper Arm" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit1.png" limb="RightForearm" hidelimb="true" hideotherwearables="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Engineer's Hazmat Left Upper Arm" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit1.png" limb="LeftForearm" hidelimb="true" hideotherwearables="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Engineer's Hazmat Waist" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit1.png" limb="Waist" hidelimb="true" hideotherwearables="true" inherittexturescale="true" inheritorigin="false" inheritsourcerect="false" sourcerect="178,198,68,57" origin="0.57,0.7" />
+        <sprite name="Engineer's Hazmat Right Thigh" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit1.png" limb="RightThigh" hidelimb="true" hideotherwearables="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Engineer's Hazmat Left Thigh" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit1.png" limb="LeftThigh" hidelimb="true" hideotherwearables="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Engineer's Hazmat Right Leg" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit1.png" limb="RightLeg" hidelimb="true" hideotherwearables="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Engineer's Hazmat Left Leg" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit1.png" limb="LeftLeg" hidelimb="true" hideotherwearables="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Engineer's Hazmat Left Shoe" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit1.png" limb="LeftFoot" hidelimb="true" hideotherwearables="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Engineer's Hazmat Right Shoe" texture="%ModDir:3045796581%/Content/Items/Jobgear/Engineer/HazmatSuit1.png" limb="RightFoot" hidelimb="true" hideotherwearables="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
         <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="overheating" damagemultiplier="0.0" />
         <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="contaminated" damagemultiplier="0.1" />
         <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="radiationsickness" damagemultiplier="0.1" />
@@ -68,6 +68,8 @@
         <StatusEffect type="OnWearing" target="Character" OxygenAvailable="-100.0" UseHullOxygen="false">
           <Conditional IsPlayer="eq true" />
         </StatusEffect>
+        <!-- Obstruct vision of the the wearer -->
+        <StatusEffect type="OnWearing" target="Character" ObstructVisionAmount="0.7" setvalue="true"/>
         <!-- Provide oxygen to wearer if any oxygensource is contained and drain the oxygen tank as fast as abyss diving suit | Disabled for bots -->
         <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.15" comparison="And">
           <Conditional IsDead="false" />
