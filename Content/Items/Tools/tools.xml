@@ -228,7 +228,7 @@
         <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
         <RequiredItems items="reactorfuel" type="Contained" />
       </RangedWeapon>
-      <ItemContainer capacity="1" maxstacksize="1" canbeselected="true" hideitems="false" slotsperrow="1" itempos="35,-3" containedspritedepths="0.565" msg="ItemMsgInteractSelect">
+      <ItemContainer capacity="1" maxstacksize="1" canbeselected="true" hideitems="false" slotsperrow="1" itempos="35,-3" containedspritedepths="0.601" msg="ItemMsgInteractSelect">
         <Containable items="reactorfuel"/>
       </ItemContainer>
     </Item>
@@ -292,11 +292,11 @@
         <StatusEffect type="Always" target="This,NearbyCharacters" range="10000" tags="nearcharacter" interval="1" duration="1.1">
           <Conditional isPlayer="true" />
         </StatusEffect>
-        <!-- create an invisible explosion to apply variable amount of damage and afflictions to nearby items and characters, if the fission process was started and the item is not contained within a container with the tag "radiationcontainer" -->
+        <!-- create an invisible explosion to apply variable amount of damage and afflictions to nearby items and characters, if the fission process was started and the item is not contained within a container with the tag "containradiation" -->
         <StatusEffect type="Always" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
-          <Conditional HasTag="neq deepdiving" targetcontainer="true" />
+          <Conditional HasTag="neq deepdivinglarge" targetcontainer="true" />
           <Conditional HasTag="neq containradiation" targetcontainer="true" />
           <Conditional HasStatusTag="neq containradiation" targetcontainer="true" />
           <Explosion range="1500" itemdamage="1.35" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
@@ -393,7 +393,7 @@
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional IsPlayer="eq true" />
-          <Conditional HasTag="neq deepdiving" targetcontainer="true" />
+          <Conditional HasTag="neq deepdivinglarge" targetcontainer="true" />
           <Conditional HasTag="neq containradiation" targetcontainer="true" />
           <Conditional HasStatusTag="neq containradiation" targetcontainer="true" />
           <Affliction identifier="burn" amount="3" />
@@ -401,7 +401,7 @@
         <!-- activate the LightComponent to trigger the OnActive StatusEffects and visualize that the fission process has started when the fuel rod was used inside an active reactor -->
         <StatusEffect type="Always" target="This" IsOn="True" tags="activefuelrod,provocative" setvalue="True" comparison="And" interval="1.1">
           <Conditional HasTag="eq reactor" targetcontainer="True" />
-          <Conditional Temperature="gt 0.01" targetcontainer="True" />
+          <Conditional fissionrate="gt 1.0" targetcontainer="True" />
         </StatusEffect>
         <!-- activate the LightComponent to trigger the OnActive StatusEffects and visualize that the fission process has started when the fuel rod was spawned inside a wreck reactor -->
         <StatusEffect type="OnContained" target="This" IsOn="True" tags="activefuelrod,provocative" setvalue="True">
@@ -488,11 +488,11 @@
         <StatusEffect type="Always" target="This,NearbyCharacters" range="10000" tags="nearcharacter" interval="1" duration="1.1">
           <Conditional isPlayer="true" />
         </StatusEffect>
-        <!-- create an invisible explosion to apply variable amount of damage and afflictions to nearby items and characters, if the fission process was started and the item is not contained within a container with the tag "radiationcontainer" -->
+        <!-- create an invisible explosion to apply variable amount of damage and afflictions to nearby items and characters, if the fission process was started and the item is not contained within a container with the tag "containradiation" -->
         <StatusEffect type="Always" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
-          <Conditional HasTag="neq deepdiving" targetcontainer="true" />
+          <Conditional HasTag="neq deepdivinglarge" targetcontainer="true" />
           <Conditional HasTag="neq containradiation" targetcontainer="true" />
           <Explosion range="1000" itemdamage="1.5" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
             <Affliction identifier="radiationsickness" strength="1.5" />
@@ -587,14 +587,14 @@
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional IsPlayer="eq true" />
-          <Conditional HasTag="neq deepdiving" targetcontainer="true" />
+          <Conditional HasTag="neq deepdivinglarge" targetcontainer="true" />
           <Conditional HasTag="neq containradiation" targetcontainer="true" />
           <Affliction identifier="burn" amount="4" />
         </StatusEffect>
         <!-- activate the LightComponent to trigger the OnActive StatusEffects and visualize that the fission process has started when the fuel rod was used inside an active reactor -->
         <StatusEffect type="Always" target="This" IsOn="True" tags="activefuelrod,provocative" setvalue="True" comparison="And" interval="1.1">
           <Conditional HasTag="eq reactor" targetcontainer="True" />
-          <Conditional Temperature="gt 0.1" targetcontainer="True" />
+          <Conditional fissionrate="gt 1.0" targetcontainer="True" />
         </StatusEffect>
         <!-- activate the LightComponent to trigger the OnActive StatusEffects and visualize that the fission process has started when the fuel rod was spawned inside a wreck reactor -->
         <StatusEffect type="OnContained" target="This" IsOn="True" tags="activefuelrod,provocative" setvalue="True">
@@ -681,11 +681,11 @@
         <StatusEffect type="Always" target="This,NearbyCharacters" range="10000" tags="nearcharacter" interval="1" duration="1.1">
           <Conditional isPlayer="true" />
         </StatusEffect>
-        <!-- create an invisible explosion to apply variable amount of damage and afflictions to nearby items and characters, if the fission process was started and the item is not contained within a container with the tag "radiationcontainer" -->
+        <!-- create an invisible explosion to apply variable amount of damage and afflictions to nearby items and characters, if the fission process was started and the item is not contained within a container with the tag "containradiation" -->
         <StatusEffect type="Always" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
-          <Conditional HasTag="neq deepdiving" targetcontainer="true" />
+          <Conditional HasTag="neq deepdivinglarge" targetcontainer="true" />
           <Conditional HasTag="neq containradiation" targetcontainer="true" />
           <Explosion range="2000" itemdamage="0.975" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
             <Affliction identifier="radiationsickness" strength="3.75" />
@@ -778,7 +778,7 @@
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional IsPlayer="eq true" />
-          <Conditional HasTag="neq deepdiving" targetcontainer="true" />
+          <Conditional HasTag="neq deepdivinglarge" targetcontainer="true" />
           <Conditional HasTag="neq containradiation" targetcontainer="true" />
           <Affliction identifier="burn" amount="5" />
         </StatusEffect>
@@ -790,14 +790,14 @@
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional IsPlayer="eq true" />
-          <Conditional HasTag="neq deepdiving" targetcontainer="true" />
+          <Conditional HasTag="neq deepdivinglarge" targetcontainer="true" />
           <Conditional HasTag="neq containradiation" targetcontainer="true" />
           <Affliction identifier="burn" amount="5" />
         </StatusEffect>
         <!-- activate the LightComponent to trigger the OnActive StatusEffects and visualize that the fission process has started when the fuel rod was used inside an active reactor -->
         <StatusEffect type="Always" target="This" IsOn="True" tags="activefuelrod,provocative" setvalue="True" comparison="And" interval="1.1">
           <Conditional HasTag="eq reactor" targetcontainer="True" />
-          <Conditional Temperature="gt 0.1" targetcontainer="True" />
+          <Conditional fissionrate="gt 1.0" targetcontainer="True" />
         </StatusEffect>
         <!-- activate the LightComponent to trigger the OnActive StatusEffects and visualize that the fission process has started when the fuel rod was spawned inside a wreck reactor -->
         <StatusEffect type="OnContained" target="This" IsOn="True" tags="activefuelrod,provocative" setvalue="True">
@@ -881,11 +881,11 @@
         <StatusEffect type="Always" target="This,NearbyCharacters" range="10000" tags="nearcharacter" interval="1" duration="1.1">
           <Conditional isPlayer="true" />
         </StatusEffect>
-        <!-- create an invisible explosion to apply variable amount of damage and afflictions to nearby items and characters, if the fission process was started and the item is not contained within a container with the tag "radiationcontainer" -->
+        <!-- create an invisible explosion to apply variable amount of damage and afflictions to nearby items and characters, if the fission process was started and the item is not contained within a container with the tag "containradiation" -->
         <StatusEffect type="Always" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
-          <Conditional HasTag="neq deepdiving" targetcontainer="true" />
+          <Conditional HasTag="neq deepdivinglarge" targetcontainer="true" />
           <Conditional HasTag="neq containradiation" targetcontainer="true" />
           <Explosion range="1500" itemdamage="1.5" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
             <Affliction identifier="radiationsickness" strength="5.4" />
@@ -980,14 +980,14 @@
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional IsPlayer="eq true" />
-          <Conditional HasTag="neq deepdiving" targetcontainer="true" />
+          <Conditional HasTag="neq deepdivinglarge" targetcontainer="true" />
           <Conditional HasTag="neq containradiation" targetcontainer="true" />
           <Affliction identifier="burn" amount="6" />
         </StatusEffect>
         <!-- activate the LightComponent to trigger the OnActive StatusEffects and visualize that the fission process has started when the fuel rod was used inside an active reactor -->
         <StatusEffect type="Always" target="This" IsOn="True" tags="activefuelrod,provocative" setvalue="True" comparison="And" interval="1.1">
           <Conditional HasTag="eq reactor" targetcontainer="True" />
-          <Conditional Temperature="gt 0.1" targetcontainer="True" />
+          <Conditional fissionrate="gt 1.0" targetcontainer="True" />
         </StatusEffect>
         <!-- activate the LightComponent to trigger the OnActive StatusEffects and visualize that the fission process has started when the fuel rod was spawned inside a wreck reactor -->
         <StatusEffect type="OnContained" target="This" IsOn="True" tags="activefuelrod,provocative" setvalue="True">
