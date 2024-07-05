@@ -111,7 +111,7 @@
         </StatusEffect>
       </ItemContainer>
     </Item>
-    <Item name="Hazmat Suit (Pressure Resistant)" identifier="hazmatsuit2" category="Equipment" tags="smallitem,clothing,radiationproof,deepdiving,divinggear_wearableindoors" fireproof="true" cargocontaineridentifier="metalcrate" description="A modified hazmat suit. It has been adjusted to protect against water pressure up to a depth of 10000m at the cost of some of its radiation shielding." scale="0.5" impactsoundtag="impact_metal_heavy">
+    <Item name="Hazmat Suit (Pressure Resistant)" identifier="hazmatsuit2" category="Equipment" tags="smallitem,clothing,radiationproof,deepdiving,divinggear_wearableindoors" fireproof="true" cargocontaineridentifier="metalcrate" description="A modified hazmat suit. It has been adjusted to protect against water pressure up to a depth of 6600m at the cost of some of its radiation shielding." scale="0.5" impactsoundtag="impact_metal_heavy">
       <PreferredContainer primary="reactorcab" />
       <PreferredContainer secondary="crewcab" />
       <Price baseprice="1000" sold="false">

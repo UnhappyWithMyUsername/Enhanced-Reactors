@@ -11,7 +11,7 @@
 <entityname.hazmatsuit1>Hazmat Suit</entityname.hazmatsuit1>
 <entitydescription.hazmatsuit1>- Mandatory equipment when handling fuel rods.\n- Requires an oxygen tank.\n- Does not protect from pressure.</entitydescription.hazmatsuit1>
 <entityname.hazmatsuit2>Hazmat Suit (Pressure Resistant)</entityname.hazmatsuit2>
-<entitydescription.hazmatsuit2>A modified hazmat suit.\nIt has been adjusted to protect against water pressure up to a depth of 10000m at the cost of some of its radiation shielding.</entitydescription.hazmatsuit2>
+<entitydescription.hazmatsuit2>A modified hazmat suit.\nIt has been adjusted to protect against water pressure up to a depth of 6600m at the cost of some of its radiation shielding.</entitydescription.hazmatsuit2>
 <entityname.fuelrodtongs>Fuel Rod Tongs</entityname.fuelrodtongs>
 <entitydescription.fuelrodtongs>Required to move active fuel rods around without burning your hands in the process. Can be stored in a toolbelt.</entitydescription.fuelrodtongs>
 <entityname.geigercounter>Geiger Counter</entityname.geigercounter>
