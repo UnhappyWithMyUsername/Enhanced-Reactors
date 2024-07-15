@@ -311,7 +311,8 @@
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional HasTag="eq reactor" targetcontainer="true" />
-          <Conditional HasStatusTag="eq leaksmall" targetcontainer="true" />
+          <Conditional conditionpercentage="lt 75" targetcontainer="true" />
+          <Conditional conditionpercentage="gte 50" targetcontainer="true" />
           <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
             <Affliction identifier="radiationsickness" strength="0.15" />
             <Affliction identifier="contaminated" strength="0.15" />
@@ -323,7 +324,8 @@
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional HasTag="eq reactor" targetcontainer="true" />
-          <Conditional HasStatusTag="eq leakmedium" targetcontainer="true" />
+          <Conditional conditionpercentage="lt 50" targetcontainer="true" />
+          <Conditional conditionpercentage="gte 25" targetcontainer="true" />
           <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
             <Affliction identifier="radiationsickness" strength="0.3" />
             <Affliction identifier="contaminated" strength="0.3" />
@@ -335,7 +337,7 @@
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional HasTag="eq reactor" targetcontainer="true" />
-          <Conditional HasStatusTag="eq leaklarge" targetcontainer="true" />
+          <Conditional conditionpercentage="lt 25" targetcontainer="true" />
           <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
             <Affliction identifier="radiationsickness" strength="0.45" />
             <Affliction identifier="contaminated" strength="0.45" />
@@ -512,7 +514,8 @@
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional HasTag="eq reactor" targetcontainer="true" />
-          <Conditional HasStatusTag="eq leaksmall" targetcontainer="true" />
+          <Conditional conditionpercentage="lt 75" targetcontainer="true" />
+          <Conditional conditionpercentage="gte 50" targetcontainer="true" />
           <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
             <Affliction identifier="radiationsickness" strength="0.075" />
             <Affliction identifier="contaminated" strength="0.075" />
@@ -524,7 +527,8 @@
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional HasTag="eq reactor" targetcontainer="true" />
-          <Conditional HasStatusTag="eq leakmedium" targetcontainer="true" />
+          <Conditional conditionpercentage="lt 50" targetcontainer="true" />
+          <Conditional conditionpercentage="gte 25" targetcontainer="true" />
           <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
             <Affliction identifier="radiationsickness" strength="0.15" />
             <Affliction identifier="contaminated" strength="0.15" />
@@ -536,7 +540,7 @@
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional HasTag="eq reactor" targetcontainer="true" />
-          <Conditional HasStatusTag="eq leaklarge" targetcontainer="true" />
+          <Conditional conditionpercentage="lt 25" targetcontainer="true" />
           <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
             <Affliction identifier="radiationsickness" strength="0.225" />
             <Affliction identifier="contaminated" strength="0.225" />
@@ -711,7 +715,8 @@
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional HasTag="eq reactor" targetcontainer="true" />
-          <Conditional HasStatusTag="eq leaksmall" targetcontainer="true" />
+          <Conditional conditionpercentage="lt 75" targetcontainer="true" />
+          <Conditional conditionpercentage="gte 50" targetcontainer="true" />
           <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
             <Affliction identifier="radiationsickness" strength="0.225" />
             <Affliction identifier="contaminated" strength="0.225" />
@@ -723,7 +728,8 @@
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional HasTag="eq reactor" targetcontainer="true" />
-          <Conditional HasStatusTag="eq leakmedium" targetcontainer="true" />
+          <Conditional conditionpercentage="lt 50" targetcontainer="true" />
+          <Conditional conditionpercentage="gte 25" targetcontainer="true" />
           <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
             <Affliction identifier="radiationsickness" strength="0.45" />
             <Affliction identifier="contaminated" strength="0.45" />
@@ -735,7 +741,7 @@
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional HasTag="eq reactor" targetcontainer="true" />
-          <Conditional HasStatusTag="eq leaklarge" targetcontainer="true" />
+          <Conditional conditionpercentage="lt 25" targetcontainer="true" />
           <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
             <Affliction identifier="radiationsickness" strength="0.675" />
             <Affliction identifier="contaminated" strength="0.675" />
@@ -917,7 +923,8 @@
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional HasTag="eq reactor" targetcontainer="true" />
-          <Conditional HasStatusTag="eq leaksmall" targetcontainer="true" />
+          <Conditional conditionpercentage="lt 75" targetcontainer="true" />
+          <Conditional conditionpercentage="gte 50" targetcontainer="true" />
           <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
             <Affliction identifier="radiationsickness" strength="0.3" />
             <Affliction identifier="contaminated" strength="0.3" />
@@ -929,7 +936,8 @@
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional HasTag="eq reactor" targetcontainer="true" />
-          <Conditional HasStatusTag="eq leakmedium" targetcontainer="true" />
+          <Conditional conditionpercentage="lt 50" targetcontainer="true" />
+          <Conditional conditionpercentage="gte 25" targetcontainer="true" />
           <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
             <Affliction identifier="radiationsickness" strength="0.6" />
             <Affliction identifier="contaminated" strength="0.6" />
@@ -941,7 +949,7 @@
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional HasTag="eq reactor" targetcontainer="true" />
-          <Conditional HasStatusTag="eq leaklarge" targetcontainer="true" />
+          <Conditional conditionpercentage="lt 25" targetcontainer="true" />
           <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
             <Affliction identifier="radiationsickness" strength="0.9" />
             <Affliction identifier="contaminated" strength="0.9" />
