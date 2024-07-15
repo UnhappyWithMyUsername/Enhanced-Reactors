@@ -1,7 +1,59 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Afflictions>
-  <!-- IMMERSIVE REPAIRS COMPATIBILITY -->
   <Override>
+    <Affliction
+      name="Fuel Rod Rage"
+      identifier="fuelrodrage"
+      description="You're overcharged with nuclear power. All sorts of mutations are happening to your body and you only have a very short time to live!"
+      causeofdeathdescription="Died of radiation sickness."
+      selfcauseofdeathdescription="You have died of radiation sickness."
+      type="none"
+      isbuff="true"
+      limbspecific="false"
+      indicatorlimb="Torso"
+      maxstrength="180"
+      iconcolors="255,0,0;0,255,0"
+      showiconthreshold="0"
+      showicontoothersthreshold="0"
+      showinhealthscannerthreshold="0"
+      healableinmedicalclinic="false">
+      <!-- <Description
+        textidentifier="afflictiondescription.oily"
+        minstrength="0"
+        maxstrength="1800"/> -->
+        <Effect minstrength="0" maxstrength="1" strengthchange="-1"
+        mingrainstrength="1.0"
+        maxgrainstrength="1.0"
+        minchromaticaberration="1.0"
+        maxchromaticaberration="1.0"
+        resistancefor="damage,pressure,stun,incrementalstun,gunshotwound,gaze,fractures,arterialcut,t_amputation,s_amputation,pain,surgeryincision,clampedbleeders,retractedskin,poison,resistance,oxygenlow,bloodloss,organdamage,burn,chemaddiction,invertcontrols,nausea,alieninfection,paralysis,bleeding"
+        minresistance="1"
+        maxresistance="1"
+        multiplybymaxvitality="true"
+        minvitalitydecrease="500"
+        maxvitalitydecrease="500">
+        <StatValue stattype="SwimmingSpeed" minvalue="0.25" maxvalue="0.25" />
+        <StatValue stattype="WalkingSpeed" minvalue="0.25" maxvalue="0.25" />
+        <AbilityFlag flagtype="ImmuneToPressure" />
+      </Effect>
+      <Effect minstrength="1" maxstrength="180" strengthchange="-1"
+        mingrainstrength="1.0"
+        maxgrainstrength="1.0"
+        minchromaticaberration="1.0"
+        maxchromaticaberration="1.0"
+        resistancefor="damage,pressure,stun,incrementalstun,gunshotwound,gaze,fractures,arterialcut,t_amputation,s_amputation,pain,surgeryincision,clampedbleeders,retractedskin,poison,resistance,oxygenlow,bloodloss,organdamage,burn,chemaddiction,invertcontrols,nausea,alieninfection,paralysis,bleeding"
+        minresistance="1"
+        maxresistance="1"
+        multiplybymaxvitality="true"
+        minvitalitydecrease="0"
+        maxvitalitydecrease="0">
+        <StatValue stattype="SwimmingSpeed" minvalue="0.25" maxvalue="0.25" />
+        <StatValue stattype="WalkingSpeed" minvalue="0.25" maxvalue="0.25" />
+        <AbilityFlag flagtype="ImmuneToPressure" />
+      </Effect>
+      <icon texture="%ModDir:3045796581%/Content/UI/IR-IconsAtlas.png" sourcerect="128,128,128,128" color="195,136,60,255" origin="0,0"/>
+    </Affliction>
+    <!-- IMMERSIVE REPAIRS COMPATIBILITY -->
     <Oily
       name="Oily"
       identifier="oily"
@@ -31,8 +83,6 @@
       </Effect>
       <icon texture="%ModDir:3045796581%/Content/UI/IR-IconsAtlas.png" sourcerect="128,128,128,128" color="195,136,60,255" origin="0,0"/>
     </Oily>
-  </Override>
-  <Override>
     <!-- Decontaminate affliction is purely for visual smoke effects to show which player is sprayed at -->
     <Affliction
       name="Decontaminate"
@@ -95,8 +145,6 @@
       </Effect>
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0"/>
     </Affliction>
-  </Override>
-  <Override>
     <Affliction
       name="Check for Radiation"
       identifier="checkifcontaminated"
@@ -117,8 +165,6 @@
       </Effect>
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0"/>
     </Affliction>
-  </Override>
-  <Override>
     <Affliction
       name="Radiation Sounds "
       identifier="radiationsounds"
@@ -162,8 +208,6 @@
       </Effect>
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0"/>
     </Affliction>
-  </Override>
-  <Override>
     <Affliction
       name="Radiation Sound (Low)"
       identifier="radiationsoundlow"
@@ -185,8 +229,6 @@
       </Effect>
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0"/>
     </Affliction>
-  </Override>
-  <Override>
     <Affliction
       name="Radiation Sound (Medium)"
       identifier="radiationsoundmedium"
@@ -208,8 +250,6 @@
       </Effect>
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0"/>
     </Affliction>
-  </Override>
-  <Override>
     <Affliction
       name="Radiation Sound (High)"
       identifier="radiationsoundhigh"
@@ -231,8 +271,6 @@
       </Effect>
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0"/>
     </Affliction>
-  </Override>
-  <Override>
     <Affliction
       name="Radiation Sound (Extreme)"
       identifier="radiationsoundextreme"
@@ -254,8 +292,6 @@
       </Effect>
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0"/>
     </Affliction>
-  </Override>
-  <Override>
     <Affliction
       name="Heat Stroke Risk"
       identifier="overheating"
@@ -313,8 +349,6 @@
       </Effect>
       <icon texture="%ModDir:3045796581%/Content/Items/ER-ItemsAtlas.png" sourcerect="312,95,128,128" color="195,104,60,255" origin="0,0" />
     </Affliction>
-  </Override>
-  <Override>
     <Affliction
       name="Overheating 2"
       identifier="applyburn"
@@ -371,8 +405,6 @@
       </Effect>
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,640,128,128" color="195,104,60,255" origin="0,0"/>
     </Affliction>
-  </Override>
-  <Override>
     <Affliction
       name="Radiation Resistance"
       identifier="radiationresistance"
@@ -403,8 +435,6 @@
       <Effect minstrength="600" maxstrength="900" strengthchange="-1.0" resistancefor="radiationsickness,contaminated" minresistance="0.50" maxresistance="0.50" />
       <icon texture="%ModDir:3045796581%/Content/Items/ER-ItemsAtlas.png" sourcerect="312,225,115,123" color="10,193,114,255" origin="0,0" />
     </Affliction>
-  </Override>
-  <Override>
     <Affliction
     name="Contaminated"
     identifier="contaminated"
@@ -480,8 +510,6 @@
       </Effect>
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,768,128,128" color="195,136,60,255" origin="0,0"/>
     </Affliction>
-  </Override>
-  <Override>
     <Affliction
     name="Radiation sickness"
     identifier="radiationsickness"
@@ -650,8 +678,6 @@
 
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,768,128,128" color="195,136,60,255" origin="0,0"/>
     </Affliction>
-  </Override>
-  <Override>
     <Affliction
       name="Irradiate (Low)"
       identifier="irradiatelow"
@@ -671,8 +697,6 @@
         </StatusEffect>
       </Effect>
     </Affliction>
-  </Override>
-  <Override>
     <Affliction
       name="Irradiate (Medium)"
       identifier="irradiatemedium"
@@ -692,8 +716,6 @@
         </StatusEffect>
       </Effect>
     </Affliction>
-  </Override>
-  <Override>
     <Affliction
       name="Irradiate (High)"
       identifier="irradiatehigh"
@@ -713,8 +735,6 @@
         </StatusEffect>
       </Effect>
     </Affliction>
-  </Override>
-  <Override>
     <Affliction
       name="Shocked"
       identifier="shocked"
@@ -740,32 +760,22 @@
         </StatusEffect>
       </Effect>
     </Affliction>
-  </Override>
-  <Override>
     <Affliction identifier="shock1" showiconthreshold="1000" showinhealthscannerthreshold="1000" maxstrength="100" afflictionoverlayalphaislinear="true">
       <Effect minstrength="0" maxstrength="100" strengthchange="-300" />
       <AfflictionOverlay texture="%ModDir:3045796581%/Content/UI/Shock1.png" />
     </Affliction>
-  </Override>
-  <Override>
     <Affliction identifier="shock2" showiconthreshold="1000" showinhealthscannerthreshold="1000" maxstrength="100" afflictionoverlayalphaislinear="true">
       <Effect minstrength="0" maxstrength="100" strengthchange="-300" />
       <AfflictionOverlay texture="%ModDir:3045796581%/Content/UI/Shock2.png" />
     </Affliction>
-  </Override>
-  <Override>
     <Affliction identifier="shock3" showiconthreshold="1000" showinhealthscannerthreshold="1000" maxstrength="100" afflictionoverlayalphaislinear="true">
       <Effect minstrength="0" maxstrength="100" strengthchange="-300" />
       <AfflictionOverlay texture="%ModDir:3045796581%/Content/UI/Shock3.png" />
     </Affliction>
-  </Override>
-  <Override>
     <Affliction identifier="shock4" showiconthreshold="1000" showinhealthscannerthreshold="1000" maxstrength="100" afflictionoverlayalphaislinear="true">
       <Effect minstrength="0" maxstrength="100" strengthchange="-300" />
       <AfflictionOverlay texture="%ModDir:3045796581%/Content/UI/Shock4.png" />
     </Affliction>
-  </Override>
-  <Override>
     <Affliction
       name="Shocked"
       identifier="junctionshocked"
@@ -795,8 +805,6 @@
         </StatusEffect>
       </Effect>
     </Affliction>
-  </Override>
-  <Override>
     <Affliction
       name="Track Carbon Intake"
       identifier="trackcarbonintake"

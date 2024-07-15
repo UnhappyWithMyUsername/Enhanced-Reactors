@@ -233,7 +233,7 @@
       </ItemContainer>
     </Item>
     <!-- cargoscooter tag is used to prevent storing the fuel rod in metal crates -->
-    <Item name="" identifier="fuelrod" Category="Fuel" Tags="mediumitem,reactorfuel,cargoscooter" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" scale="0.5" impactsoundtag="impact_fuelrod">
+    <Item name="" identifier="fuelrod" Category="Fuel" Tags="mediumitem,reactorfuel,cargoscooter" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
       <PreferredContainer primary="fuelrodcrate" secondary="reactorcab"/>
       <PreferredContainer secondary="fuelrodcontainer" minamount="1" maxamount="3" spawnprobability="0.4"/>
       <PreferredContainer secondary="nucleargun" minamount="1" maxamount="1" spawnprobability="1"/>
@@ -414,9 +414,15 @@
         <StatusEffect type="OnContained" target="This" IsOn="True" tags="activefuelrod,provocative" setvalue="True">
           <Conditional HasTag="eq deepdivinglarge" targetcontainer="True" />
         </StatusEffect>
-        <!-- activate the LightComponent to trigger the OnActive StatusEffects and visualize that the fission process has started when the fuel rod was used inside a weapon -->
-        <StatusEffect type="OnUse" target="This" IsOn="True" tags="activefuelrod,provocative" setvalue="True">
-          <Conditional HasTag="neq reactor" targetcontainer="True" />
+        <!-- Eat the fuel rod -->
+        <StatusEffect type="OnUse" target="Character" disabledeltatime="true" setvalue="true" multiplyafflictionsbymaxvitality="true">
+          <Conditional HasTag="activefuelrod" targetcontaineditem="True" />
+          <Affliction identifier="fuelrodrage" amount="60" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This">
+          <Conditional HasTag="activefuelrod" />
+          <Sound file="%ModDir:3045796581%/Content/Items/Tools/gulp.ogg" volume="1" loop="false" range="500" />
+          <Remove />
         </StatusEffect>
       </Holdable>
       <Throwable handle1="0,0" slots="RightHand,LeftHand" msg="ItemMsgPickUpSelect" canBeCombined="false" throwforce="3.5" aimpos="35,-10" />
@@ -442,7 +448,7 @@
       <AiTarget sightrange="4000"/>
     </Item>
     <!-- cargoscooter tag is used to prevent storing the fuel rod in metal crates -->
-    <Item name="" identifier="thoriumfuelrod" Category="Fuel" Tags="mediumitem,reactorfuel,cargoscooter" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" health="200" scale="0.5" impactsoundtag="impact_fuelrod">
+    <Item name="" identifier="thoriumfuelrod" Category="Fuel" Tags="mediumitem,reactorfuel,cargoscooter" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" health="200" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
       <PreferredContainer primary="fuelrodcrate" secondary="reactorcab"/>
       <PreferredContainer secondary="fuelrodcontainer" minamount="1" maxamount="2" spawnprobability="0.2"/>
       <PreferredContainer secondary="wreckreactorcab,abandonedreactorcab" amount="1" spawnprobability="0.1"/>
@@ -607,9 +613,15 @@
         <StatusEffect type="OnContained" target="This" IsOn="True" tags="activefuelrod,provocative" setvalue="True">
           <Conditional HasTag="eq deepdivinglarge" targetcontainer="True" />
         </StatusEffect>
-        <!-- activate the LightComponent to trigger the OnActive StatusEffects and visualize that the fission process has started when the fuel rod was used inside a weapon -->
-        <StatusEffect type="OnUse" target="This" IsOn="True" tags="activefuelrod,provocative" setvalue="True">
-          <Conditional HasTag="neq reactor" targetcontainer="True" />
+        <!-- Eat the fuel rod -->
+        <StatusEffect type="OnUse" target="Character" disabledeltatime="true" setvalue="true" multiplyafflictionsbymaxvitality="true">
+          <Conditional HasTag="activefuelrod" targetcontaineditem="True" />
+          <Affliction identifier="fuelrodrage" amount="30" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This">
+          <Conditional HasTag="activefuelrod" />
+          <Sound file="%ModDir:3045796581%/Content/Items/Tools/gulp.ogg" volume="1" loop="false" range="500" />
+          <Remove />
         </StatusEffect>
       </Holdable>
       <Throwable handle1="0,0" slots="RightHand,LeftHand" msg="ItemMsgPickUpSelect" canBeCombined="false" throwforce="3.5" aimpos="35,-10" />
@@ -635,7 +647,7 @@
       <AiTarget sightrange="5000"/>
     </Item>
     <!-- cargoscooter tag is used to prevent storing the fuel rod in metal crates -->
-    <Item name="" identifier="fulguriumfuelrod" Category="Fuel" Tags="mediumitem,reactorfuel,cargoscooter" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" health="150" scale="0.5" impactsoundtag="impact_fuelrod">
+    <Item name="" identifier="fulguriumfuelrod" Category="Fuel" Tags="mediumitem,reactorfuel,cargoscooter" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" health="150" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
       <PreferredContainer primary="fuelrodcrate" secondary="reactorcab"/>
       <PreferredContainer secondary="fuelrodcontainer" minamount="1" maxamount="3" spawnprobability="0.1"/>
       <PreferredContainer secondary="wreckreactorcab,abandonedreactorcab" amount="1" spawnprobability="0.2"/>
@@ -810,9 +822,15 @@
         <StatusEffect type="OnContained" target="This" IsOn="True" tags="activefuelrod,provocative" setvalue="True">
           <Conditional HasTag="eq deepdivinglarge" targetcontainer="True" />
         </StatusEffect>
-        <!-- activate the LightComponent to trigger the OnActive StatusEffects and visualize that the fission process has started when the fuel rod was used inside a weapon -->
-        <StatusEffect type="OnUse" target="This" IsOn="True" tags="activefuelrod,provocative" setvalue="True">
-          <Conditional HasTag="neq reactor" targetcontainer="True" />
+        <!-- Eat the fuel rod -->
+        <StatusEffect type="OnUse" target="Character" disabledeltatime="true" setvalue="true" multiplyafflictionsbymaxvitality="true">
+          <Conditional HasTag="activefuelrod" targetcontaineditem="True" />
+          <Affliction identifier="fuelrodrage" amount="120" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This">
+          <Conditional HasTag="activefuelrod" />
+          <Sound file="%ModDir:3045796581%/Content/Items/Tools/gulp.ogg" volume="1" loop="false" range="500" />
+          <Remove />
         </StatusEffect>
       </Holdable>
       <Throwable handle1="0,0" slots="RightHand,LeftHand" msg="ItemMsgPickUpSelect" canBeCombined="false" throwforce="3.5" aimpos="35,-10" />
@@ -838,7 +856,7 @@
       <AiTarget sightrange="6000"/>
     </Item>
     <!-- cargoscooter tag is used to prevent storing the fuel rod in metal crates -->
-    <Item name="" identifier="fulguriumfuelrodvolatile" category="Fuel" Tags="mediumitem,reactorfuel,activefuelrod,cargoscooter" maxstacksize="8" allowasextracargo="true" cargocontaineridentifier="fuelrodcrate" health="400" scale="0.5" impactsoundtag="impact_fuelrod">
+    <Item name="" identifier="fulguriumfuelrodvolatile" category="Fuel" Tags="mediumitem,reactorfuel,activefuelrod,cargoscooter" maxstacksize="8" allowasextracargo="true" cargocontaineridentifier="fuelrodcrate" health="400" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
       <PreferredContainer primary="fuelrodcrate" secondary="reactorcab"/>
       <Price baseprice="400" sold="false" displaynonempty="true">
         <Price storeidentifier="merchantoutpost" />
@@ -1000,9 +1018,15 @@
         <StatusEffect type="OnContained" target="This" IsOn="True" tags="activefuelrod,provocative" setvalue="True">
           <Conditional HasTag="eq deepdivinglarge" targetcontainer="True" />
         </StatusEffect>
-        <!-- activate the LightComponent to trigger the OnActive StatusEffects and visualize that the fission process has started when the fuel rod was used inside a weapon -->
-        <StatusEffect type="OnUse" target="This" IsOn="True" tags="activefuelrod,provocative" setvalue="True">
-          <Conditional HasTag="neq reactor" targetcontainer="True" />
+        <!-- Eat the fuel rod -->
+        <StatusEffect type="OnUse" target="Character" disabledeltatime="true" setvalue="true" multiplyafflictionsbymaxvitality="true">
+          <Conditional HasTag="activefuelrod" targetcontaineditem="True" />
+          <Affliction identifier="fuelrodrage" amount="180" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This">
+          <Conditional HasTag="activefuelrod" />
+          <Sound file="%ModDir:3045796581%/Content/Items/Tools/gulp.ogg" volume="1" loop="false" range="500" />
+          <Remove />
         </StatusEffect>
       </Holdable>
       <Throwable handle1="0,0" slots="RightHand,LeftHand" msg="ItemMsgPickUpSelect" canBeCombined="false" throwforce="3.5" aimpos="35,-10" />
