@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Override>
   <Items>
-    <Item name="" identifier="sprayer" category="Equipment" Tags="smallitem,tool,mountableweapon" cargocontaineridentifier="metalcrate" description="" Scale="0.5" impactsoundtag="impact_metal_light">
+    <Item name="" identifier="sprayer" category="Equipment" Tags="smallitem,tool,mountableweapon" cargocontaineridentifier="metalcrate" description="" Scale="0.5" impactsoundtag="impact_metal_light" useinhealthinterface="true">
       <PreferredContainer primary="engcab"/>
       <PreferredContainer primary="reactorcab" amount="1" spawnprobability="1" />
       <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab" amount="1" spawnprobability="0.05"/>
@@ -62,10 +62,6 @@
           <ReduceAffliction identifier="contaminated" amount="10.0" />
           <Affliction identifier="decontaminate" amount="1.0" />
         </StatusEffect>
-        <StatusEffect type="OnFailure" targettype="UseTarget">
-          <ReduceAffliction identifier="contaminated" amount="10.0" />
-          <Affliction identifier="decontaminate" amount="1.0" />
-        </StatusEffect>
         <!--Reduce decontamination solution condition-->
         <StatusEffect type="OnUse" target="Contained" Condition="-2.5">
           <RequiredItem items="deconsol" type="Contained" />
@@ -74,8 +70,9 @@
       <!-- IMMERSIVE REPAIRS COMPATIBILITY | RepairTool that requires ethanol to reduce "Oily" affliction with ethanol -->
       <RepairTool firedamage="0.0" structurefixamount="0.0" range="300" barrelpos="34,8" repairmultiple="false" repairthroughwalls="false" maxoverlappingwalldist="0" levelwallfixamount="0.0" targetforce="10">
         <RequiredItem items="ethanol" type="Contained" />
-        <StatusEffect type="OnSuccess" targettype="UseTarget">
-          <ReduceAffliction type="oil" amount="8.0" />
+        <StatusEffect type="OnSuccess" target="UseTarget">
+          <RequiredItem items="ethanol" type="Contained" />
+          <ReduceAffliction identifier="oily" amount="60" />
           <Affliction identifier="decontaminate" amount="1.0" />
         </StatusEffect>
       </RepairTool>
@@ -98,6 +95,28 @@
       <ItemContainer capacity="1" maxstacksize="1" hideitems="false" itempos="8,-35" containedspritedepth="0.56" containedstateindicatorstyle="tank">
         <Containable items="ethanol,paint,deconsol,fixfoamtank" />
       </ItemContainer>
+      <!-- ItemComponent with an impossible skillcheck to always trigger the OnFailure effects if the item is used in the health interface. This is required to be done this way due to OnSuccess being always triggered by the RepairTool component and thus would otherwise trigger by normal usage -->
+      <ItemComponent>
+        <RequiredSkill identifier="medical" level="1000" />
+        <StatusEffect type="OnFailure" target="UseTarget" duration="1" stackable="false">
+          <RequiredItem items="ethanol" type="Contained" />
+          <ReduceAffliction identifier="oily" amount="60" />
+          <Affliction identifier="decontaminate" amount="1.0" />
+          <Sound file="Content/Items/Tools/Sprayer.ogg" range="500.0" loop="true" />
+        </StatusEffect>
+        <StatusEffect type="OnFailure" target="Contained" condition="-0.75" disabledeltatime="true">
+          <RequiredItem items="ethanol" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnFailure" target="UseTarget" duration="1" stackable="false">
+          <RequiredItem items="deconsol" type="Contained" />
+          <ReduceAffliction identifier="contaminated" amount="10.0" />
+          <Affliction identifier="decontaminate" amount="1.0" />
+          <Sound file="Content/Items/Tools/Sprayer.ogg" range="500.0" loop="true" />
+        </StatusEffect>
+        <StatusEffect type="OnFailure" target="Contained" condition="-2.5" disabledeltatime="true">
+          <RequiredItem items="deconsol" type="Contained" />
+        </StatusEffect>
+      </ItemComponent>
       <aitarget sightrange="2000" soundrange="500" fadeouttime="3" />
     </Item>
     <Item name="Geiger Counter" identifier="geigercounter" category="Equipment,Electrical" maxstacksize="4" tags="smallitem,loadable,geigercounter" scale="0.5" cargocontaineridentifier="metalcrate" description="Allows you to detect radiation. Can be used on characters." useinhealthinterface="true" impactsoundtag="impact_metal_light">
