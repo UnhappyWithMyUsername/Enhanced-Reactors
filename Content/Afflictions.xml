@@ -12,7 +12,7 @@
       limbspecific="false"
       indicatorlimb="Torso"
       maxstrength="180"
-      iconcolors="255,0,0;0,255,0"
+      iconcolors="0,0,0;50,255,0"
       showiconthreshold="0"
       showicontoothersthreshold="0"
       showinhealthscannerthreshold="0"
@@ -51,7 +51,7 @@
         <StatValue stattype="WalkingSpeed" minvalue="0.25" maxvalue="0.25" />
         <AbilityFlag flagtype="ImmuneToPressure" />
       </Effect>
-      <icon texture="%ModDir:3045796581%/Content/UI/IR-IconsAtlas.png" sourcerect="128,128,128,128" color="195,136,60,255" origin="0,0"/>
+      <icon texture="%ModDir:3045796581%/Content/Items/ER-ItemsAtlas.png" sourcerect="312,95,128,128" color="195,104,60,255" origin="0,0" />
     </Affliction>
     <!-- IMMERSIVE REPAIRS COMPATIBILITY -->
     <Oily
