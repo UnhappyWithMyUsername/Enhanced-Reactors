@@ -55,5 +55,50 @@
         <Containable items="deconsol" />
       </ItemContainer>
     </Item>
+    <Item hideinmenus="true" name="Radioactive Waste" identifier="radioactivewaste" tags="radioactive" category="Misc" Scale="0.5" sonarsize="30" >
+      <Sprite texture="%ModDir:3045796581%/Content/Items/ER-ItemsAtlas.png" sourcerect="191,360,85,142" depth="0.65" origin="0.5,0.5" />
+      <Body width="80" height="136" density="25" friction="0.8" />
+      <Holdable canbepicked="true" slots="RightHand+LeftHand" holdpos="40,-40" handle1="0,53" handle2="0,53" holdangle="3" aimable="false" msg="ItemMsgPickUpSelect" >
+        <StatusEffect type="Always" target="This" range="250" interval="0.3" disabledeltatime="true">
+          <Explosion range="250" itemdamage="0.1" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
+            <Affliction identifier="radiationsickness" strength="0.25" />
+            <Affliction identifier="contaminated" strength="0.5" />
+            <Affliction identifier="radiationsounds" strength="2.9" />
+          </Explosion>
+        </StatusEffect>
+        <StatusEffect type="InWater" target="This" interval="2" SpawnItemRandomly="true" >
+          <SpawnItem identifier="radioactivewastebubble" spawnposition="This" />
+          <SpawnItem identifier="effect_none" spawnposition="This" />
+          <SpawnItem identifier="effect_none" spawnposition="This" />
+          <SpawnItem identifier="effect_none" spawnposition="This" />
+        </StatusEffect>
+       <StatValue stattype="MovementSpeed" value="-0.5" />
+      </Holdable>
+      <LightComponent LightColor="30,100,120,50" range="300" IsOn="true" pulseamount="0.2" pulsefrequency="0.2" offset="0,0" allowingameediting="false">
+        <IsActiveConditional InPlayerSubmarine="false" />
+      </LightComponent> 
+      <LightComponent LightColor="30,100,120,255" range="50" IsOn="true" pulseamount="0.2" pulsefrequency="0.2" offset="0,0" allowingameediting="false">
+        <sprite texture="%ModDir:3045796581%/Content/Items/ER-ItemsAtlas.png" sourcerect="277,360,85,142" origin="0.5,0.5" />
+      </LightComponent>          
+      <AiTarget Soundrange="2000" sonardisruption="0.2" />
+    </Item>
+    <Item hideinmenus="true" name="Radioactive bubble" identifier="radioactivewastebubble" tags="radioactive" category="Misc" Scale="0.5" noninteractable="true" sonarsize="5"  health="10" >
+      <Sprite texture="%ModDir:3045796581%/Content/Items/ER-ItemsAtlas.png" sourcerect="0,0,1,1" depth="0.66" origin="0.5,0.5" />
+      <Body radius="10" density="2.5" />
+      <Itemcomponent>
+        <StatusEffect type="Always" target="This,NearbyCharacters" range="250" interval="0.3" condition="-0.333" disabledeltatime="true">
+          <Affliction identifier="contaminated" strength="0.083" />
+          <Affliction identifier="radiationsickness" strength="0.033" />
+          <Affliction identifier="radiationsounds" strength="1.0" />
+          <ParticleEmitter particle="risingbubbles" anglemin="85" anglemax="95" particleamount="2" velocitymin="120" velocitymax="120" scalemin="0.5" scalemax="1" lifetimemultiplier="1.5" />
+        </StatusEffect>
+        <StatusEffect type="NotInWater" target="This" condition="0" setvalue="true"/>
+        <StatusEffect type="OnBroken" target="This" >
+          <Remove />
+        </StatusEffect>
+      </Itemcomponent>
+      <LightComponent LightColor="30,100,120,120" range="300" IsOn="true" pulseamount="0.2" pulsefrequency="0.2" offset="0,0" allowingameediting="false"/>
+      <AiTarget Soundrange="5000" sonardisruption="0.1" />
+    </Item>
   </Items>
 </Override>
