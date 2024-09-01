@@ -289,11 +289,13 @@
       <Body radius="6" height="55" density="13" />
       <ItemComponent canbeselected="false" canbepicked="false" allowingameediting="false">
         <StatusEffect type="OnContained" target="Parent" tags="containradiation" duration="0.1" setvalue="true" comparison="And">
+          <Conditional hastag="not lua_managed" />
           <Conditional HasTag="deconstructor" />
           <Conditional IsActive="eq true" />
           <Conditional Voltage="gt 0.1" />
         </StatusEffect>
         <StatusEffect type="OnContained" target="Parent" tags="containradiation" duration="0.1" setvalue="true" comparison="And">
+          <Conditional hastag="not lua_managed" />
           <Conditional HasTag="fabricator" />
           <Conditional IsActive="eq true" />
           <Conditional Voltage="gt 0.1" />
@@ -308,11 +310,13 @@
           <Conditional HasStatusTag="eq wreckreactor" targetcontainer="true" />
         </StatusEffect>
         <!-- check if near a character and tag the item to allow the StatusEffects to trigger | Prevents performance impact when far away from the item -->
-        <StatusEffect type="Always" target="This,NearbyCharacters" range="10000" tags="nearcharacter" interval="1" duration="1.1">
+        <StatusEffect type="Always" target="This,NearbyCharacters" range="10000" tags="nearcharacter" interval="1" duration="1.1" comparison="And">
+          <Conditional hastag="not lua_managed" />
           <Conditional isPlayer="true" />
         </StatusEffect>
         <!-- create an invisible explosion to apply variable amount of damage and afflictions to nearby items and characters, if the fission process was started and the item is not contained within a container with the tag "containradiation" -->
         <StatusEffect type="Always" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
+          <Conditional hastag="not lua_managed" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional HasTag="neq deepdivinglarge" targetcontainer="true" />
@@ -327,6 +331,7 @@
         </StatusEffect>
         <!-- create an invisible explosion to apply variable amount of afflictions to nearby characters depending on the condition of the reactor -->
         <StatusEffect type="Always" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
+          <Conditional hastag="not lua_managed" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional HasTag="eq reactor" targetcontainer="true" />
@@ -340,6 +345,7 @@
           </Explosion>
         </StatusEffect>
         <StatusEffect type="Always" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
+          <Conditional hastag="not lua_managed" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional HasTag="eq reactor" targetcontainer="true" />
@@ -353,6 +359,7 @@
           </Explosion>
         </StatusEffect>
         <StatusEffect type="Always" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
+          <Conditional hastag="not lua_managed" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional HasTag="eq reactor" targetcontainer="true" />
@@ -366,6 +373,7 @@
         </StatusEffect>
         <!-- create smoke particles and an explosion that deals high item and structure damage to anything within 1m, if fission process was started and the fuel rod is not contained and not in water -->
         <StatusEffect type="OnNotContained" target="This" interval="0.2" comparison="And">
+          <Conditional hastag="not lua_managed" />
           <Conditional InWater="false" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
@@ -374,6 +382,7 @@
         </StatusEffect>
         <!-- create underwater bubble particles and an explosion that deals high item and structure damage to anything within 1m, if the fission process was started and the fuel rod is not contained and within water -->
         <StatusEffect type="OnNotContained" target="This" interval="0.2" comparison="And">
+          <Conditional hastag="not lua_managed" />
           <Conditional InWater="true" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
@@ -382,6 +391,7 @@
         </StatusEffect>
         <!-- spawn items that delete themselves randomly with a chance of 1/20 each second for an item to spawn that causes a fire to make the fuel rod randomly start fires if it's not contained and the fission process was started -->
         <StatusEffect type="OnNotContained" target="This" interval="1.0" SpawnItemRandomly="True" comparison="And">
+          <Conditional hastag="not lua_managed" />
           <Conditional InWater="false" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
@@ -411,6 +421,7 @@
       <Holdable handle1="0,0" slots="RightHand,LeftHand" msg="ItemMsgPickUpSelect" canBeCombined="false" throwforce="3.5" aimpos="35,-10">
         <!-- apply burn to the hands when holding the fuel rod if the fission process was started -->
         <StatusEffect type="Always" target="This,Character" targetlimbs="LeftHand,RightHand" interval="0.2" disabledeltatime="true" comparison="And">
+          <Conditional hastag="not lua_managed" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional IsPlayer="eq true" />
@@ -512,11 +523,13 @@
           <Conditional HasStatusTag="eq wreckreactor" targetcontainer="true" />
         </StatusEffect>
         <!-- check if near a character and tag the item to allow the StatusEffects to trigger | Prevents performance impact when far away from the item -->
-        <StatusEffect type="Always" target="This,NearbyCharacters" range="10000" tags="nearcharacter" interval="1" duration="1.1">
+        <StatusEffect type="Always" target="This,NearbyCharacters" range="10000" tags="nearcharacter" interval="1" duration="1.1" comparison="And">
+          <Conditional hastag="not lua_managed" />
           <Conditional isPlayer="true" />
         </StatusEffect>
         <!-- create an invisible explosion to apply variable amount of damage and afflictions to nearby items and characters, if the fission process was started and the item is not contained within a container with the tag "containradiation" -->
         <StatusEffect type="Always" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
+          <Conditional hastag="not lua_managed" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional HasTag="neq deepdivinglarge" targetcontainer="true" />
@@ -530,6 +543,7 @@
         </StatusEffect>
         <!-- create an invisible explosion to apply variable amount of afflictions to nearby characters depending on the condition of the reactor -->
         <StatusEffect type="Always" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
+          <Conditional hastag="not lua_managed" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional HasTag="eq reactor" targetcontainer="true" />
@@ -543,6 +557,7 @@
           </Explosion>
         </StatusEffect>
         <StatusEffect type="Always" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
+          <Conditional hastag="not lua_managed" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional HasTag="eq reactor" targetcontainer="true" />
@@ -556,6 +571,7 @@
           </Explosion>
         </StatusEffect>
         <StatusEffect type="Always" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
+          <Conditional hastag="not lua_managed" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional HasTag="eq reactor" targetcontainer="true" />
@@ -569,6 +585,7 @@
         </StatusEffect>
         <!-- create smoke particles and an explosion that deals high item and structure damage to anything within 1m, if fission process was started and the fuel rod is not contained and not in water -->
         <StatusEffect type="OnNotContained" target="This" interval="0.2" comparison="And">
+          <Conditional hastag="not lua_managed" />
           <Conditional InWater="false" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
@@ -577,6 +594,7 @@
         </StatusEffect>
         <!-- create underwater bubble particles and an explosion that deals high item and structure damage to anything within 1m, if the fission process was started and the fuel rod is not contained and within water -->
         <StatusEffect type="OnNotContained" target="This" interval="0.2" comparison="And">
+          <Conditional hastag="not lua_managed" />
           <Conditional InWater="true" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
@@ -585,6 +603,7 @@
         </StatusEffect>
         <!-- spawn items that delete themselves randomly with a chance of 1/20 each second for an item to spawn that causes a fire to make the fuel rod randomly start fires if it's not contained and the fission process was started -->
         <StatusEffect type="OnNotContained" target="This" interval="1.0" SpawnItemRandomly="True" comparison="And">
+          <Conditional hastag="not lua_managed" />
           <Conditional InWater="false" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
@@ -613,6 +632,7 @@
       <Holdable handle1="0,0" slots="RightHand,LeftHand" msg="ItemMsgPickUpSelect" canBeCombined="false" throwforce="3.5" aimpos="35,-10">
         <!-- apply burn to the hands when holding the fuel rod if the fission process was started -->
         <StatusEffect type="Always" target="This,Character" targetlimbs="LeftHand,RightHand" interval="0.2" disabledeltatime="true" comparison="And">
+          <Conditional hastag="not lua_managed" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional IsPlayer="eq true" />
@@ -713,11 +733,13 @@
           <Conditional HasStatusTag="eq wreckreactor" targetcontainer="true" />
         </StatusEffect>
         <!-- check if near a character and tag the item to allow the StatusEffects to trigger | Prevents performance impact when far away from the item -->
-        <StatusEffect type="Always" target="This,NearbyCharacters" range="10000" tags="nearcharacter" interval="1" duration="1.1">
+        <StatusEffect type="Always" target="This,NearbyCharacters" range="10000" tags="nearcharacter" interval="1" duration="1.1" comparison="And">
+          <Conditional hastag="not lua_managed" />
           <Conditional isPlayer="true" />
         </StatusEffect>
         <!-- create an invisible explosion to apply variable amount of damage and afflictions to nearby items and characters, if the fission process was started and the item is not contained within a container with the tag "containradiation" -->
         <StatusEffect type="Always" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
+          <Conditional hastag="not lua_managed" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional HasTag="neq deepdivinglarge" targetcontainer="true" />
@@ -731,6 +753,7 @@
         </StatusEffect>
         <!-- create an invisible explosion to apply variable amount of afflictions to characters depending on the condition of the reactor -->
         <StatusEffect type="Always" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
+          <Conditional hastag="not lua_managed" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional HasTag="eq reactor" targetcontainer="true" />
@@ -744,6 +767,7 @@
           </Explosion>
         </StatusEffect>
         <StatusEffect type="Always" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
+          <Conditional hastag="not lua_managed" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional HasTag="eq reactor" targetcontainer="true" />
@@ -757,6 +781,7 @@
           </Explosion>
         </StatusEffect>
         <StatusEffect type="Always" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
+          <Conditional hastag="not lua_managed" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional HasTag="eq reactor" targetcontainer="true" />
@@ -770,6 +795,7 @@
         </StatusEffect>
         <!-- create smoke particles and an explosion that deals high item and structure damage to anything within 1m, if fission process was started and the fuel rod is not contained and not in water -->
         <StatusEffect type="OnNotContained" target="This" interval="0.2" comparison="And">
+          <Conditional hastag="not lua_managed" />
           <Conditional InWater="false" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
@@ -778,6 +804,7 @@
         </StatusEffect>
         <!-- create underwater bubble particles and an explosion that deals high item and structure damage to anything within 1m, if the fission process was started and the fuel rod is not contained and within water -->
         <StatusEffect type="OnNotContained" target="This" interval="0.2" comparison="And">
+          <Conditional hastag="not lua_managed" />
           <Conditional InWater="true" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
@@ -786,6 +813,7 @@
         </StatusEffect>
         <!-- spawn items that delete themselves randomly with a chance of 1/20 each second for an item to spawn that causes a fire to make the fuel rod randomly start fires if it's not contained and the fission process was started -->
         <StatusEffect type="OnNotContained" target="This" interval="1.0" SpawnItemRandomly="True" comparison="And">
+          <Conditional hastag="not lua_managed" />
           <Conditional InWater="false" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
@@ -810,20 +838,12 @@
           <SpawnItem identifier="effect_none" spawnposition="This" />
           <SpawnItem identifier="effect_firestarter" spawnposition="This" />
         </StatusEffect>
-        <!-- apply burn to the hands when holding the fuel rod if the fission process was started -->
-        <StatusEffect type="Always" target="This,Character" targetlimbs="LeftHand,RightHand" interval="0.2" disabledeltatime="true" comparison="And">
-          <Conditional HasTag="eq activefuelrod" />
-          <Conditional HasStatusTag="eq nearcharacter" />
-          <Conditional IsPlayer="eq true" />
-          <Conditional HasTag="neq deepdivinglarge" targetcontainer="true" />
-          <Conditional HasTag="neq containradiation" targetcontainer="true" />
-          <Affliction identifier="burn" amount="5" />
-        </StatusEffect>
       </LightComponent>
       <!-- Requires both <Holdable> to apply burn when held as this doesn't work in other components and <Throwable> to make it throwable -->
       <Holdable handle1="0,0" slots="RightHand,LeftHand" msg="ItemMsgPickUpSelect" canBeCombined="false" throwforce="3.5" aimpos="35,-10">
         <!-- apply burn to the hands when holding the fuel rod if the fission process was started -->
         <StatusEffect type="Always" target="This,Character" targetlimbs="LeftHand,RightHand" interval="0.2" disabledeltatime="true" comparison="And">
+          <Conditional hastag="not lua_managed" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional IsPlayer="eq true" />
@@ -921,11 +941,13 @@
           <Conditional HasStatusTag="eq wreckreactor" targetcontainer="true" />
         </StatusEffect>
         <!-- check if near a character and tag the item to allow the StatusEffects to trigger | Prevents performance impact when far away from the item -->
-        <StatusEffect type="Always" target="This,NearbyCharacters" range="10000" tags="nearcharacter" interval="1" duration="1.1">
+        <StatusEffect type="Always" target="This,NearbyCharacters" range="10000" tags="nearcharacter" interval="1" duration="1.1" comparison="And">
+          <Conditional hastag="not lua_managed" />
           <Conditional isPlayer="true" />
         </StatusEffect>
         <!-- create an invisible explosion to apply variable amount of damage and afflictions to nearby items and characters, if the fission process was started and the item is not contained within a container with the tag "containradiation" -->
         <StatusEffect type="Always" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
+          <Conditional hastag="not lua_managed" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional HasTag="neq deepdivinglarge" targetcontainer="true" />
@@ -939,6 +961,7 @@
         </StatusEffect>
         <!-- create an invisible explosion to apply variable amount of afflictions to nearby characters depending on the condition of the reactor -->
         <StatusEffect type="Always" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
+          <Conditional hastag="not lua_managed" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional HasTag="eq reactor" targetcontainer="true" />
@@ -952,6 +975,7 @@
           </Explosion>
         </StatusEffect>
         <StatusEffect type="Always" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
+          <Conditional hastag="not lua_managed" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional HasTag="eq reactor" targetcontainer="true" />
@@ -965,6 +989,7 @@
           </Explosion>
         </StatusEffect>
         <StatusEffect type="Always" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
+          <Conditional hastag="not lua_managed" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional HasTag="eq reactor" targetcontainer="true" />
@@ -978,6 +1003,7 @@
         </StatusEffect>
         <!-- create smoke particles and an explosion that deals high item and structure damage to anything within 1m, if fission process was started and the fuel rod is not contained and not in water -->
         <StatusEffect type="OnNotContained" target="This" interval="0.2" comparison="And">
+          <Conditional hastag="not lua_managed" />
           <Conditional InWater="false" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
@@ -986,6 +1012,7 @@
         </StatusEffect>
         <!-- create underwater bubble particles and an explosion that deals high item and structure damage to anything within 1m, if the fission process was started and the fuel rod is not contained and within water -->
         <StatusEffect type="OnNotContained" target="This" interval="0.2" comparison="And">
+          <Conditional hastag="not lua_managed" />
           <Conditional InWater="true" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
@@ -994,6 +1021,7 @@
         </StatusEffect>
         <!-- spawn items that delete themselves randomly with a chance of 1/20 each second for an item to spawn that causes a fire to make the fuel rod randomly start fires if it's not contained and the fission process was started -->
         <StatusEffect type="OnNotContained" target="This" interval="1.0" SpawnItemRandomly="True" comparison="And">
+          <Conditional hastag="not lua_managed" />
           <Conditional InWater="false" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
@@ -1022,6 +1050,7 @@
       <Holdable handle1="0,0" slots="RightHand,LeftHand" msg="ItemMsgPickUpSelect" canBeCombined="false" throwforce="3.5" aimpos="35,-10">
         <!-- apply burn to the hands when holding the fuel rod if the fission process was started -->
         <StatusEffect type="Always" target="This,Character" targetlimbs="LeftHand,RightHand" interval="0.2" disabledeltatime="true" comparison="And">
+          <Conditional hastag="not lua_managed" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Conditional IsPlayer="eq true" />
