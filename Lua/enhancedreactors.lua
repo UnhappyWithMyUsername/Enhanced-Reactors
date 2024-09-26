@@ -96,6 +96,12 @@ EnhancedReactors.ProcessItemUpdate = function (item)
 
         local reactor = parentItem and parentItem.GetComponentString("Reactor") or nil
 
+        if not parentItem then
+            if math.random() < 0.05 then
+                FireSource(item.WorldPosition)
+            end
+        end
+
         if not parentItem or (not parentItem.HasTag("deepdivinglarge") and not parentItem.HasTag("containradiation")) then
             for character in Character.CharacterList do
                 EnhancedReactors.ApplyAfflictionRadius(item, character, 750, 2, {
@@ -104,10 +110,6 @@ EnhancedReactors.ProcessItemUpdate = function (item)
                     radiationSounds.Instantiate(1.25),
                     overheating.Instantiate(0.05)
             }, true)
-            end
-
-            if math.random() < 0.05 then
-                FireSource(item.WorldPosition)
             end
 
             if parentCharacter then
