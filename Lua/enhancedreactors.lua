@@ -32,36 +32,19 @@ EnhancedReactors.ProcessItem = function (item)
     end
 end
 
-EnhancedReactors.ApplyAfflictionRadius = function (item, character, maxDistance, penetration, afflictions, noLimbCheck)
+EnhancedReactors.ApplyAfflictionRadius = function (item, character, maxDistance, wallPenetration, armorPenetration, afflictions)
     if Vector2.Distance(character.WorldPosition, item.WorldPosition) > maxDistance then
         return
     end
 
     local position = item.Position
 
-    if not noLimbCheck then
-        for limb in pairs(character.AnimController.Limbs) do
-            local factor = math.min(Explosion.GetObstacleDamageMultiplier(ConvertUnits.ToSimUnits(position), position, limb.SimPosition) * penetration, 1)
-            factor = factor * (1 - Vector2.Distance(character.WorldPosition, item.WorldPosition) / maxDistance)
+    local factor = math.min(Explosion.GetObstacleDamageMultiplier(ConvertUnits.ToSimUnits(position), position, character.SimPosition) * wallPenetration, 1)
+    factor = factor * (1 - Vector2.Distance(character.WorldPosition, item.WorldPosition) / maxDistance)
 
-            for affliction in afflictions do
-                affliction.Strength = affliction.Strength * factor
-                if affliction.Prefab.LimbSpecific then
-                    character.CharacterHealth.ApplyAffliction(limb, affliction)
-                else
-                    character.CharacterHealth.ApplyAffliction(nil, affliction)
-                end
-            end
-        end
-    else
-        local factor = math.min(Explosion.GetObstacleDamageMultiplier(ConvertUnits.ToSimUnits(position), position, character.SimPosition) * penetration, 1)
-        factor = factor * (1 - Vector2.Distance(character.WorldPosition, item.WorldPosition) / maxDistance)
-
-        for affliction in afflictions do
-            affliction.Strength = affliction.Strength * factor
-            character.CharacterHealth.ApplyAffliction(nil, affliction)
-        end
-    end
+    local limb = character.AnimController.MainLimb
+    local AttackResult = limb.AddDamage(limb.SimPosition, afflictions, false, factor, armorPenetration, nil)
+    character.CharacterHealth.ApplyDamage(limb, AttackResult, true)
 end
 
 local overheating = AfflictionPrefab.Prefabs["overheating"]
@@ -75,7 +58,7 @@ EnhancedReactors.ProcessItemUpdate = function (item)
     if reactor then
         if reactor.Temperature > 40 then
             for character in Character.CharacterList do
-                EnhancedReactors.ApplyAfflictionRadius(item, character, 750, 2, { overheating.Instantiate(0.05) }, true)
+                EnhancedReactors.ApplyAfflictionRadius(item, character, 750, 2, 0, { overheating.Instantiate(0.05) })
             end
         end
     end
@@ -104,12 +87,12 @@ EnhancedReactors.ProcessItemUpdate = function (item)
 
         if not parentItem or (not parentItem.HasTag("deepdivinglarge") and not parentItem.HasTag("containradiation")) then
             for character in Character.CharacterList do
-                EnhancedReactors.ApplyAfflictionRadius(item, character, 750, 2, {
+                EnhancedReactors.ApplyAfflictionRadius(item, character, 750, 10, 0, {
                     radiationSickness.Instantiate(1),
                     contaminated.Instantiate(1),
                     radiationSounds.Instantiate(1.25),
                     overheating.Instantiate(0.05)
-            }, true)
+            })
             end
 
             if parentCharacter then
@@ -127,12 +110,12 @@ EnhancedReactors.ProcessItemUpdate = function (item)
             if parentItem.ConditionPercentage < 75 then
                 local strength = fuelRods[item.Prefab.Identifier.Value]
                 for character in Character.CharacterList do
-                    EnhancedReactors.ApplyAfflictionRadius(item, character, 750, 2, {
+                    EnhancedReactors.ApplyAfflictionRadius(item, character, 750, 10, 0, {
                         radiationSickness.Instantiate((0.45 - parentItem.ConditionPercentage * 0.006) * strength),
                         contaminated.Instantiate((0.45 - parentItem.ConditionPercentage * 0.006) * strength),
                         radiationSounds.Instantiate((2.9 - parentItem.ConditionPercentage * 0.038) * strength),
                         overheating.Instantiate((0.18 - parentItem.ConditionPercentage * 0.0024) * strength)
-                    }, true)
+                    })
                 end
             end
         end
