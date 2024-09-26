@@ -13,10 +13,30 @@ local reactors = {
 }
 
 local fuelRods = {
-    ["fuelrod"] = 1,
-    ["thoriumfuelrod"] = 1.1,
-    ["fulguriumfuelrod"] = 2,
-    ["fulguriumfuelrodvolatile"] = 3
+    ["fuelrod"] = {
+        radiationSickness = 1,
+        contaminated = 1,
+        radiationSounds = 1,
+        overheating = 1
+    },
+    ["thoriumfuelrod"] = {
+        radiationSickness = 1.1,
+        contaminated = 1.1,
+        radiationSounds = 1.1,
+        overheating = 1.1,
+    },
+    ["fulguriumfuelrod"] = {
+        radiationSickness = 2,
+        contaminated = 2,
+        radiationSounds = 2,
+        overheating = 2,
+    },
+    ["fulguriumfuelrodvolatile"] = {
+        radiationSickness = 3,
+        contaminated = 3,
+        radiationSounds = 3,
+        overheating = 3,
+    }
 }
 
 EnhancedReactors.ProcessItem = function (item)
@@ -108,13 +128,13 @@ EnhancedReactors.ProcessItemUpdate = function (item)
 
         if reactor then
             if parentItem.ConditionPercentage < 75 then
-                local strength = fuelRods[item.Prefab.Identifier.Value]
+                local data = fuelRods[item.Prefab.Identifier.Value]
                 for character in Character.CharacterList do
                     EnhancedReactors.ApplyAfflictionRadius(item, character, 750, 10, 0, {
-                        radiationSickness.Instantiate((0.45 - parentItem.ConditionPercentage * 0.006) * strength),
-                        contaminated.Instantiate((0.45 - parentItem.ConditionPercentage * 0.006) * strength),
-                        radiationSounds.Instantiate((2.9 - parentItem.ConditionPercentage * 0.038) * strength),
-                        overheating.Instantiate((0.18 - parentItem.ConditionPercentage * 0.0024) * strength)
+                        radiationSickness.Instantiate((0.45 - parentItem.ConditionPercentage * 0.006) * data.radiationSickness),
+                        contaminated.Instantiate((0.45 - parentItem.ConditionPercentage * 0.006) * data.contaminated),
+                        radiationSounds.Instantiate((2.9 - parentItem.ConditionPercentage * 0.038) * data.radiationSounds),
+                        overheating.Instantiate((0.18 - parentItem.ConditionPercentage * 0.0024) * data.overheating)
                     })
                 end
             end
