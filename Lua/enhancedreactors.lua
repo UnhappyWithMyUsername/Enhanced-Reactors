@@ -106,12 +106,13 @@ EnhancedReactors.ProcessItemUpdate = function (item)
         end
 
         if not parentItem or (not parentItem.HasTag("deepdivinglarge") and not parentItem.HasTag("containradiation")) then
+            local data = fuelRods[item.Prefab.Identifier.Value]
             for character in Character.CharacterList do
                 EnhancedReactors.ApplyAfflictionRadius(item, character, 750, 10, 0, {
-                    radiationSickness.Instantiate(1),
-                    contaminated.Instantiate(1),
-                    radiationSounds.Instantiate(1.25),
-                    overheating.Instantiate(0.05)
+                    radiationSickness.Instantiate(1 * data.radiationSickness),
+                    contaminated.Instantiate(1 * data.contaminated),
+                    radiationSounds.Instantiate(1.25 * data.radiationSounds),
+                    overheating.Instantiate(0.05 * data.overheating)
             })
             end
 
