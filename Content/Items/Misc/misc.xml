@@ -28,6 +28,8 @@
       <Controller canbeselected="true" selectkey="Select" UserPos="-1,0" direction="Right" hidehud="false" drawuserbehind="true" noninteractablewhenflippedy="true" comparison="And">
         <ActiveConditional HasTag="deconsol" targetcontaineditem="true" />
         <ActiveConditional condition="gt 0" targetcontaineditem="true" />
+        <!-- don't allow entering the shower when the shower is submerged -->
+        <ActiveConditional InWater="false" />
         <!-- don't allow entering the shower when wearing an exosuit -->
         <RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" />
         <limbposition limb="RightHand" position="100,-200" allowusinglimb="false" />
