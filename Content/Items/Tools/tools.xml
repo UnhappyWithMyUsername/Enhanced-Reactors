@@ -252,7 +252,7 @@
       </ItemContainer>
     </Item>
     <!-- cargoscooter tag is used to prevent storing the fuel rod in metal crates -->
-    <Item name="" identifier="fuelrod" Category="Fuel" Tags="mediumitem,reactorfuel,cargoscooter,fuelrod" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
+    <Item name="" identifier="fuelrod" Category="Fuel" Tags="mediumitem,reactorfuel,cargoscooter" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
       <PreferredContainer primary="fuelrodcrate" secondary="reactorcab"/>
       <PreferredContainer secondary="fuelrodcontainer" minamount="1" maxamount="3" spawnprobability="0.4"/>
       <PreferredContainer secondary="nucleargun" minamount="1" maxamount="1" spawnprobability="1"/>
@@ -512,6 +512,20 @@
       <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="384,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Tools/tools.png" depth="0.55" sourcerect="452,1,19,68" />
       <Body radius="6" width="21" height="71" density="13" />
+      <ItemComponent canbeselected="false" canbepicked="false" allowingameediting="false">
+        <StatusEffect type="OnContained" target="Parent" tags="containradiation" duration="0.1" setvalue="true" comparison="And">
+          <Hook name="EnhancedReactors.Disable" />
+          <Conditional HasTag="deconstructor" />
+          <Conditional IsActive="eq true" />
+          <Conditional Voltage="gt 0.1" />
+        </StatusEffect>
+        <StatusEffect type="OnContained" target="Parent" tags="containradiation" duration="0.1" setvalue="true" comparison="And">
+          <Hook name="EnhancedReactors.Disable" />
+          <Conditional HasTag="fabricator" />
+          <Conditional IsActive="eq true" />
+          <Conditional Voltage="gt 0.1" />
+        </StatusEffect>
+      </ItemComponent>
       <LightComponent range="750.0" lightcolor="225,150,255,175" IsOn="false" flicker="0.2" flickerspeed="0.3" castshadows="true" alphablend="false" allowingameediting="false" powerconsumption="0">
         <!-- slowly drain the fuel rod over time if the fission process was started | disabled inside reactors to allow reactors set to not consume fuel and beacon missions to play out normally unless condition is 0 -->
         <StatusEffect type="OnActive" target="This" interval="1" condition="-0.05" disabledeltatime="true" comparison="And">
@@ -720,6 +734,20 @@
       <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="640,64,64,64" origin="0.5,0.5" />
       <Sprite texture="Content/Items/Tools/tools.png" depth="0.55" sourcerect="431,1,19,68" />
       <Body radius="6" height="55" density="13" />
+      <ItemComponent canbeselected="false" canbepicked="false" allowingameediting="false">
+        <StatusEffect type="OnContained" target="Parent" tags="containradiation" duration="0.1" setvalue="true" comparison="And">
+          <Hook name="EnhancedReactors.Disable" />
+          <Conditional HasTag="deconstructor" />
+          <Conditional IsActive="eq true" />
+          <Conditional Voltage="gt 0.1" />
+        </StatusEffect>
+        <StatusEffect type="OnContained" target="Parent" tags="containradiation" duration="0.1" setvalue="true" comparison="And">
+          <Hook name="EnhancedReactors.Disable" />
+          <Conditional HasTag="fabricator" />
+          <Conditional IsActive="eq true" />
+          <Conditional Voltage="gt 0.1" />
+        </StatusEffect>
+      </ItemComponent>
       <LightComponent range="750.0" lightcolor="255,125,30,175" IsOn="false" flicker="0.2" flickerspeed="0.3" castshadows="true" alphablend="false" allowingameediting="false" powerconsumption="0">
         <!-- slowly drain the fuel rod over time if the fission process was started | disabled inside reactors to allow reactors set to not consume fuel and beacon missions to play out normally unless condition is 0 -->
         <StatusEffect type="OnActive" target="This" interval="1" condition="-0.05" disabledeltatime="true" comparison="And">
@@ -926,6 +954,20 @@
       <InventoryIcon texture="Content/Items/JobGear/TalentGear.png" sourcerect="67,176,62,61" origin="0.5,0.5" />
       <Sprite texture="Content/Items/JobGear/TalentGear.png" depth="0.55" sourcerect="190,60,20,71" origin="0.5,0.5" />
       <Body radius="6" height="55" density="13" />
+      <ItemComponent canbeselected="false" canbepicked="false" allowingameediting="false">
+        <StatusEffect type="OnContained" target="Parent" tags="containradiation" duration="0.1" setvalue="true" comparison="And">
+          <Hook name="EnhancedReactors.Disable" />
+          <Conditional HasTag="deconstructor" />
+          <Conditional IsActive="eq true" />
+          <Conditional Voltage="gt 0.1" />
+        </StatusEffect>
+        <StatusEffect type="OnContained" target="Parent" tags="containradiation" duration="0.1" setvalue="true" comparison="And">
+          <Hook name="EnhancedReactors.Disable" />
+          <Conditional HasTag="fabricator" />
+          <Conditional IsActive="eq true" />
+          <Conditional Voltage="gt 0.1" />
+        </StatusEffect>
+      </ItemComponent>
       <LightComponent range="750.0" lightcolor="60,200,255,200" IsOn="true" flicker="0.2" flickerspeed="0.3" castshadows="true" alphablend="false" allowingameediting="false" powerconsumption="0">
         <!-- slowly drain the fuel rod over time if the fission process was started | disabled inside reactors to allow reactors set to not consume fuel and beacon missions to play out normally unless condition is 0 -->
         <StatusEffect type="OnActive" target="This" interval="1" condition="-0.05" disabledeltatime="true" comparison="And">
