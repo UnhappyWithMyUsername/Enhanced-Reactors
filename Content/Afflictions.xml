@@ -166,7 +166,7 @@
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0"/>
     </Affliction>
     <Affliction
-      name="Radiation Sounds "
+      name="Radiation Sounds"
       identifier="radiationsounds"
       limbspecific="false"
       indicatorlimb="Head"
@@ -436,24 +436,24 @@
       <icon texture="%ModDir:3045796581%/Content/Items/ER-ItemsAtlas.png" sourcerect="312,225,115,123" color="10,193,114,255" origin="0,0" />
     </Affliction>
     <Affliction
-    name="Contaminated"
-    identifier="contaminated"
-    description="You are contaminated and a health hazard to others."
-    type="poison"
-    causeofdeathdescription="Died of radiation sickness."
-    selfcauseofdeathdescription="You have died of radiation sickness."
-    limbspecific="false"
-    indicatorlimb="Torso"
-    showiconthreshold="1000"
-    showicontoothersthreshold="1000"
-    showinhealthscannerthreshold="1000"
-    karmachangeonapplied="-1"
-    treatmentthreshold="4"
-    maxstrength="100"
-    affectmachines="false"
-    grainburst="3"
-    healcostmultiplier="4.0"
-    MedicalSkillGain="1.0">
+      name="Contaminated"
+      identifier="contaminated"
+      description="You are contaminated and a health hazard to others."
+      type="poison"
+      causeofdeathdescription="Died of radiation sickness."
+      selfcauseofdeathdescription="You have died of radiation sickness."
+      limbspecific="false"
+      indicatorlimb="Torso"
+      showiconthreshold="1000"
+      showicontoothersthreshold="1000"
+      showinhealthscannerthreshold="1000"
+      karmachangeonapplied="-1"
+      treatmentthreshold="4"
+      maxstrength="100"
+      affectmachines="false"
+      grainburst="3"
+      healcostmultiplier="4.0"
+      MedicalSkillGain="1.0">
       <Description
         textidentifier="afflictiondescription.contaminated"
         target="OtherCharacter"
@@ -511,24 +511,24 @@
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,768,128,128" color="195,136,60,255" origin="0,0"/>
     </Affliction>
     <Affliction
-    name="Radiation sickness"
-    identifier="radiationsickness"
-    description="Burns and sores can be seen on patient's skin. They seem to be spreading."
-    type="poison"
-    causeofdeathdescription="Died of radiation sickness."
-    selfcauseofdeathdescription="You have died of radiation sickness."
-    limbspecific="false"
-    indicatorlimb="Torso"
-    showiconthreshold="100"
-    showicontoothersthreshold="1000"
-    showinhealthscannerthreshold="10"
-    karmachangeonapplied="-1"
-    treatmentthreshold="25"
-    maxstrength="200"
-    affectmachines="false"
-    grainburst="3"
-    healcostmultiplier="4.0"
-    MedicalSkillGain="1.0">
+      name="Radiation sickness"
+      identifier="radiationsickness"
+      description="Burns and sores can be seen on patient's skin. They seem to be spreading."
+      type="poison"
+      causeofdeathdescription="Died of radiation sickness."
+      selfcauseofdeathdescription="You have died of radiation sickness."
+      limbspecific="false"
+      indicatorlimb="Torso"
+      showiconthreshold="100"
+      showicontoothersthreshold="1000"
+      showinhealthscannerthreshold="10"
+      karmachangeonapplied="-1"
+      treatmentthreshold="25"
+      maxstrength="200"
+      affectmachines="false"
+      grainburst="3"
+      healcostmultiplier="4.0"
+      MedicalSkillGain="1.0">
       <Description
         textidentifier="afflictiondescription.radiationsickness.low.self"
         target="Self"
@@ -760,20 +760,20 @@
         </StatusEffect>
       </Effect>
     </Affliction>
-    <Affliction identifier="shock1" showiconthreshold="1000" showinhealthscannerthreshold="1000" maxstrength="100" afflictionoverlayalphaislinear="true">
-      <Effect minstrength="0" maxstrength="100" strengthchange="-300" />
+    <Affliction identifier="shock1" showiconthreshold="1000" showinhealthscannerthreshold="1000" maxstrength="100" afflictionoverlayalphaislinear="false">
+      <Effect minstrength="0" maxstrength="100" strengthchange="-300" MinAfflictionOverlayAlphaMultiplier="0.0" MaxAfflictionOverlayAlphaMultiplier="0.3" />
       <AfflictionOverlay texture="%ModDir:3045796581%/Content/UI/Shock1.png" />
     </Affliction>
-    <Affliction identifier="shock2" showiconthreshold="1000" showinhealthscannerthreshold="1000" maxstrength="100" afflictionoverlayalphaislinear="true">
-      <Effect minstrength="0" maxstrength="100" strengthchange="-300" />
+    <Affliction identifier="shock2" showiconthreshold="1000" showinhealthscannerthreshold="1000" maxstrength="100" afflictionoverlayalphaislinear="false">
+      <Effect minstrength="0" maxstrength="100" strengthchange="-300" MinAfflictionOverlayAlphaMultiplier="0.0" MaxAfflictionOverlayAlphaMultiplier="0.3" />
       <AfflictionOverlay texture="%ModDir:3045796581%/Content/UI/Shock2.png" />
     </Affliction>
-    <Affliction identifier="shock3" showiconthreshold="1000" showinhealthscannerthreshold="1000" maxstrength="100" afflictionoverlayalphaislinear="true">
-      <Effect minstrength="0" maxstrength="100" strengthchange="-300" />
+    <Affliction identifier="shock3" showiconthreshold="1000" showinhealthscannerthreshold="1000" maxstrength="100" afflictionoverlayalphaislinear="false">
+      <Effect minstrength="0" maxstrength="100" strengthchange="-300" MinAfflictionOverlayAlphaMultiplier="0.0" MaxAfflictionOverlayAlphaMultiplier="0.3" />
       <AfflictionOverlay texture="%ModDir:3045796581%/Content/UI/Shock3.png" />
     </Affliction>
-    <Affliction identifier="shock4" showiconthreshold="1000" showinhealthscannerthreshold="1000" maxstrength="100" afflictionoverlayalphaislinear="true">
-      <Effect minstrength="0" maxstrength="100" strengthchange="-300" />
+    <Affliction identifier="shock4" showiconthreshold="1000" showinhealthscannerthreshold="1000" maxstrength="100" afflictionoverlayalphaislinear="false">
+      <Effect minstrength="0" maxstrength="100" strengthchange="-300" MinAfflictionOverlayAlphaMultiplier="0.0" MaxAfflictionOverlayAlphaMultiplier="0.3" />
       <AfflictionOverlay texture="%ModDir:3045796581%/Content/UI/Shock4.png" />
     </Affliction>
     <Affliction

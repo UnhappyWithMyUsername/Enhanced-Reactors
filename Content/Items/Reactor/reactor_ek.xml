@@ -17,7 +17,8 @@
           <Conditional condition="eq 0" />
         </StatusEffect>
         <!-- produce heat around reactor in a 7.5m radius if the temperature is high -->
-        <StatusEffect type="OnActive" target="This" interval="0.9">
+        <StatusEffect type="OnActive" target="This" interval="0.9" comparison="And">
+          <Hook name="EnhancedReactors.Disable" />
           <Conditional temperature="gt 40" />
           <Explosion range="750" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false" playtinnitus="false">
             <Affliction identifier="overheating" strength="0.7" />
@@ -53,6 +54,7 @@
         <!-- fuel rod explosion -->
         <StatusEffect type="OnBroken" target="This" FissionRate="0.0" disabledeltatime="true">
           <RequiredItem items="fuelrod" type="contained" />
+          <Conditional fissionrate="gt 1.0" />
           <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="50000" />
           <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="50000" />
           <Explosion range="750" ballastfloradamage="1000" structuredamage="300" itemdamage="500" force="25.0" camerashake="0" flashrange="10000" flashduration="5.0" screencolor="255,255,255,255" screencolorrange="5000" screencolorduration="3.0" decal="explosion" decalsize="1">
@@ -70,6 +72,7 @@
         <!-- thorium fuel rod explosion -->
         <StatusEffect type="OnBroken" target="This" FissionRate="0.0" disabledeltatime="true">
           <RequiredItem items="thoriumfuelrod" type="contained" />
+          <Conditional fissionrate="gt 1.0" />
           <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="50000" />
           <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="50000" />
           <Explosion range="1500" ballastfloradamage="1000" structuredamage="600" itemdamage="1000" force="50.0" camerashake="0" flashrange="10000" flashduration="5.0" screencolor="225,150,255,255" screencolorrange="5000" screencolorduration="3.0" decal="explosion" decalsize="1">
@@ -88,6 +91,7 @@
         <!-- fulgurium fuel rod explosion -->
         <StatusEffect type="OnBroken" target="This" FissionRate="0.0" disabledeltatime="true">
           <RequiredItem items="fulguriumfuelrod" type="contained" />
+          <Conditional fissionrate="gt 1.0" />
           <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="50000" />
           <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="50000" />
           <Explosion range="2250" ballastfloradamage="1000" structuredamage="900" itemdamage="1500" force="75.0" camerashake="0" flashrange="10000" flashduration="5.0" screencolor="255,125,30,255" screencolorrange="5000" screencolorduration="3.0" decal="explosion" decalsize="1">
@@ -106,6 +110,7 @@
         <!-- volatile fulgurium fuel rod explosion -->
         <StatusEffect type="OnBroken" target="This" FissionRate="0.0" disabledeltatime="true">
           <RequiredItem items="fulguriumfuelrodvolatile" type="contained" />
+          <Conditional fissionrate="gt 1.0" />
           <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="100000" />
           <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="100000" />
           <Explosion range="3000" ballastfloradamage="1000" structuredamage="1200" itemdamage="2000" force="100.0" camerashake="0" flashrange="50000" flashduration="5.0" screencolor="60,200,255,255" screencolorrange="5000" screencolorduration="3.0" decal="explosion" decalsize="1">
@@ -122,10 +127,13 @@
           <ParticleEmitter particle="underwaterexplosion" anglemin="0" anglemax="360" particleamount="3" velocitymin="0" velocitymax="0" scalemin="15" scalemax="15" />
         </StatusEffect>
         <StatusEffect type="OnBroken" target="This">
+          <Conditional fissionrate="gt 1.0" />
           <sound file="Content/Items/Weapons/ExplosionDebris4.ogg" range="10000" />
           <sound file="Content/Items/Weapons/ExplosionDebris5.ogg" range="10000" />
         </StatusEffect>
-        <StatusEffect type="OnBroken" target="Contained" Condition="0.0" delay="0.1" setvalue="true" />
+        <StatusEffect type="OnBroken" target="Contained" Condition="0.0" delay="0.1" setvalue="true">
+          <Conditional fissionrate="gt 1.0" />
+        </StatusEffect>
         <SkillRequirementHint identifier="electrical" level="50" />
       </Reactor>
       <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="0" IsOn="false" castshadows="false" allowingameediting="false" alphablend="false">
@@ -263,7 +271,8 @@
           <Conditional condition="eq 0" />
         </StatusEffect>
         <!-- produce heat around reactor in a 7.5m radius if the temperature is high -->
-        <StatusEffect type="OnActive" target="This" interval="0.9">
+        <StatusEffect type="OnActive" target="This" interval="0.9" comparison="And">
+          <Hook name="EnhancedReactors.Disable" />
           <Conditional temperature="gt 40" />
           <Explosion range="750" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false" playtinnitus="false">
             <Affliction identifier="overheating" strength="0.7" />
@@ -299,6 +308,7 @@
         <!-- fuel rod explosion -->
         <StatusEffect type="OnBroken" target="This" FissionRate="0.0" disabledeltatime="true">
           <RequiredItem items="fuelrod" type="contained" />
+          <Conditional fissionrate="gt 1.0" />
           <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="50000" />
           <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="50000" />
           <Explosion range="750" ballastfloradamage="1000" structuredamage="300" itemdamage="500" force="25.0" camerashake="0" flashrange="10000" flashduration="5.0" screencolor="255,255,255,255" screencolorrange="5000" screencolorduration="3.0" decal="explosion" decalsize="1">
@@ -316,6 +326,7 @@
         <!-- thorium fuel rod explosion -->
         <StatusEffect type="OnBroken" target="This" FissionRate="0.0" disabledeltatime="true">
           <RequiredItem items="thoriumfuelrod" type="contained" />
+          <Conditional fissionrate="gt 1.0" />
           <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="50000" />
           <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="50000" />
           <Explosion range="1500" ballastfloradamage="1000" structuredamage="600" itemdamage="1000" force="50.0" camerashake="0" flashrange="10000" flashduration="5.0" screencolor="225,150,255,255" screencolorrange="5000" screencolorduration="3.0" decal="explosion" decalsize="1">
@@ -334,6 +345,7 @@
         <!-- fulgurium fuel rod explosion -->
         <StatusEffect type="OnBroken" target="This" FissionRate="0.0" disabledeltatime="true">
           <RequiredItem items="fulguriumfuelrod" type="contained" />
+          <Conditional fissionrate="gt 1.0" />
           <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="50000" />
           <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="50000" />
           <Explosion range="2250" ballastfloradamage="1000" structuredamage="900" itemdamage="1500" force="75.0" camerashake="0" flashrange="10000" flashduration="5.0" screencolor="255,125,30,255" screencolorrange="5000" screencolorduration="3.0" decal="explosion" decalsize="1">
@@ -352,6 +364,7 @@
         <!-- volatile fulgurium fuel rod explosion -->
         <StatusEffect type="OnBroken" target="This" FissionRate="0.0" disabledeltatime="true">
           <RequiredItem items="fulguriumfuelrodvolatile" type="contained" />
+          <Conditional fissionrate="gt 1.0" />
           <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="100000" />
           <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="100000" />
           <Explosion range="3000" ballastfloradamage="1000" structuredamage="1200" itemdamage="2000" force="100.0" camerashake="0" flashrange="50000" flashduration="5.0" screencolor="60,200,255,255" screencolorrange="5000" screencolorduration="3.0" decal="explosion" decalsize="1">
@@ -368,10 +381,13 @@
           <ParticleEmitter particle="underwaterexplosion" anglemin="0" anglemax="360" particleamount="3" velocitymin="0" velocitymax="0" scalemin="15" scalemax="15" />
         </StatusEffect>
         <StatusEffect type="OnBroken" target="This">
+          <Conditional fissionrate="gt 1.0" />
           <sound file="Content/Items/Weapons/ExplosionDebris4.ogg" range="10000" />
           <sound file="Content/Items/Weapons/ExplosionDebris5.ogg" range="10000" />
         </StatusEffect>
-        <StatusEffect type="OnBroken" target="Contained" Condition="0.0" delay="0.1" setvalue="true" />
+        <StatusEffect type="OnBroken" target="Contained" Condition="0.0" delay="0.1" setvalue="true">
+          <Conditional fissionrate="gt 1.0" />
+        </StatusEffect>
         <SkillRequirementHint identifier="electrical" level="50" />
       </Reactor>
       <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="0" IsOn="false" castshadows="false" allowingameediting="false" alphablend="false">
@@ -509,7 +525,8 @@
           <Conditional condition="eq 0" />
         </StatusEffect>
         <!-- produce heat around reactor in a 7.5m radius if the temperature is high -->
-        <StatusEffect type="OnActive" target="This" interval="0.9">
+        <StatusEffect type="OnActive" target="This" interval="0.9" comparison="And">
+          <Hook name="EnhancedReactors.Disable" />
           <Conditional temperature="gt 40" />
           <Explosion range="750" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false" playtinnitus="false">
             <Affliction identifier="overheating" strength="0.7" />
@@ -545,6 +562,7 @@
         <!-- fuel rod explosion -->
         <StatusEffect type="OnBroken" target="This" FissionRate="0.0" disabledeltatime="true">
           <RequiredItem items="fuelrod" type="contained" />
+          <Conditional fissionrate="gt 1.0" />
           <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="50000" />
           <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="50000" />
           <Explosion range="750" ballastfloradamage="1000" structuredamage="300" itemdamage="500" force="25.0" camerashake="0" flashrange="10000" flashduration="5.0" screencolor="255,255,255,255" screencolorrange="5000" screencolorduration="3.0" decal="explosion" decalsize="1">
@@ -562,6 +580,7 @@
         <!-- thorium fuel rod explosion -->
         <StatusEffect type="OnBroken" target="This" FissionRate="0.0" disabledeltatime="true">
           <RequiredItem items="thoriumfuelrod" type="contained" />
+          <Conditional fissionrate="gt 1.0" />
           <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="50000" />
           <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="50000" />
           <Explosion range="1500" ballastfloradamage="1000" structuredamage="600" itemdamage="1000" force="50.0" camerashake="0" flashrange="10000" flashduration="5.0" screencolor="225,150,255,255" screencolorrange="5000" screencolorduration="3.0" decal="explosion" decalsize="1">
@@ -580,6 +599,7 @@
         <!-- fulgurium fuel rod explosion -->
         <StatusEffect type="OnBroken" target="This" FissionRate="0.0" disabledeltatime="true">
           <RequiredItem items="fulguriumfuelrod" type="contained" />
+          <Conditional fissionrate="gt 1.0" />
           <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="50000" />
           <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="50000" />
           <Explosion range="2250" ballastfloradamage="1000" structuredamage="900" itemdamage="1500" force="75.0" camerashake="0" flashrange="10000" flashduration="5.0" screencolor="255,125,30,255" screencolorrange="5000" screencolorduration="3.0" decal="explosion" decalsize="1">
@@ -598,6 +618,7 @@
         <!-- volatile fulgurium fuel rod explosion -->
         <StatusEffect type="OnBroken" target="This" FissionRate="0.0" disabledeltatime="true">
           <RequiredItem items="fulguriumfuelrodvolatile" type="contained" />
+          <Conditional fissionrate="gt 1.0" />
           <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="100000" />
           <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="100000" />
           <Explosion range="3000" ballastfloradamage="1000" structuredamage="1200" itemdamage="2000" force="100.0" camerashake="0" flashrange="50000" flashduration="5.0" screencolor="60,200,255,255" screencolorrange="5000" screencolorduration="3.0" decal="explosion" decalsize="1">
@@ -614,10 +635,13 @@
           <ParticleEmitter particle="underwaterexplosion" anglemin="0" anglemax="360" particleamount="3" velocitymin="0" velocitymax="0" scalemin="15" scalemax="15" />
         </StatusEffect>
         <StatusEffect type="OnBroken" target="This">
+          <Conditional fissionrate="gt 1.0" />
           <sound file="Content/Items/Weapons/ExplosionDebris4.ogg" range="10000" />
           <sound file="Content/Items/Weapons/ExplosionDebris5.ogg" range="10000" />
         </StatusEffect>
-        <StatusEffect type="OnBroken" target="Contained" Condition="0.0" delay="0.1" setvalue="true" />
+        <StatusEffect type="OnBroken" target="Contained" Condition="0.0" delay="0.1" setvalue="true">
+          <Conditional fissionrate="gt 1.0" />
+        </StatusEffect>
         <SkillRequirementHint identifier="electrical" level="50" />
       </Reactor>
       <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="0" IsOn="false" castshadows="false" allowingameediting="false" alphablend="false">

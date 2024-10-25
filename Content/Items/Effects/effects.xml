@@ -103,7 +103,7 @@
           <SpawnItem identifier="effect_firestarter" spawnposition="This" />
         </StatusEffect>
         <!-- remove the item after 30 seconds when spawned -->
-        <StatusEffect type="Always" target="This" delay="30" oneshot="true">
+        <StatusEffect type="Always" target="This" delay="30" oneshot="true" stackable="false">
           <Remove />
         </StatusEffect>
       </Holdable>
