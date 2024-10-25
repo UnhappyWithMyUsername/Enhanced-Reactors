@@ -16,25 +16,25 @@ local fuelRods = {
     ["fuelrod"] = {
         radiationSickness = 1,
         contaminated = 1,
-        radiationSounds = 1,
+        radiationSounds = 3.5,
         overheating = 1
     },
     ["thoriumfuelrod"] = {
-        radiationSickness = 1.1,
-        contaminated = 1.1,
-        radiationSounds = 1.1,
-        overheating = 1.1,
+        radiationSickness = 0.5,
+        contaminated = 0.5,
+        radiationSounds = 2.0,
+        overheating = 1.5,
     },
     ["fulguriumfuelrod"] = {
         radiationSickness = 2,
         contaminated = 2,
-        radiationSounds = 2,
+        radiationSounds = 4.5,
         overheating = 2,
     },
     ["fulguriumfuelrodvolatile"] = {
         radiationSickness = 3,
         contaminated = 3,
-        radiationSounds = 3,
+        radiationSounds = 5.5,
         overheating = 3,
     }
 }
@@ -78,12 +78,12 @@ EnhancedReactors.ProcessItemUpdate = function (item)
     if reactor then
         if reactor.Temperature > 40 then
             for character in Character.CharacterList do
-                EnhancedReactors.ApplyAfflictionRadius(item, character, 750, 2, 0, { overheating.Instantiate(0.05) })
+                EnhancedReactors.ApplyAfflictionRadius(item, character, 750, 0, 0, { overheating.Instantiate(0.05) })
             end
         end
     end
 
-    if item.HasTag("fuelrod") and item.HasTag("activefuelrod") then
+    if item.HasTag("reactorfuel") and item.HasTag("activefuelrod") then
         local inventory = item.ParentInventory
 
         local parentItem = nil
@@ -100,7 +100,7 @@ EnhancedReactors.ProcessItemUpdate = function (item)
         local reactor = parentItem and parentItem.GetComponentString("Reactor") or nil
 
         if not parentItem then
-            if math.random() < 0.05 then
+            if math.random() < 0.01 then
                 FireSource(item.WorldPosition)
             end
         end
@@ -108,7 +108,7 @@ EnhancedReactors.ProcessItemUpdate = function (item)
         if not parentItem or (not parentItem.HasTag("deepdivinglarge") and not parentItem.HasTag("containradiation")) then
             local data = fuelRods[item.Prefab.Identifier.Value]
             for character in Character.CharacterList do
-                EnhancedReactors.ApplyAfflictionRadius(item, character, 750, 10, 0, {
+                EnhancedReactors.ApplyAfflictionRadius(item, character, 750, 1, 0, {
                     radiationSickness.Instantiate(1 * data.radiationSickness),
                     contaminated.Instantiate(1 * data.contaminated),
                     radiationSounds.Instantiate(1.25 * data.radiationSounds),
@@ -128,10 +128,10 @@ EnhancedReactors.ProcessItemUpdate = function (item)
         end
 
         if reactor then
-            if parentItem.ConditionPercentage < 75 then
+            if parentItem.ConditionPercentage < 75 and not parentItem.HasTag("extrashielding") then
                 local data = fuelRods[item.Prefab.Identifier.Value]
                 for character in Character.CharacterList do
-                    EnhancedReactors.ApplyAfflictionRadius(item, character, 750, 10, 0, {
+                    EnhancedReactors.ApplyAfflictionRadius(item, character, 750, 0.6, 0, {
                         radiationSickness.Instantiate((0.45 - parentItem.ConditionPercentage * 0.006) * data.radiationSickness),
                         contaminated.Instantiate((0.45 - parentItem.ConditionPercentage * 0.006) * data.contaminated),
                         radiationSounds.Instantiate((2.9 - parentItem.ConditionPercentage * 0.038) * data.radiationSounds),
