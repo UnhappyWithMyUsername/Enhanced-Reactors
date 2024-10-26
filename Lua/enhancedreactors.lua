@@ -99,11 +99,11 @@ EnhancedReactors.ProcessItemUpdate = function (item)
 
         local reactor = parentItem and parentItem.GetComponentString("Reactor") or nil
 
-        if not parentItem then
-            if math.random() < 0.01 then
-                FireSource(item.WorldPosition)
-            end
-        end
+        -- if not parentItem then
+        --     if math.random() < 0.01 then
+        --         FireSource(item.WorldPosition)
+        --     end
+        -- end
 
         if not parentItem or (not parentItem.HasTag("deepdivinglarge") and not parentItem.HasTag("containradiation")) then
             local data = fuelRods[item.Prefab.Identifier.Value]

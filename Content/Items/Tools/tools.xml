@@ -311,7 +311,7 @@
         </StatusEffect>
         <!-- check if near a character and tag the item to allow the StatusEffects to trigger | Prevents performance impact when far away from the item -->
         <StatusEffect type="Always" target="This,NearbyCharacters" range="10000" tags="nearcharacter" interval="1" duration="1.1" comparison="And">
-          <Hook name="EnhancedReactors.Disable" />
+          <!-- <Hook name="EnhancedReactors.Disable" /> -->
           <Conditional isPlayer="true" />
         </StatusEffect>
         <!-- create an invisible explosion to apply variable amount of damage and afflictions to nearby items and characters, if the fission process was started and the item is not contained within a container with the tag "containradiation" -->
@@ -389,7 +389,7 @@
         </StatusEffect>
         <!-- spawn items that delete themselves randomly with a chance of 1/20 each second for an item to spawn that causes a fire to make the fuel rod randomly start fires if it's not contained and the fission process was started -->
         <StatusEffect type="OnNotContained" target="This" interval="1.0" SpawnItemRandomly="True" comparison="And">
-          <Hook name="EnhancedReactors.Disable" />
+          <!-- <Hook name="EnhancedReactors.Disable" /> -->
           <Conditional InWater="false" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
@@ -536,7 +536,7 @@
         </StatusEffect>
         <!-- check if near a character and tag the item to allow the StatusEffects to trigger | Prevents performance impact when far away from the item -->
         <StatusEffect type="Always" target="This,NearbyCharacters" range="10000" tags="nearcharacter" interval="1" duration="1.1" comparison="And">
-          <Hook name="EnhancedReactors.Disable" />
+          <!-- <Hook name="EnhancedReactors.Disable" /> -->
           <Conditional isPlayer="true" />
         </StatusEffect>
         <!-- create an invisible explosion to apply variable amount of damage and afflictions to nearby items and characters, if the fission process was started and the item is not contained within a container with the tag "containradiation" -->
@@ -613,7 +613,7 @@
         </StatusEffect>
         <!-- spawn items that delete themselves randomly with a chance of 1/20 each second for an item to spawn that causes a fire to make the fuel rod randomly start fires if it's not contained and the fission process was started -->
         <StatusEffect type="OnNotContained" target="This" interval="1.0" SpawnItemRandomly="True" comparison="And">
-          <Hook name="EnhancedReactors.Disable" />
+          <!-- <Hook name="EnhancedReactors.Disable" /> -->
           <Conditional InWater="false" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
@@ -758,7 +758,7 @@
         </StatusEffect>
         <!-- check if near a character and tag the item to allow the StatusEffects to trigger | Prevents performance impact when far away from the item -->
         <StatusEffect type="Always" target="This,NearbyCharacters" range="10000" tags="nearcharacter" interval="1" duration="1.1" comparison="And">
-          <Hook name="EnhancedReactors.Disable" />
+          <!-- <Hook name="EnhancedReactors.Disable" /> -->
           <Conditional isPlayer="true" />
         </StatusEffect>
         <!-- create an invisible explosion to apply variable amount of damage and afflictions to nearby items and characters, if the fission process was started and the item is not contained within a container with the tag "containradiation" -->
@@ -835,7 +835,7 @@
         </StatusEffect>
         <!-- spawn items that delete themselves randomly with a chance of 1/20 each second for an item to spawn that causes a fire to make the fuel rod randomly start fires if it's not contained and the fission process was started -->
         <StatusEffect type="OnNotContained" target="This" interval="1.0" SpawnItemRandomly="True" comparison="And">
-          <Hook name="EnhancedReactors.Disable" />
+          <!-- <Hook name="EnhancedReactors.Disable" /> -->
           <Conditional InWater="false" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
@@ -978,7 +978,7 @@
         </StatusEffect>
         <!-- check if near a character and tag the item to allow the StatusEffects to trigger | Prevents performance impact when far away from the item -->
         <StatusEffect type="Always" target="This,NearbyCharacters" range="10000" tags="nearcharacter" interval="1" duration="1.1" comparison="And">
-          <Hook name="EnhancedReactors.Disable" />
+          <!-- <Hook name="EnhancedReactors.Disable" /> -->
           <Conditional isPlayer="true" />
         </StatusEffect>
         <!-- create an invisible explosion to apply variable amount of damage and afflictions to nearby items and characters, if the fission process was started and the item is not contained within a container with the tag "containradiation" -->
@@ -1055,7 +1055,7 @@
         </StatusEffect>
         <!-- spawn items that delete themselves randomly with a chance of 1/20 each second for an item to spawn that causes a fire to make the fuel rod randomly start fires if it's not contained and the fission process was started -->
         <StatusEffect type="OnNotContained" target="This" interval="1.0" SpawnItemRandomly="True" comparison="And">
-          <Hook name="EnhancedReactors.Disable" />
+          <!-- <Hook name="EnhancedReactors.Disable" /> -->
           <Conditional InWater="false" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
