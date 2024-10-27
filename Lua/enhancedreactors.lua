@@ -52,6 +52,15 @@ EnhancedReactors.ProcessItem = function (item)
     end
 end
 
+EnhancedReactors.RemoveItem = function (item)
+    for i, managedItem in ipairs(EnhancedReactors.ManagedItems) do
+        if managedItem == item then
+            table.remove(EnhancedReactors.ManagedItems, i)
+            break
+        end
+    end
+end
+
 EnhancedReactors.ApplyAfflictionRadius = function (item, character, maxDistance, wallPenetration, armorPenetration, afflictions)
     if Vector2.Distance(character.WorldPosition, item.WorldPosition) > maxDistance then
         return
