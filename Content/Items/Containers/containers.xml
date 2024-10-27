@@ -59,8 +59,8 @@
     </Item>
   </Override>
   <Override>
-    <Item name="Fuel Rod Crate" identifier="fuelrodcrate" tags="smallcrate,fuelrodcrate,fuelrodcontainer,containradiation,depthchargeammo" description="Safely stores up to 8 fuel rods and prevents them from irradiating the surroundings." maxstacksize="1" scale="0.5" impactsoundtag="impact_metal_heavy">
-      <BrokenSprite texture="%ModDir:3045796581%/Content/Items/ER-ItemsAtlas.png" sourcerect="97,95,95,114" depth="0.54" origin="0.5,0.66" maxcondition="50" fadein="false" />
+    <Item name="Fuel Rod Crate" identifier="fuelrodcrate" tags="smallcrate,fuelrodcrate,fuelrodcontainer,depthchargeammo" description="Safely stores up to 8 fuel rods and prevents them from irradiating the surroundings." maxstacksize="1" scale="0.5" impactsoundtag="impact_metal_heavy">
+      <BrokenSprite texture="%ModDir:3045796581%/Content/Items/ER-ItemsAtlas.png" sourcerect="97,95,95,114" depth="0.54" origin="0.5,0.66" maxcondition="99.9" fadein="false" />
       <Sprite texture="%ModDir:3045796581%/Content/Items/ER-ItemsAtlas.png" sourcerect="1,97,95,78" depth="0.54" origin="0.5,0.5" />
       <PreferredContainer primary="fuelcratecontainer" secondary="coilgunammoloader,ammoboxcontainer" />
       <PreferredContainer secondary="wreckammoboxcontainer" amount="1" spawnprobability="0.2" />
@@ -71,33 +71,42 @@
         <RequiredItem identifier="steel" amount="1" />
       </Fabricate>
       <Deconstruct time="10" />
-      <GreaterComponent drawhudwhenequipped="false" allowingameediting="false" canbeselected="false" timeframe="0" />
+      <!-- ItemComponent is only used as a workaround to play a sound if someone stopped interacting with the junction box since that can't really be done otherwise other than with "Always" StatusEffects which drain performance nonstop instead of only when interaction is happening. -->
+      <ItemComponent canbeselected="false" canbepicked="false" allowingameediting="false" IsActive="false">
+        <StatusEffect type="OnActive" target="This" targetitemcomponent="ItemContainer" tags="containradiation" condition="100" hideitems="true" drawinventory="false" canbeselected="false" locked="true" allowdraganddrop="false" allowaccess="false" setvalue="true" disabledeltatime="true">
+          <Conditional HasStatusTag="neq opened" />
+        </StatusEffect>
+        <!-- play a closing sound and disable the ItemComponent, stopping to execute the check for the "opened" tag which gets applied while someone is interacting with the junction box -->
+        <StatusEffect type="OnActive" target="This" targetitemcomponent="ItemComponent" IsActive="false" setvalue="true" forceplaysounds="true">
+          <Conditional HasStatusTag="neq opened" />
+          <Sound file="%ModDir:3045796581%/Content/Items/Containers/CrateClose1.ogg" range="300" volume="2.0" loop="false" />
+        </StatusEffect>
+      </ItemComponent>
+      <!-- Controller to check if someone is interacting with the junction box -->
+      <Controller canbeselected="true" selectkey="Action" hidehud="false" drawuserbehind="false" noninteractablewhenflippedy="false" allowingameediting="false" drawhudwhenequipped="false" comparison="And">
+        <!-- play an opening sound when starting to interact with the junction box -->
+        <StatusEffect type="OnActive" target="this" targetitemcomponent="ItemContainer" tags="" condition="99.9" hideitems="true" drawinventory="true" canbeselected="true" locked="false" allowdraganddrop="true" allowaccess="true" setvalue="true" forceplaysounds="true" disabledeltatime="true">
+          <Conditional HasStatusTag="neq opened" />
+          <Sound file="%ModDir:3045796581%/Content/Items/Containers/CrateOpen1.ogg" range="300" volume="2.0" loop="false" />
+        </StatusEffect>
+        <!-- tag the junction box with "opened" if the controller is active, meaning someone is interacting with it -->
+        <StatusEffect type="OnActive" target="This" tags="opened" duration="0.1" />
+        <!-- turn the ItemComponent on so we can play a sound when the user stops interacting with the junction box. Would otherwise require an "Always" check which would always run and thus impact performance. -->
+        <StatusEffect type="OnActive" target="This" targetitemcomponent="ItemComponent" IsActive="true" setvalue="true" />
+        <!-- prevent allowing to configure an output for the controller to hide the controller UI. Has to be done this way because <Upgrade> only changes that setting for one of the two controllers... This StatusEffect only executes once per round -->
+        <StatusEffect type="OnActive" target="This" targetitemcomponent="Controller" allowingameediting="false" setvalue="true" oneshot="true" />
+      </Controller>
       <Holdable slots="RightHand,LeftHand" holdpos="0,-30" handle1="0,-30" aimable="false" msg="ItemMsgPickUpSelect">
-        <StatusEffect type="OnContained" target="This" targetitemcomponent="ItemContainer" timeframe="0" condition="100" hideitems="true" drawinventory="false" canbeselected="true" locked="false" allowdraganddrop="true" allowaccess="true" setvalue="true" interval="1.1" AllowWhenBroken="true">
+        <StatusEffect type="OnSpawn" target="This" tags="containradiation" setvalue="true" disabledeltatime="true" />
+        <StatusEffect type="OnContained" target="This" targetitemcomponent="ItemContainer" hideitems="true" drawinventory="false" canbeselected="false" locked="false" allowdraganddrop="true" allowaccess="true" setvalue="true" interval="1.1">
           <Conditional HasTag="fuelcratecontainer" targetcontainer="true" />
           <Conditional HasTag="coilgunammoloader" targetcontainer="true" />
           <Conditional HasTag="ammoboxcontainer" targetcontainer="true" />
         </StatusEffect>
-        <StatusEffect type="OnActive" target="This" hideitems="true" drawinventory="false" canbeselected="false" locked="true" allowdraganddrop="false" allowaccess="false" setvalue="true" interval="0.3" AllowWhenBroken="true">
-          <Conditional targetitemcomponent="ItemContainer" />
-        </StatusEffect>
-        <StatusEffect type="OnPicked" target="This" timeframe="0" condition="100" setvalue="true" AllowWhenBroken="true">
-          <Conditional timeframe="eq 1" />
-          <Sound file="%ModDir:3045796581%/Content/Items/Containers/CrateClose1.ogg" range="300" volume="2.0" loop="false" />
-        </StatusEffect>
       </Holdable>
-      <ItemContainer selectkey="Use" drawhudwhenequipped="false" hideitems="true" capacity="8" maxstacksize="1" itempos="-30,4" iteminterval="20,1" itemrotation="0" itemsperrow="4" AllowSwappingContainedItems="false" containedspritedepths="0.537,0.537,0.537,0.537,0.538,0.538,0.538,0.538" allowdraganddrop="false" slotsperrow="4" drawinventory="true" canbeselected="true" canbecombined="false" removecontaineditemsondeconstruct="true">
+      <ItemContainer selectkey="Use" drawhudwhenequipped="false" drawinventory="false" canbeselected="false" locked="true" allowdraganddrop="false" allowaccess="false" hideitems="true" capacity="8" maxstacksize="1" itempos="-30,4" iteminterval="20,1" itemrotation="0" itemsperrow="4" AllowSwappingContainedItems="false" containedspritedepths="0.537,0.537,0.537,0.537,0.538,0.538,0.538,0.538" slotsperrow="4" canbecombined="false" removecontaineditemsondeconstruct="true">
         <GuiFrame relativesize="0.2,0.2" anchor="Center" style="ItemUI" />
-        <StatusEffect type="OnNotContained" target="This" drawinventory="true" canbeselected="true" locked="false" allowdraganddrop="true" allowaccess="true" setvalue="true" interval="0.3" AllowWhenBroken="true">
-          <Conditional targetitemcomponent="ItemContainer" />
-        </StatusEffect>
-        <StatusEffect type="OnPicked" target="This" hideitems="true" timeframe="1" condition="0" setvalue="true" disabledeltatime="true" AllowWhenBroken="true" comparison="And">
-          <Conditional timeframe="eq 0" />
-          <Conditional targetitemcomponent="ItemContainer" />
-          <Sound file="%ModDir:3045796581%/Content/Items/Containers/CrateOpen1.ogg" range="300" volume="2.0" loop="false" />
-        </StatusEffect>
-        <Containable items="reactorfuel">
-        </Containable>
+        <Containable items="reactorfuel" />
       </ItemContainer>
     </Item>
   </Override>
