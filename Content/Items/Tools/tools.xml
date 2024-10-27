@@ -702,7 +702,7 @@
     <!-- cargoscooter tag is used to prevent storing the fuel rod in metal crates -->
     <Item name="" identifier="fulguriumfuelrod" Category="Fuel" Tags="mediumitem,reactorfuel,cargoscooter" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" health="150" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
       <PreferredContainer primary="fuelrodcrate" secondary="reactorcab"/>
-      <PreferredContainer secondary="fuelrodcontainer" minamount="1" maxamount="3" spawnprobability="0.1"/>
+      <PreferredContainer secondary="fuelrodcontainer" amount="1" spawnprobability="0.1"/>
       <PreferredContainer secondary="wreckreactorcab,abandonedreactorcab" amount="1" spawnprobability="0.2"/>
       <PreferredContainer secondary="wreckreactor" amount="1" mincondition="0.5" maxcondition="0.99" spawnprobability="0.05"/>
       <PreferredContainer secondary="beaconengcab" amount="1" spawnprobability="0.05"/>
