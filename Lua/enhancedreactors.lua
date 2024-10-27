@@ -78,7 +78,7 @@ EnhancedReactors.ProcessItemUpdate = function (item)
     if reactor then
         if reactor.Temperature > 40 then
             for character in Character.CharacterList do
-                EnhancedReactors.ApplyAfflictionRadius(item, character, 750, 0, 0, { overheating.Instantiate(0.05) })
+                EnhancedReactors.ApplyAfflictionRadius(item, character, 750, 1, 0, { overheating.Instantiate(0.1) })
             end
         end
     end
