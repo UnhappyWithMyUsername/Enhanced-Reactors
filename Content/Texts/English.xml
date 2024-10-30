@@ -32,6 +32,8 @@
 <entitydescription.nuclearcartridge>A magazine for nuclear guns.</entitydescription.nuclearcartridge>
 <entityname.deconsoltank>Deconsol</entityname.deconsoltank>
 <entitydescription.deconsoltank>A decontamination solution. Needs to be sprayed onto a contaminated person by using a sprayer.</entitydescription.deconsoltank>
+<entityname.emptyfuelrod>Empty Fuel Rod</entityname.emptyfuelrod>
+<entitydescription.emptyfuelrod>An empty fuel rod. It's still irradiating a fair amount of warmth and radiation.</entitydescription.emptyfuelrod>
 
 <!-- Afflictions -->
 <afflictionname.radiationresistance>Radiation Resistance</afflictionname.radiationresistance>

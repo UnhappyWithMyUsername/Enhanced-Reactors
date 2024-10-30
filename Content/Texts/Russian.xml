@@ -27,6 +27,8 @@
   <entitydescription.radioactivematcontainer>Может безопасно хранить до 6 стаков радиоактивных материалов.</entitydescription.radioactivematcontainer>
   <entityname.nuclearcartridge>Ядерный картридж</entityname.nuclearcartridge>
   <entitydescription.nuclearcartridge>Журнал для ядерного оружия.</entitydescription.nuclearcartridge>
+  <entityname.emptyfuelrod>Empty Fuel Rod</entityname.emptyfuelrod>
+  <entitydescription.emptyfuelrod>An empty fuel rod. It's still irradiating a fair amount of warmth and radiation.</entitydescription.emptyfuelrod>
   <!-- Афликшоны -->
   <afflictionname.radiationresistance>Радиационная защита</afflictionname.radiationresistance>
   <afflictiondescription.radiationresistance>Вы более устойчивы к радиации, однако у вас нет к ней иммунитета!</afflictiondescription.radiationresistance>

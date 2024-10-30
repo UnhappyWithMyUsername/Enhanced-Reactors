@@ -26,6 +26,8 @@
   <entitydescription.radioactivematcontainer>最多可安全储存6栏放射性物质</entitydescription.radioactivematcontainer>
   <entityname.nuclearcartridge>核弹</entityname.nuclearcartridge>
   <entitydescription.nuclearcartridge>核弹枪弹夹.</entitydescription.nuclearcartridge>
+  <entityname.emptyfuelrod>Empty Fuel Rod</entityname.emptyfuelrod>
+  <entitydescription.emptyfuelrod>An empty fuel rod. It's still irradiating a fair amount of warmth and radiation.</entitydescription.emptyfuelrod>
   <!-- Afflictions -->
   <afflictionname.radiationresistance>耐辐射性</afflictionname.radiationresistance>
   <afflictiondescription.radiationresistance>您对辐射的抵抗力更强，但您并不能免受辐射影响!</afflictiondescription.radiationresistance>

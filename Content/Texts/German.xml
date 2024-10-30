@@ -29,6 +29,8 @@
   <entitydescription.nuclearcartridge>Ein Magazin für Nuklearwaffen.</entitydescription.nuclearcartridge>
   <entityname.deconsoltank>Deconsol</entityname.deconsoltank>
   <entitydescription.deconsoltank>Eine dekontaminierende Lösung, welche mit einem Sprayer auf die kontaminierte Person aufgetragen werden muss.</entitydescription.deconsoltank>
+  <entityname.emptyfuelrod>Leerer Brennstab</entityname.emptyfuelrod>
+  <entitydescription.emptyfuelrod>Ein leerer Brennstab der noch immer einiges an Wärme und Strahlung von sich gibt.</entitydescription.emptyfuelrod>
   <!-- Afflictions -->
   <afflictionname.radiationresistance>Strahlungsschutz</afflictionname.radiationresistance>
   <afflictiondescription.radiationresistance>Du bist resistenter gegen Strahlung, aber nicht immun!</afflictiondescription.radiationresistance>
