@@ -195,6 +195,9 @@
         <Containable items="fulguriumfuelrodvolatile">
           <StatusEffect type="OnContaining" target="This" AvailableFuel="150.0" disabledeltatime="true" />
         </Containable>
+        <Containable items="emptyfuelrod">
+          <StatusEffect type="OnContaining" target="This" AvailableFuel="0" disabledeltatime="true" />
+        </Containable>
         <Containable items="huskfigurine">
           <StatusEffect type="OnContaining" target="This" AvailableFuel="0" disabledeltatime="true" />
         </Containable>
@@ -449,6 +452,9 @@
         <Containable items="fulguriumfuelrodvolatile">
           <StatusEffect type="OnContaining" target="This" AvailableFuel="150.0" disabledeltatime="true" />
         </Containable>
+        <Containable items="emptyfuelrod">
+          <StatusEffect type="OnContaining" target="This" AvailableFuel="0" disabledeltatime="true" />
+        </Containable>
         <Containable items="huskfigurine">
           <StatusEffect type="OnContaining" target="This" AvailableFuel="0" disabledeltatime="true" />
         </Containable>
@@ -702,6 +708,9 @@
         </Containable>
         <Containable items="fulguriumfuelrodvolatile">
           <StatusEffect type="OnContaining" target="This" AvailableFuel="75.0" disabledeltatime="true" />
+        </Containable>
+        <Containable items="emptyfuelrod">
+          <StatusEffect type="OnContaining" target="This" AvailableFuel="0" disabledeltatime="true" />
         </Containable>
         <Containable items="huskfigurine">
           <StatusEffect type="OnContaining" target="This" AvailableFuel="0" disabledeltatime="true" />

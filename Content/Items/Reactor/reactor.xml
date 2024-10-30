@@ -65,7 +65,7 @@
       </Repairable>
       <ItemContainer capacity="1" maxstacksize="1" canbeselected="true" hudpos="0.5,0.15" slotsperrow="1" uilabel="FuelRods">
         <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="192,448,64,64" origin="0.5,0.5" />
-        <Containable items="fuelrod,fulguriumfuelrod,thoriumfuelrod,fulguriumfuelrodvolatile" />
+        <Containable items="fuelrod,fulguriumfuelrod,thoriumfuelrod,fulguriumfuelrodvolatile,emptyfuelrod,huskfigurine" />
       </ItemContainer>
     </Item>
   </Override>
@@ -299,6 +299,9 @@
         </Containable>
         <Containable items="fulguriumfuelrodvolatile">
           <StatusEffect type="OnContaining" target="This" AvailableFuel="150.0" disabledeltatime="true" />
+        </Containable>
+        <Containable items="emptyfuelrod">
+          <StatusEffect type="OnContaining" target="This" AvailableFuel="0" disabledeltatime="true" />
         </Containable>
         <Containable items="huskfigurine">
           <StatusEffect type="OnContaining" target="This" AvailableFuel="0" disabledeltatime="true" />
@@ -555,6 +558,9 @@
         </Containable>
         <Containable items="fulguriumfuelrodvolatile">
           <StatusEffect type="OnContaining" target="This" AvailableFuel="150.0" disabledeltatime="true" />
+        </Containable>
+        <Containable items="emptyfuelrod">
+          <StatusEffect type="OnContaining" target="This" AvailableFuel="0" disabledeltatime="true" />
         </Containable>
         <Containable items="huskfigurine">
           <StatusEffect type="OnContaining" target="This" AvailableFuel="0" disabledeltatime="true" />
