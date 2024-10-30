@@ -98,7 +98,7 @@
       </Controller>
       <Holdable slots="RightHand,LeftHand" holdpos="0,-30" handle1="0,-30" aimable="false" msg="ItemMsgPickUpSelect">
         <StatusEffect type="OnSpawn" target="This" tags="containradiation" setvalue="true" disabledeltatime="true" />
-        <StatusEffect type="OnContained" target="This" targetitemcomponent="ItemContainer" hideitems="true" drawinventory="false" canbeselected="false" locked="false" allowdraganddrop="true" allowaccess="true" setvalue="true" interval="1.1">
+        <StatusEffect type="OnContained" target="This" targetitemcomponent="ItemContainer" condition="100" hideitems="true" drawinventory="false" canbeselected="false" locked="false" allowdraganddrop="true" allowaccess="true" setvalue="true" interval="1.1">
           <Conditional HasTag="fuelcratecontainer" targetcontainer="true" />
           <Conditional HasTag="coilgunammoloader" targetcontainer="true" />
           <Conditional HasTag="ammoboxcontainer" targetcontainer="true" />
@@ -106,7 +106,7 @@
       </Holdable>
       <ItemContainer selectkey="Use" drawhudwhenequipped="false" drawinventory="false" canbeselected="false" locked="true" allowdraganddrop="false" allowaccess="false" hideitems="true" capacity="8" maxstacksize="1" itempos="-30,4" iteminterval="20,1" itemrotation="0" itemsperrow="4" AllowSwappingContainedItems="false" containedspritedepths="0.537,0.537,0.537,0.537,0.538,0.538,0.538,0.538" slotsperrow="4" canbecombined="false" removecontaineditemsondeconstruct="true">
         <GuiFrame relativesize="0.2,0.2" anchor="Center" style="ItemUI" />
-        <Containable items="reactorfuel" />
+        <Containable items="reactorfuel,emptyfuelrod,depletedfuel" />
       </ItemContainer>
     </Item>
   </Override>
