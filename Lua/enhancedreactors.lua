@@ -36,6 +36,12 @@ local fuelRods = {
         contaminated = 3,
         radiationSounds = 5.5,
         overheating = 3,
+    },
+    ["emptyfuelrod"] = {
+        radiationSickness = 0.1,
+        contaminated = 0.2,
+        radiationSounds = 1.5,
+        overheating = 0.2,
     }
 }
 
@@ -47,7 +53,7 @@ EnhancedReactors.ProcessItem = function (item)
 
     if fuelRods[item.Prefab.Identifier.Value] then
         item.AddTag("lua_managed")
-        item.AddTag("fuelrod")
+        -- item.AddTag("fuelrod")
         table.insert(EnhancedReactors.ManagedItems, item)
     end
 end
@@ -92,7 +98,7 @@ EnhancedReactors.ProcessItemUpdate = function (item)
         end
     end
 
-    if item.HasTag("reactorfuel") and item.HasTag("activefuelrod") then
+    if item.HasTag("fuelroditem") and item.HasTag("activefuelrod") then
         local inventory = item.ParentInventory
 
         local parentItem = nil
