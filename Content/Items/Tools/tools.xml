@@ -305,7 +305,7 @@
         <!-- Once the fuel rod reaches 0.0%, remove it and spawn an empty fuel rod in its place -->
         <StatusEffect type="OnBroken" target="This">
           <Remove />
-          <SpawnItem identifier="emptyfuelrod" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+          <SpawnItem identifier="emptyfuelrod" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" condition="0" />
         </StatusEffect>
         <!-- slowly drain the fuel rod over time if the fission process was started | disabled inside reactors to allow reactors set to not consume fuel and beacon missions to play out normally unless condition is 0 -->
         <StatusEffect type="OnActive" target="This" interval="1" condition="-0.05" disabledeltatime="true" comparison="And">
@@ -535,7 +535,7 @@
         <!-- Once the fuel rod reaches 0.0%, remove it and spawn an empty fuel rod in its place -->
         <StatusEffect type="OnBroken" target="This">
           <Remove />
-          <SpawnItem identifier="emptyfuelrod" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+          <SpawnItem identifier="emptyfuelrod" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" condition="0" />
         </StatusEffect>
         <!-- slowly drain the fuel rod over time if the fission process was started | disabled inside reactors to allow reactors set to not consume fuel and beacon missions to play out normally unless condition is 0 -->
         <StatusEffect type="OnActive" target="This" interval="1" condition="-0.05" disabledeltatime="true" comparison="And">
@@ -762,7 +762,7 @@
         <!-- Once the fuel rod reaches 0.0%, remove it and spawn an empty fuel rod in its place -->
         <StatusEffect type="OnBroken" target="This">
           <Remove />
-          <SpawnItem identifier="emptyfuelrod" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+          <SpawnItem identifier="emptyfuelrod" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" condition="0" />
         </StatusEffect>
         <!-- slowly drain the fuel rod over time if the fission process was started | disabled inside reactors to allow reactors set to not consume fuel and beacon missions to play out normally unless condition is 0 -->
         <StatusEffect type="OnActive" target="This" interval="1" condition="-0.05" disabledeltatime="true" comparison="And">
@@ -987,7 +987,7 @@
         <!-- Once the fuel rod reaches 0.0%, remove it and spawn an empty fuel rod in its place -->
         <StatusEffect type="OnBroken" target="This">
           <Remove />
-          <SpawnItem identifier="emptyfuelrod" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+          <SpawnItem identifier="emptyfuelrod" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" condition="0" />
         </StatusEffect>
         <!-- slowly drain the fuel rod over time if the fission process was started | disabled inside reactors to allow reactors set to not consume fuel and beacon missions to play out normally unless condition is 0 -->
         <StatusEffect type="OnActive" target="This" interval="1" condition="-0.05" disabledeltatime="true" comparison="And">
@@ -1181,23 +1181,23 @@
       <Sprite texture="%ModDir:3045796581%/Content/Items/ER-ItemsAtlas.png" depth="0.55" sourcerect="148,212,19,68" />
       <Body radius="6" height="55" density="13" />
       <ItemComponent canbeselected="false" canbepicked="false" allowingameediting="false">
-        <StatusEffect type="OnContained" target="Parent" tags="containradiation" duration="0.1" setvalue="true" comparison="And">
+        <StatusEffect type="OnContained" target="Parent" tags="containradiation" duration="0.1" setvalue="true" comparison="And" AllowWhenBroken="true">
           <Hook name="EnhancedReactors.Disable" />
           <Conditional HasTag="deconstructor" />
           <Conditional IsActive="eq true" />
           <Conditional Voltage="gt 0.1" />
         </StatusEffect>
-        <StatusEffect type="OnContained" target="Parent" tags="containradiation" duration="0.1" setvalue="true" comparison="And">
+        <StatusEffect type="OnContained" target="Parent" tags="containradiation" duration="0.1" setvalue="true" comparison="And" AllowWhenBroken="true">
           <Hook name="EnhancedReactors.Disable" />
           <Conditional HasTag="fabricator" />
           <Conditional IsActive="eq true" />
           <Conditional Voltage="gt 0.1" />
         </StatusEffect>
       </ItemComponent>
-      <LightComponent range="50.0" lightcolor="200,225,255,20" flicker="0.2" flickerspeed="0.1" castshadows="false" alphablend="false" allowingameediting="false" powerconsumption="0">
+      <LightComponent range="50.0" lightcolor="200,225,255,20" flicker="0.2" flickerspeed="0.1" castshadows="false" alphablend="false" allowingameediting="false" powerconsumption="0" AllowWhenBroken="true">
         <IsActive HasTag="activefuelrod" />
         <!-- check if near a character and tag the item to allow the StatusEffects to trigger | Prevents performance impact when far away from the item -->
-        <StatusEffect type="Always" target="This,NearbyCharacters" range="10000" tags="nearcharacter" interval="1" duration="1.1" comparison="And">
+        <StatusEffect type="Always" target="This,NearbyCharacters" range="10000" tags="nearcharacter" interval="1" duration="1.1" comparison="And" AllowWhenBroken="true">
           <!-- <Hook name="EnhancedReactors.Disable" /> -->
           <Conditional isPlayer="true" />
         </StatusEffect>
@@ -1259,7 +1259,7 @@
           </Explosion>
         </StatusEffect>
         <!-- create smoke particles and an explosion that deals high item and structure damage to anything within 1m, if fission process was started and the fuel rod is not contained and not in water -->
-        <StatusEffect type="OnNotContained" target="This" interval="0.2" comparison="And">
+        <StatusEffect type="OnNotContained" target="This" interval="0.2" comparison="And" AllowWhenBroken="true">
           <Conditional InWater="false" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
@@ -1267,7 +1267,7 @@
           <ParticleEmitter particle="smoke" particlespersecond="50" scalemin="0.2" scalemax="0.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" />
         </StatusEffect>
         <!-- create underwater bubble particles and an explosion that deals high item and structure damage to anything within 1m, if the fission process was started and the fuel rod is not contained and within water -->
-        <StatusEffect type="OnNotContained" target="This" interval="0.2" comparison="And">
+        <StatusEffect type="OnNotContained" target="This" interval="0.2" comparison="And" AllowWhenBroken="true">
           <Conditional InWater="true" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
@@ -1282,20 +1282,20 @@
           <Conditional HasTag="activefuelrod" targetcontaineditem="True" />
           <Affliction identifier="fuelrodrage" amount="60" />
         </StatusEffect> -->
-        <StatusEffect type="OnUse" target="This">
+        <StatusEffect type="OnUse" target="This" AllowWhenBroken="true">
           <Conditional HasTag="activefuelrod" />
           <Sound file="%ModDir:3045796581%/Content/Items/Tools/gulp.ogg" volume="1" loop="false" range="500" />
           <Remove />
         </StatusEffect>
       </Holdable>
-      <Throwable handle1="0,0" slots="RightHand,LeftHand" msg="ItemMsgPickUpSelect" canBeCombined="false" throwforce="3.5" aimpos="35,-10" />
+      <Throwable handle1="0,0" slots="RightHand,LeftHand" msg="ItemMsgPickUpSelect" canBeCombined="false" throwforce="3.5" aimpos="35,-10" AllowWhenBroken="true" />
       <Projectile characterusable="false" launchimpulse="15" impulsespread="0.01" sticktocharacters="true" sticktoitems="false" sticktostructures="false" sticktodoors="false">
         <Attack targetimpulse="3" severlimbsprobability="0.1" itemdamage="1" structuredamage="0" structuresoundtype="StructureSlash">
           <Affliction identifier="blunttrauma" strength="2" />
           <Affliction identifier="blunttrauma" strength="2" probability="0.25" />
           <Affliction identifier="stun" strength="0.2" />
         </Attack>
-        <StatusEffect type="OnImpact" target="UseTarget">
+        <StatusEffect type="OnImpact" target="UseTarget" AllowWhenBroken="true">
           <Conditional entitytype="Character" />
           <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="1000" />
           <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="1000" />
