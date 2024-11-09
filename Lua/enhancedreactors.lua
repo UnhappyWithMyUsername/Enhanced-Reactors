@@ -131,7 +131,7 @@ EnhancedReactors.ProcessItemUpdate = function (item)
             })
             end
 
-            if parentCharacter then
+            if parentCharacter and not item.HasTag("emptyfuelrod") then
                 local slot = inventory.FindIndex(item)
 
                 if slot == inventory.FindLimbSlot(InvSlotType.RightHand) then
