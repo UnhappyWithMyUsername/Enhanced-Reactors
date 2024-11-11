@@ -146,7 +146,7 @@
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0"/>
     </Affliction>
     <Affliction
-      name="Check for Radiation"
+      name="Check for Contamination"
       identifier="checkifcontaminated"
       limbspecific="false"
       indicatorlimb="Head"
@@ -204,6 +204,13 @@
           <Conditional radiationsounds="gte 3" />
           <ReduceAffliction identifier="radiationsounds" amount="1000" />
           <Sound file="%ModDir:3045796581%/Content/Sounds/Damage/extremeradiation.ogg" volume="1.0" loop="true" range="350" />
+        </StatusEffect>
+        <!-- remove small amounts of radiationsounds affliction to prevent it from building up and sounding the geiger counter through small amounts applying through walls/doors when it shouldn't be detected -->
+        <StatusEffect target="Character" interval="0.1" stackable="false" disabledeltatime="true" comparison="And">
+          <Conditional HasStatusTag="hasgeigercounter" />
+          <Conditional radiationsounds="gte 0.01" />
+          <Conditional radiationsounds="lt 0.1" />
+          <ReduceAffliction identifier="radiationsounds" amount="1000" />
         </StatusEffect>
       </Effect>
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0"/>
