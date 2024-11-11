@@ -1287,6 +1287,9 @@
           <Sound file="%ModDir:3045796581%/Content/Items/Tools/gulp.ogg" volume="1" loop="false" range="500" />
           <Remove />
         </StatusEffect>
+        <StatusEffect type="OnContained" target="This" condition="0.0" setvalue="true" disabledeltatime="true" oneshot="true">
+          <Conditional condition="gt 0" />
+        </StatusEffect>
       </Holdable>
       <Throwable handle1="0,0" slots="RightHand,LeftHand" msg="ItemMsgPickUpSelect" canBeCombined="false" throwforce="3.5" aimpos="35,-10" AllowWhenBroken="true" />
       <Projectile characterusable="false" launchimpulse="15" impulsespread="0.01" sticktocharacters="true" sticktoitems="false" sticktostructures="false" sticktodoors="false">
