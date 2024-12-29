@@ -7,7 +7,7 @@
   <!-- Description: Light protection from radiation, useful as a precaution of an imminent low radiation hazard. -->
   <!-- *************************************************************************************************************************************************************************** -->
   <Override>
-    <Item name="Potassium Iodide Tablets" identifier="potassiumiodidetablets" category="Medical" Tags="smallitem,medical" maxstacksize="32" maxstacksizecharacterinventory="8" useinhealthinterface="true" cargocontaineridentifier="mediccrate" description="Light protection from radiation, useful as a precaution of an imminent low radiation hazard. Reduces low amounts of contamination." scale="0.3" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+    <Item name="Potassium Iodide Tablets" identifier="potassiumiodidetablets" category="Medical" Tags="smallitem,medical,mountableweapon" maxstacksize="32" maxstacksizecharacterinventory="8" useinhealthinterface="true" cargocontaineridentifier="mediccrate" description="Light protection from radiation, useful as a precaution of an imminent low radiation hazard. Reduces low amounts of contamination." scale="0.3" impactsoundtag="impact_metal_light" RequireAimToUse="True">
       <PreferredContainer secondary="supplycab" minamount="1" maxamount="2" spawnprobability="0.1" notcampaign="true"/>
       <PreferredContainer secondary="reactorcab" amount="1" spawnprobability="1" />
       <PreferredContainer secondary="abandonedengcab,wreckengcab,outpostengcab" minamount="1" maxamount="2" spawnprobability="0.1"/>
@@ -65,7 +65,7 @@
   <!-- Description: Used to cure low amounts of poisoning and radiation. Excessive use can be harmful. -->
   <!-- *************************************************************************************************************************************************************************** -->
   <Override>
-    <Item name="Activated Carbon Tablets" identifier="activatedcarbontablets" category="Medical" Tags="smallitem,medical" maxstacksize="32" maxstacksizecharacterinventory="8" useinhealthinterface="true" cargocontaineridentifier="mediccrate" description="Used to cure low amounts of poisoning and radiation. Useless against contamination. Excessive use can be harmful." scale="0.3" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+    <Item name="Activated Carbon Tablets" identifier="activatedcarbontablets" category="Medical" Tags="smallitem,medical,mountableweapon" maxstacksize="32" maxstacksizecharacterinventory="8" useinhealthinterface="true" cargocontaineridentifier="mediccrate" description="Used to cure low amounts of poisoning and radiation. Useless against contamination. Excessive use can be harmful." scale="0.3" impactsoundtag="impact_metal_light" RequireAimToUse="True">
       <PreferredContainer secondary="supplycab" minamount="1" maxamount="2" spawnprobability="0.1" notcampaign="true"/>
       <PreferredContainer secondary="abandonedengcab,wreckengcab,outpostengcab" minamount="1" maxamount="2" spawnprobability="0.1"/>
       <PreferredContainer secondary="wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.05" />
@@ -126,7 +126,7 @@
   <!-- Slows down cellular degradation caused by radiation. -->
   <!-- *************************************************************************************************************************************************************************** -->
   <Override>  
-    <AntiRad name="" identifier="antirad" category="Medical" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" Tags="smallitem,chem,medical,syringe" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+    <AntiRad name="" identifier="antirad" category="Medical" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" Tags="smallitem,chem,medical,syringe,mountableweapon" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
       <Upgrade gameversion="0.10.0.0" scale="0.5" />
       <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.1" />
       <PreferredContainer secondary="outpostmedcab" amount="1" spawnprobability="0.2" />
@@ -189,7 +189,7 @@
   <!-- Decontamination Solution. Reduces contamination when sprayed at the character with a sprayer. -->
   <!-- *************************************************************************************************************************************************************************** -->
   <Override>
-    <Item name="Deconsol" identifier="deconsoltank" category="Equipment,Fuel" health="100" maxstacksize="8" maxstacksizecharacterinventory="1" MaxStackSizeHoldableOrWearableInventory="1" Tags="smallitem,medical,deconsol" description="A decontamination solution. Needs to be sprayed onto a contaminated person by using a sprayer." cargocontaineridentifier="mediccrate" scale="0.5" impactsoundtag="impact_metal_light">
+    <Item name="Deconsol" identifier="deconsoltank" category="Equipment,Fuel" health="100" maxstacksize="8" maxstacksizecharacterinventory="1" MaxStackSizeHoldableOrWearableInventory="1" Tags="smallitem,medical,deconsol,mountableweapon" description="A decontamination solution. Needs to be sprayed onto a contaminated person by using a sprayer." cargocontaineridentifier="mediccrate" scale="0.5" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="medcab" secondary="medcontainer"/>
       <PreferredContainer primary="reactorcab" amount="1" spawnprobability="1" />
       <PreferredContainer primary="sprayer" amount="1" spawnprobability="0.25"/>

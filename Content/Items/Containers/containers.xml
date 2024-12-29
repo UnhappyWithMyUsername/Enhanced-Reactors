@@ -21,7 +21,7 @@
     </Item>
   </Override>
   <Override>
-    <Item name="Radioactive Material Container" identifier="radioactivematcontainer" category="Equipment" tags="mediumitem,mobilecontainer,tool,radioactivematstorage,containradiation" cargocontaineridentifier="" showcontentsintooltip="true" Scale="0.5" fireproof="true" description="Can safely store up to 6 stacks of radioactive minerals." impactsoundtag="impact_metal_heavy" RequireAimToUse="True">
+    <Item name="Radioactive Material Container" identifier="radioactivematcontainer" category="Equipment" tags="mediumitem,mobilecontainer,tool,radioactivematstorage,containradiation,mountableweapon" cargocontaineridentifier="" showcontentsintooltip="true" Scale="0.5" fireproof="true" description="Can safely store up to 6 stacks of radioactive minerals." impactsoundtag="impact_metal_heavy" RequireAimToUse="True">
       <PreferredContainer primary="locker" />
       <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab" amount="1" spawnprobability="0.05"/>
       <PreferredContainer secondary="outpostcrewcabinet" amount="1" spawnprobability="0.1"/>

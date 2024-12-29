@@ -119,7 +119,7 @@
       </ItemComponent>
       <aitarget sightrange="2000" soundrange="500" fadeouttime="3" />
     </Item>
-    <Item name="Geiger Counter" identifier="geigercounter" category="Equipment,Electrical" maxstacksize="4" tags="smallitem,loadable,geigercounter" scale="0.5" cargocontaineridentifier="metalcrate" description="Allows you to detect radiation. Can be used on characters." useinhealthinterface="true" impactsoundtag="impact_metal_light">
+    <Item name="Geiger Counter" identifier="geigercounter" category="Equipment,Electrical" maxstacksize="4" tags="smallitem,loadable,geigercounter,mountableweapon" scale="0.5" cargocontaineridentifier="metalcrate" description="Allows you to detect radiation. Can be used on characters." useinhealthinterface="true" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="batterycellrecharger" maxcondition="80"/>
       <PreferredContainer primary="reactorcab" amount="1" spawnprobability="1" />
       <PreferredContainer secondary="abandonedengcab,wreckengcab,outpostengcab" minamount="1" maxamount="2" spawnprobability="0.1"/>
@@ -180,7 +180,7 @@
         <QualityStat stattype="Condition" value="0.1"/>
       </Quality>
     </Item>
-    <Item name="Fuel Rod Tongs" identifier="fuelrodtongs" Category="Equipment" Tags="smallitem,tongs" description="Required to move active fuel rods around without burning your hands in the process. Can be stored in a toolbelt." maxstacksize="1" cargocontaineridentifier="metalcrate" scale="0.5" spritecolor="255,255,255,255" impactsoundtag="impact_metal_light">
+    <Item name="Fuel Rod Tongs" identifier="fuelrodtongs" Category="Equipment" Tags="smallitem,tongs,mountableweapon" description="Required to move active fuel rods around without burning your hands in the process. Can be stored in a toolbelt." maxstacksize="1" cargocontaineridentifier="metalcrate" scale="0.5" spritecolor="255,255,255,255" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="reactorcab" amount="1" spawnprobability="1" />
       <PreferredContainer secondary="wreckreactorcab,abandonedreactorcab" minamount="1" maxamount="2" spawnprobability="0.3"/>
       <InventoryIcon texture="%ModDir:3045796581%/Content/Items/ER-ItemsAtlas.png" sourcerect="1,366,94,94" origin="0.5,0.5" />
@@ -252,7 +252,7 @@
       </ItemContainer>
     </Item>
     <!-- cargoscooter tag is used to prevent storing the fuel rod in metal crates -->
-    <Item name="" identifier="fuelrod" Category="Fuel" Tags="fuelroditem,mediumitem,reactorfuel,fuelroduranium,cargoscooter" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
+    <Item name="" identifier="fuelrod" Category="Fuel" Tags="fuelroditem,mediumitem,reactorfuel,fuelroduranium,cargoscooter,mountableweapon" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
       <PreferredContainer primary="fuelrodcrate" secondary="reactorcab"/>
       <PreferredContainer secondary="fuelrodcontainer" minamount="1" maxamount="3" spawnprobability="0.4"/>
       <PreferredContainer secondary="nucleargun" minamount="1" maxamount="1" spawnprobability="1"/>
@@ -483,7 +483,7 @@
       <AiTarget sightrange="4000"/>
     </Item>
     <!-- cargoscooter tag is used to prevent storing the fuel rod in metal crates -->
-    <Item name="" identifier="thoriumfuelrod" Category="Fuel" Tags="fuelroditem,mediumitem,reactorfuel,fuelrodthorium,cargoscooter" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" health="200" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
+    <Item name="" identifier="thoriumfuelrod" Category="Fuel" Tags="fuelroditem,mediumitem,reactorfuel,fuelrodthorium,cargoscooter,mountableweapon" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" health="200" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
       <PreferredContainer primary="fuelrodcrate" secondary="reactorcab"/>
       <PreferredContainer secondary="fuelrodcontainer" minamount="1" maxamount="2" spawnprobability="0.2"/>
       <PreferredContainer secondary="wreckreactorcab,abandonedreactorcab" amount="1" spawnprobability="0.1"/>
@@ -710,7 +710,7 @@
       <AiTarget sightrange="5000"/>
     </Item>
     <!-- cargoscooter tag is used to prevent storing the fuel rod in metal crates -->
-    <Item name="" identifier="fulguriumfuelrod" Category="Fuel" Tags="fuelroditem,mediumitem,reactorfuel,fuelrodfulgurium,cargoscooter" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" health="150" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
+    <Item name="" identifier="fulguriumfuelrod" Category="Fuel" Tags="fuelroditem,mediumitem,reactorfuel,fuelrodfulgurium,cargoscooter,mountableweapon" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" health="150" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
       <PreferredContainer primary="fuelrodcrate" secondary="reactorcab"/>
       <PreferredContainer secondary="fuelrodcontainer" amount="1" spawnprobability="0.1"/>
       <PreferredContainer secondary="wreckreactorcab,abandonedreactorcab" amount="1" spawnprobability="0.2"/>
@@ -938,7 +938,7 @@
       <AiTarget sightrange="6000"/>
     </Item>
     <!-- cargoscooter tag is used to prevent storing the fuel rod in metal crates -->
-    <Item name="" identifier="fulguriumfuelrodvolatile" category="Fuel" Tags="fuelroditem,mediumitem,reactorfuel,fuelrodvolatilefulgurium,activefuelrod,cargoscooter" maxstacksize="8" allowasextracargo="true" cargocontaineridentifier="fuelrodcrate" health="400" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
+    <Item name="" identifier="fulguriumfuelrodvolatile" category="Fuel" Tags="fuelroditem,mediumitem,reactorfuel,fuelrodvolatilefulgurium,activefuelrod,cargoscooter,mountableweapon" maxstacksize="8" allowasextracargo="true" cargocontaineridentifier="fuelrodcrate" health="400" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
       <PreferredContainer primary="fuelrodcrate" secondary="reactorcab"/>
       <Price baseprice="400" sold="false" displaynonempty="true">
         <Price storeidentifier="merchantoutpost" />
@@ -1162,7 +1162,7 @@
       <AiTarget sightrange="7000"/>
     </Item>
     <!-- cargoscooter tag is used to prevent storing the fuel rod in metal crates -->
-    <Item name="Empty Fuel Rod" identifier="emptyfuelrod" Category="Fuel" Tags="fuelroditem,mediumitem,emptyfuelrod,fuelroduranium,fuelrodthorium,fuelrodfulgurium,fuelrodvolatilefulgurium,activefuelrod,cargoscooter" description="An empty fuel rod. It's still irradiating a fair amount of warmth and radiation." maxstacksize="8" cargocontaineridentifier="fuelrodcrate" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
+    <Item name="Empty Fuel Rod" identifier="emptyfuelrod" Category="Fuel" Tags="fuelroditem,mediumitem,emptyfuelrod,fuelroduranium,fuelrodthorium,fuelrodfulgurium,fuelrodvolatilefulgurium,activefuelrod,cargoscooter,mountableweapon" description="An empty fuel rod. It's still irradiating a fair amount of warmth and radiation." maxstacksize="8" cargocontaineridentifier="fuelrodcrate" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
       <PreferredContainer primary="fuelrodcrate" secondary="reactorcab" />
       <PreferredContainer secondary="wreckreactor" amount="1" mincondition="0.5" maxcondition="0.99" spawnprobability="0.2"/>
       <Price baseprice="50" displaynonempty="true" sold="false">
@@ -1310,7 +1310,7 @@
       </Projectile>
       <AiTarget sightrange="1000"/>
     </Item>
-    <Item name="" identifier="depletedfuel" category="Fuel,Material" maxstacksize="8" Tags="smallitem,depletedfuel" canbepicked="true" cargocontaineridentifier="metalcrate" allowasextracargo="true" inventoryiconcolor="110,120,110,255" spritecolor="110,120,110" scale="0.4" impactsoundtag="impact_metal_light">
+    <Item name="" identifier="depletedfuel" category="Fuel,Material" maxstacksize="8" Tags="smallitem,depletedfuel,mountableweapon" canbepicked="true" cargocontaineridentifier="metalcrate" allowasextracargo="true" inventoryiconcolor="110,120,110,255" spritecolor="110,120,110" scale="0.4" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="reactorcab"/>    
       <Price baseprice="75" sold="false">
         <Price storeidentifier="merchantoutpost" multiplier="1.3" />
