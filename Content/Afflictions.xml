@@ -127,10 +127,10 @@
         <StatusEffect type="OnActive" target="Character" targetlimb="RightHand" duration="0.1">
           <ParticleEmitter particle="spray" colormultiplier="200,200,200" copyentityangle="false" particlespersecond="2" anglemin="0" anglemax="360" scalemin="2.3" scalemax="4.6" velocitymin="10" velocitymax="10" highqualitycollisiondetection="true" />
         </StatusEffect>
-        <StatusEffect type="OnActive" target="Character" targetlimb="LeftForarm" duration="0.1">
+        <StatusEffect type="OnActive" target="Character" targetlimb="LeftForearm" duration="0.1">
           <ParticleEmitter particle="spray" colormultiplier="200,200,200" copyentityangle="false" particlespersecond="2" anglemin="0" anglemax="360" scalemin="2.3" scalemax="4.6" velocitymin="10" velocitymax="10" highqualitycollisiondetection="true" />
         </StatusEffect>
-        <StatusEffect type="OnActive" target="Character" targetlimb="RightForarm" duration="0.1">
+        <StatusEffect type="OnActive" target="Character" targetlimb="RightForearm" duration="0.1">
           <ParticleEmitter particle="spray" colormultiplier="200,200,200" copyentityangle="false" particlespersecond="2" anglemin="0" anglemax="360" scalemin="2.3" scalemax="4.6" velocitymin="10" velocitymax="10" highqualitycollisiondetection="true" />
         </StatusEffect>
         <StatusEffect type="OnActive" target="Character" targetlimb="Waist" duration="0.1">
