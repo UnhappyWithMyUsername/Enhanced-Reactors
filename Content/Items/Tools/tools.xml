@@ -1277,6 +1277,17 @@
       </LightComponent>
       <!-- Requires both <Holdable> to apply burn when held as this doesn't work in other components and <Throwable> to make it throwable -->
       <Holdable handle1="0,0" slots="RightHand,LeftHand" msg="ItemMsgPickUpSelect" canBeCombined="false" throwforce="3.5" aimpos="35,-10">
+        <!-- apply burn to the hands when holding the fuel rod if the fission process was started -->
+        <StatusEffect type="Always" target="This,Character" targetlimbs="LeftHand,RightHand" interval="0.2" disabledeltatime="true" comparison="And">
+          <Hook name="EnhancedReactors.Disable" />
+          <Conditional HasTag="eq activefuelrod" />
+          <Conditional HasStatusTag="eq nearcharacter" />
+          <Conditional IsPlayer="eq true" />
+          <Conditional HasTag="neq deepdivinglarge" targetcontainer="true" />
+          <Conditional HasTag="neq containradiation" targetcontainer="true" />
+          <Conditional HasStatusTag="neq containradiation" targetcontainer="true" />
+          <Affliction identifier="burn" amount="1.5" />
+        </StatusEffect>
         <!-- Eat the fuel rod -->
         <!-- <StatusEffect type="OnUse" target="Character" disabledeltatime="true" setvalue="true" multiplyafflictionsbymaxvitality="true">
           <Conditional HasTag="activefuelrod" targetcontaineditem="True" />

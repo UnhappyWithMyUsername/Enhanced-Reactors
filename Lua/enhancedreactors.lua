@@ -140,6 +140,16 @@ EnhancedReactors.ProcessItemUpdate = function (item)
                     parentCharacter.CharacterHealth.ApplyAffliction(parentCharacter.AnimController.GetLimb(InvSlotType.LeftHand), burn.Instantiate(1))
                 end
             end
+
+            if parentCharacter and item.HasTag("emptyfuelrod") then
+                local slot = inventory.FindIndex(item)
+
+                if slot == inventory.FindLimbSlot(InvSlotType.RightHand) then
+                    parentCharacter.CharacterHealth.ApplyAffliction(parentCharacter.AnimController.GetLimb(InvSlotType.RightHand), burn.Instantiate(0.5))
+                elseif slot == inventory.FindLimbSlot(InvSlotType.LeftHand) then
+                    parentCharacter.CharacterHealth.ApplyAffliction(parentCharacter.AnimController.GetLimb(InvSlotType.LeftHand), burn.Instantiate(0.5))
+                end
+            end
         end
 
         if reactor then
