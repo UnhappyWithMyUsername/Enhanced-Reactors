@@ -1,0 +1,15 @@
+[hr]header
+
+[b]Bold Text[/b]
+
+[u]Underlined[/u]
+
+[List]
+[*] List
+[*] List
+[*] List
+[/List]
+
+------------------------------Changelog:------------------------------
+
+- Changed "Empty Fuel Rod" to apply burns to hands. Previously they didn't cause burns which caused the tongs to no longer be a necessity
