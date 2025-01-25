@@ -12,4 +12,5 @@
 
 ------------------------------Changelog:------------------------------
 
-- Changed "Empty Fuel Rod" to apply burns to hands. Previously they didn't cause burns which caused the tongs to no longer be a necessity
+- Added override for the "Fun with Fission" talent to also affect crafting quality of nuclear cartridges.
+- Changed "Empty Fuel Rod" to apply burns to hands. Previously they didn't cause burns which caused the tongs to no longer be a necessity.
