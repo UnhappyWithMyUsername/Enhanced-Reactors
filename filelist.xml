@@ -16,6 +16,7 @@
   <Item file="%ModDir%/Content/Items/Reactor/reactor_ek.xml" />
   <Item file="%ModDir%/Content/Items/Tools/tools.xml" />
   <Particles file="%ModDir%/Content/Particles/ParticlePrefabs.xml" />
+  <RandomEvents file="%ModDir%/Content/Events/Events.xml" />
   <Sounds file="%ModDir%/Content/Sounds/sounds.xml" />
   <Talents file="%ModDir%/Content/Talents/Engineer/TalentsEngineer.xml" />
   <Text file="%ModDir%/Content/Texts/English.xml" />
