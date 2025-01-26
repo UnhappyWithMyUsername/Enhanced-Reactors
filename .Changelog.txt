@@ -14,3 +14,4 @@
 
 - Added override for the "Fun with Fission" talent to also affect crafting quality of nuclear cartridges.
 - Changed "Empty Fuel Rod" to apply burns to hands. Previously they didn't cause burns which caused the tongs to no longer be a necessity.
+- Fixed fuel rod issues with exosuits. The new tag that exosuits were now using was missing on fuel rods, causing them to drop out of the inventory.
