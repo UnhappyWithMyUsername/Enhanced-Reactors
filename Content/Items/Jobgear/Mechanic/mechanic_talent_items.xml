@@ -145,7 +145,7 @@
         </StatusEffect>      
         <StatusEffect type="OnWearing" target="Contained,Character" Condition="-0.1" interval="1" disabledeltatime="true" targetslot="1" comparison="Or">
           <Conditional IsDead="false" />
-          <RequiredItem items="reactorfuel" targetslot="1" type="Contained" />
+          <RequiredItem items="divingsuitfuel" targetslot="1" type="Contained" />
         </StatusEffect>
         <!-- 0 movement speed when out of fuel-->
         <StatusEffect type="OnWearing" target="This,Character" SpeedMultiplier="-10.0" setvalue="true" disabledeltatime="true">
@@ -162,7 +162,7 @@
         <sound file="Content/Items/Weapons/WEAPONS_chargeUp.ogg" type="OnWearing" range="500.0" volumeproperty="Speed" volume="0.2" loop="true" frequencymultiplier="0.5" />
         <StatValue stattype="FlowResistance" value="0.9" />
       </Wearable>
-      <ItemContainer capacity="0" hideitems="true" containedstateindicatorstyle="tank" containedstateindicatorslot="0">
+      <ItemContainer canbeselected="true" selectkey="Use" capacity="0" hideitems="true" containedstateindicatorstyle="tank" containedstateindicatorslot="0">
         <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
         <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="192,448,64,64" origin="0.5,0.5" />
         <StatusEffect type="OnWearing" target="Contained" targetslot="0" playsoundonrequireditemfailure="true">
@@ -218,7 +218,7 @@
           </Containable> 
         </SubContainer>
         <SubContainer capacity="1" maxstacksize="1">
-          <Containable items="reactorfuel">
+          <Containable items="divingsuitfuel">
             <StatusEffect type="OnContaining" target="This,Character" Voltage="1.0" setvalue="true">
               <Conditional IsDead="false" />
             </StatusEffect>
