@@ -153,7 +153,7 @@
         <sound file="Content/Items/Reactor/Reactor.ogg" type="OnActive" range="600.0" volumeproperty="FissionRate" volume="0.02" loop="true" />
         <!-- fuel rod explosion -->
         <StatusEffect type="OnBroken" target="This" FissionRate="0.0" disabledeltatime="true">
-          <RequiredItem items="fuelrod" type="contained" />
+          <RequiredItem items="fuelrod,fuelrod_outpost" type="contained" />
           <Conditional fissionrate="gt 1.0" />
           <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="50000" />
           <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="50000" />
@@ -288,6 +288,9 @@
         <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="192,448,64,64" origin="0.5,0.5" />
         <SlotIcon slotindex="2" texture="Content/UI/StatusMonitorUI.png" sourcerect="192,448,64,64" origin="0.5,0.5" />
         <SlotIcon slotindex="3" texture="Content/UI/StatusMonitorUI.png" sourcerect="192,448,64,64" origin="0.5,0.5" />
+        <Containable items="fuelrod_outpost">
+          <StatusEffect type="OnContaining" target="This" AvailableFuel="100.0" disabledeltatime="true" />
+        </Containable>
         <Containable items="fuelrod">
           <StatusEffect type="OnContaining" target="This" AvailableFuel="80.0" disabledeltatime="true" />
         </Containable>
@@ -416,7 +419,7 @@
         <sound file="Content/Items/Reactor/Reactor.ogg" type="OnActive" range="600.0" volumeproperty="FissionRate" volume="0.02" loop="true" />
         <!-- fuel rod explosion -->
         <StatusEffect type="OnBroken" target="This" FissionRate="0.0" disabledeltatime="true">
-          <RequiredItem items="fuelrod" type="contained" />
+          <RequiredItem items="fuelrod,fuelrod_outpost" type="contained" />
           <Conditional fissionrate="gt 1.0" />
           <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="50000" />
           <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="50000" />
@@ -547,6 +550,9 @@
         <SlotIcon slotindex="2" texture="Content/UI/StatusMonitorUI.png" sourcerect="192,448,64,64" origin="0.5,0.5" />
         <SlotIcon slotindex="3" texture="Content/UI/StatusMonitorUI.png" sourcerect="192,448,64,64" origin="0.5,0.5" />
         <RequiredItem items="idcard" type="Picked" msg="ItemMsgUnauthorizedAccess" ignoreineditor="true" />
+        <Containable items="fuelrod_outpost">
+          <StatusEffect type="OnContaining" target="This" AvailableFuel="100.0" disabledeltatime="true" />
+        </Containable>
         <Containable items="fuelrod">
           <StatusEffect type="OnContaining" target="This" AvailableFuel="80.0" disabledeltatime="true" />
         </Containable>
