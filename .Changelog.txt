@@ -12,8 +12,4 @@
 
 ------------------------------Changelog:------------------------------
 
-- Added an event to adjust enemy submarine reactors to work with the mod and minimize AI issues, but due to a game bug this event will currently not load yet. It should automatically start working in a future game version once the game devs fixed the bug.
-- Added an event to adjust outpost reactors to work with the reactor management add-on mod by replacing any existing fuel rods in the reactor with a custom fuel rod to save on performance and be more compatible with DynamicEuropa's outpost destruction.
-- Added override for the "Fun with Fission" talent to also affect crafting quality of nuclear cartridges.
-- Changed "Empty Fuel Rod" to apply burns to hands. Previously they didn't cause burns which caused the tongs to no longer be a necessity.
-- Fixed fuel rod issues with exosuits. The new "divingsuitfuel" tag that exosuits are now using was missing on fuel rods, causing them to drop out of the inventory.
+- Fixed outpost reactor showing the oxygen generator light sprite after the latest game update.
