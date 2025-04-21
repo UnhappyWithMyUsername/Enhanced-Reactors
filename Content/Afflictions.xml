@@ -1,57 +1,174 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Afflictions>
   <Override>
+    <!-- VANILLA OVERRIDES -->
     <Affliction
-      name="Fuel Rod Rage"
-      identifier="fuelrodrage"
-      description="You're overcharged with nuclear power. All sorts of mutations are happening to your body and you only have a very short time to live!"
+      name="Radiation sickness"
+      identifier="radiationsickness"
+      description="Burns and sores can be seen on patient's skin. They seem to be spreading."
+      type="poison"
       causeofdeathdescription="Died of radiation sickness."
       selfcauseofdeathdescription="You have died of radiation sickness."
-      type="none"
-      isbuff="true"
       limbspecific="false"
       indicatorlimb="Torso"
-      maxstrength="180"
-      iconcolors="0,0,0;50,255,0"
-      showiconthreshold="0"
-      showicontoothersthreshold="0"
-      showinhealthscannerthreshold="0"
-      healableinmedicalclinic="false">
-      <!-- <Description
-        textidentifier="afflictiondescription.oily"
+      showiconthreshold="100"
+      showicontoothersthreshold="1000"
+      showinhealthscannerthreshold="10"
+      karmachangeonapplied="-1"
+      treatmentthreshold="25"
+      maxstrength="200"
+      affectmachines="false"
+      grainburst="3"
+      healcostmultiplier="4.0"
+      MedicalSkillGain="1.0">
+      <Description
+        textidentifier="afflictiondescription.radiationsickness.low.self"
+        target="Self"
         minstrength="0"
-        maxstrength="1800"/> -->
-        <Effect minstrength="0" maxstrength="1" strengthchange="-1"
-        mingrainstrength="1.0"
-        maxgrainstrength="1.0"
-        minchromaticaberration="1.0"
-        maxchromaticaberration="1.0"
-        resistancefor="damage,pressure,stun,incrementalstun,gunshotwound,gaze,fractures,arterialcut,t_amputation,s_amputation,pain,surgeryincision,clampedbleeders,retractedskin,poison,resistance,oxygenlow,bloodloss,organdamage,burn,chemaddiction,invertcontrols,nausea,alieninfection,paralysis,bleeding"
-        minresistance="1"
-        maxresistance="1"
-        multiplybymaxvitality="true"
-        minvitalitydecrease="500"
-        maxvitalitydecrease="500">
-        <StatValue stattype="SwimmingSpeed" minvalue="0.25" maxvalue="0.25" />
-        <StatValue stattype="WalkingSpeed" minvalue="0.25" maxvalue="0.25" />
-        <AbilityFlag flagtype="ImmuneToPressure" />
+        maxstrength="75"/>
+      <Description
+        textidentifier="afflictiondescription.radiationsickness.high.self"
+        target="Self"
+        minstrength="75"
+        maxstrength="200"/>
+      <Description
+        textidentifier="afflictiondescription.radiationsickness"
+        target="OtherCharacter"
+        minstrength="0"
+        maxstrength="75"/>
+      <Description
+        textidentifier="afflictiondescription.radiationsickness.high"
+        target="OtherCharacter"
+        minstrength="75"
+        maxstrength="200"/>
+      <!-- No effects at this level  -->
+      <Effect minstrength="0" maxstrength="10" strengthchange="-0.07" />
+      <!-- Start to irradiate others -->
+      <Effect minstrength="10" maxstrength="25" strengthchange="0.0" >
       </Effect>
-      <Effect minstrength="1" maxstrength="180" strengthchange="-1"
-        mingrainstrength="1.0"
-        maxgrainstrength="1.0"
-        minchromaticaberration="1.0"
-        maxchromaticaberration="1.0"
-        resistancefor="damage,pressure,stun,incrementalstun,gunshotwound,gaze,fractures,arterialcut,t_amputation,s_amputation,pain,surgeryincision,clampedbleeders,retractedskin,poison,resistance,oxygenlow,bloodloss,organdamage,burn,chemaddiction,invertcontrols,nausea,alieninfection,paralysis,bleeding"
-        minresistance="1"
-        maxresistance="1"
-        multiplybymaxvitality="true"
+      <!-- Cause burns depending on strength -->
+      <Effect
+        minstrength="25"
+        maxstrength="50"
+        mingrainstrength="0.0"
+        maxgrainstrength="0.0"
+        strengthchange="0.0"
         minvitalitydecrease="0"
-        maxvitalitydecrease="0">
-        <StatValue stattype="SwimmingSpeed" minvalue="0.25" maxvalue="0.25" />
-        <StatValue stattype="WalkingSpeed" minvalue="0.25" maxvalue="0.25" />
-        <AbilityFlag flagtype="ImmuneToPressure" />
+        maxvitalitydecrease="10">
+        <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" interval="0.2" disabledeltatime="true">
+          <Affliction identifier="burn" amount="0.003" />
+        </StatusEffect>
       </Effect>
-      <icon texture="%ModDir:3045796581%/Content/Items/ER-ItemsAtlas.png" sourcerect="312,95,128,128" color="195,104,60,255" origin="0,0" />
+
+      <Effect
+        minstrength="50"
+        maxstrength="75"
+        mingrainstrength="0.0"
+        maxgrainstrength="0.75"
+        strengthchange="0.0"
+        minchromaticaberration="0.0"
+        maxchromaticaberration="0.0"
+        minbodytint="255,0,0,0"
+        maxbodytint="255,0,0,30"
+        minvitalitydecrease="10"
+        maxvitalitydecrease="20">
+        <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" interval="0.2" disabledeltatime="true">
+          <Affliction identifier="burn" amount="0.0057" />
+          <Affliction identifier="nausea" amount="20.0" probability="0.01" />
+        </StatusEffect>
+      </Effect>
+
+      <Effect
+        minstrength="75"
+        maxstrength="100"
+        mingrainstrength="0.0"
+        maxgrainstrength="0.0"
+        strengthchange="0.0"
+        minchromaticaberration="1.0"
+        maxchromaticaberration="5.0"
+        minbodytint="255,0,0,30"
+        maxbodytint="255,0,0,60"
+        minvitalitydecrease="20"
+        maxvitalitydecrease="30">
+        <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" interval="0.2" disabledeltatime="true">
+          <Affliction identifier="burn" amount="0.0117" />
+          <Affliction identifier="nausea" amount="20.0" probability="0.05" />
+        </StatusEffect>
+      </Effect>
+
+      <Effect
+        minstrength="100"
+        maxstrength="125"
+        mingrainstrength="0.0"
+        maxgrainstrength="1.0"
+        strengthchange="0.0"
+        minchromaticaberration="1.0"
+        maxchromaticaberration="5.0"
+        minbodytint="255,0,0,60"
+        maxbodytint="255,0,0,90"
+        minvitalitydecrease="30"
+        maxvitalitydecrease="40">
+        <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" interval="0.2" disabledeltatime="true">
+          <Affliction identifier="burn" amount="0.0197" />
+          <Affliction identifier="nausea" amount="0.12" />
+        </StatusEffect>
+      </Effect>
+
+      <Effect
+        minstrength="125"
+        maxstrength="150"
+        mingrainstrength="1.0"
+        maxgrainstrength="1.0"
+        strengthchange="0.0"
+        minchromaticaberration="1.0"
+        maxchromaticaberration="5.0"
+        minbodytint="255,0,0,90"
+        maxbodytint="255,0,0,120"
+        minvitalitydecrease="40"
+        maxvitalitydecrease="50">
+        <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" interval="0.2" disabledeltatime="true">
+          <Affliction identifier="burn" amount="0.0277" />
+          <Affliction identifier="nausea" amount="0.14" />
+        </StatusEffect>
+      </Effect>
+
+      <Effect
+        minstrength="150"
+        maxstrength="175"
+        mingrainstrength="1.0"
+        maxgrainstrength="1.0"
+        strengthchange="0.0"
+        minchromaticaberration="1.0"
+        maxchromaticaberration="5.0"
+        minbodytint="255,0,0,120"
+        maxbodytint="255,0,0,150"
+        minvitalitydecrease="50"
+        maxvitalitydecrease="60">
+        <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" interval="0.2" disabledeltatime="true">
+          <Affliction identifier="burn" amount="0.0357" />
+          <Affliction identifier="nausea" amount="0.16" />
+        </StatusEffect>
+      </Effect>
+
+      <Effect
+        minstrength="175"
+        maxstrength="200"
+        mingrainstrength="1.0"
+        maxgrainstrength="0.1"
+        strengthchange="0.0"
+        minchromaticaberration="0.1"
+        maxchromaticaberration="0.5"
+        minbodytint="255,0,0,150"
+        maxbodytint="255,0,0,180"
+        minvitalitydecrease="60"
+        maxvitalitydecrease="70">
+        <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" interval="0.2" disabledeltatime="true">
+          <Affliction identifier="burn" amount="0.0437" />
+          <Affliction identifier="nausea" amount="0.18" />
+        </StatusEffect>
+      </Effect>
+
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,768,128,128" color="195,136,60,255" origin="0,0"/>
     </Affliction>
     <!-- IMMERSIVE REPAIRS COMPATIBILITY -->
     <Oily
@@ -518,174 +635,6 @@
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,768,128,128" color="195,136,60,255" origin="0,0"/>
     </Affliction>
     <Affliction
-      name="Radiation sickness"
-      identifier="radiationsickness"
-      description="Burns and sores can be seen on patient's skin. They seem to be spreading."
-      type="poison"
-      causeofdeathdescription="Died of radiation sickness."
-      selfcauseofdeathdescription="You have died of radiation sickness."
-      limbspecific="false"
-      indicatorlimb="Torso"
-      showiconthreshold="100"
-      showicontoothersthreshold="1000"
-      showinhealthscannerthreshold="10"
-      karmachangeonapplied="-1"
-      treatmentthreshold="25"
-      maxstrength="200"
-      affectmachines="false"
-      grainburst="3"
-      healcostmultiplier="4.0"
-      MedicalSkillGain="1.0">
-      <Description
-        textidentifier="afflictiondescription.radiationsickness.low.self"
-        target="Self"
-        minstrength="0"
-        maxstrength="75"/>
-      <Description
-        textidentifier="afflictiondescription.radiationsickness.high.self"
-        target="Self"
-        minstrength="75"
-        maxstrength="200"/>
-      <Description
-        textidentifier="afflictiondescription.radiationsickness"
-        target="OtherCharacter"
-        minstrength="0"
-        maxstrength="75"/>
-      <Description
-        textidentifier="afflictiondescription.radiationsickness.high"
-        target="OtherCharacter"
-        minstrength="75"
-        maxstrength="200"/>
-      <!-- No effects at this level  -->
-      <Effect minstrength="0" maxstrength="10" strengthchange="-0.07" />
-      <!-- Start to irradiate others -->
-      <Effect minstrength="10" maxstrength="25" strengthchange="0.0" >
-      </Effect>
-      <!-- Cause burns depending on strength -->
-      <Effect
-        minstrength="25"
-        maxstrength="50"
-        mingrainstrength="0.0"
-        maxgrainstrength="0.0"
-        strengthchange="0.0"
-        minvitalitydecrease="0"
-        maxvitalitydecrease="10">
-        <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" interval="0.2" disabledeltatime="true">
-          <Affliction identifier="burn" amount="0.003" />
-        </StatusEffect>
-      </Effect>
-
-      <Effect
-        minstrength="50"
-        maxstrength="75"
-        mingrainstrength="0.0"
-        maxgrainstrength="0.75"
-        strengthchange="0.0"
-        minchromaticaberration="0.0"
-        maxchromaticaberration="0.0"
-        minbodytint="255,0,0,0"
-        maxbodytint="255,0,0,30"
-        minvitalitydecrease="10"
-        maxvitalitydecrease="20">
-        <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" interval="0.2" disabledeltatime="true">
-          <Affliction identifier="burn" amount="0.0057" />
-          <Affliction identifier="nausea" amount="20.0" probability="0.01" />
-        </StatusEffect>
-      </Effect>
-
-      <Effect
-        minstrength="75"
-        maxstrength="100"
-        mingrainstrength="0.0"
-        maxgrainstrength="0.0"
-        strengthchange="0.0"
-        minchromaticaberration="1.0"
-        maxchromaticaberration="5.0"
-        minbodytint="255,0,0,30"
-        maxbodytint="255,0,0,60"
-        minvitalitydecrease="20"
-        maxvitalitydecrease="30">
-        <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" interval="0.2" disabledeltatime="true">
-          <Affliction identifier="burn" amount="0.0117" />
-          <Affliction identifier="nausea" amount="20.0" probability="0.05" />
-        </StatusEffect>
-      </Effect>
-
-      <Effect
-        minstrength="100"
-        maxstrength="125"
-        mingrainstrength="0.0"
-        maxgrainstrength="1.0"
-        strengthchange="0.0"
-        minchromaticaberration="1.0"
-        maxchromaticaberration="5.0"
-        minbodytint="255,0,0,60"
-        maxbodytint="255,0,0,90"
-        minvitalitydecrease="30"
-        maxvitalitydecrease="40">
-        <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" interval="0.2" disabledeltatime="true">
-          <Affliction identifier="burn" amount="0.0197" />
-          <Affliction identifier="nausea" amount="0.12" />
-        </StatusEffect>
-      </Effect>
-
-      <Effect
-        minstrength="125"
-        maxstrength="150"
-        mingrainstrength="1.0"
-        maxgrainstrength="1.0"
-        strengthchange="0.0"
-        minchromaticaberration="1.0"
-        maxchromaticaberration="5.0"
-        minbodytint="255,0,0,90"
-        maxbodytint="255,0,0,120"
-        minvitalitydecrease="40"
-        maxvitalitydecrease="50">
-        <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" interval="0.2" disabledeltatime="true">
-          <Affliction identifier="burn" amount="0.0277" />
-          <Affliction identifier="nausea" amount="0.14" />
-        </StatusEffect>
-      </Effect>
-
-      <Effect
-        minstrength="150"
-        maxstrength="175"
-        mingrainstrength="1.0"
-        maxgrainstrength="1.0"
-        strengthchange="0.0"
-        minchromaticaberration="1.0"
-        maxchromaticaberration="5.0"
-        minbodytint="255,0,0,120"
-        maxbodytint="255,0,0,150"
-        minvitalitydecrease="50"
-        maxvitalitydecrease="60">
-        <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" interval="0.2" disabledeltatime="true">
-          <Affliction identifier="burn" amount="0.0357" />
-          <Affliction identifier="nausea" amount="0.16" />
-        </StatusEffect>
-      </Effect>
-
-      <Effect
-        minstrength="175"
-        maxstrength="200"
-        mingrainstrength="1.0"
-        maxgrainstrength="0.1"
-        strengthchange="0.0"
-        minchromaticaberration="0.1"
-        maxchromaticaberration="0.5"
-        minbodytint="255,0,0,150"
-        maxbodytint="255,0,0,180"
-        minvitalitydecrease="60"
-        maxvitalitydecrease="70">
-        <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" interval="0.2" disabledeltatime="true">
-          <Affliction identifier="burn" amount="0.0437" />
-          <Affliction identifier="nausea" amount="0.18" />
-        </StatusEffect>
-      </Effect>
-
-      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,768,128,128" color="195,136,60,255" origin="0,0"/>
-    </Affliction>
-    <Affliction
       name="Irradiate (Low)"
       identifier="irradiatelow"
       description=""
@@ -832,6 +781,59 @@
         </StatusEffect>
       </Effect>
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,768,128,128" color="195,136,60,255" origin="0,0"/>
+    </Affliction>
+    <!-- WIP -->
+    <Affliction
+      name="Fuel Rod Rage"
+      identifier="fuelrodrage"
+      description="You're overcharged with nuclear power. All sorts of mutations are happening to your body and you only have a very short time to live!"
+      causeofdeathdescription="Died of radiation sickness."
+      selfcauseofdeathdescription="You have died of radiation sickness."
+      type="none"
+      isbuff="true"
+      limbspecific="false"
+      indicatorlimb="Torso"
+      maxstrength="180"
+      iconcolors="0,0,0;50,255,0"
+      showiconthreshold="0"
+      showicontoothersthreshold="0"
+      showinhealthscannerthreshold="0"
+      healableinmedicalclinic="false">
+      <!-- <Description
+        textidentifier="afflictiondescription.oily"
+        minstrength="0"
+        maxstrength="1800"/> -->
+        <Effect minstrength="0" maxstrength="1" strengthchange="-1"
+        mingrainstrength="1.0"
+        maxgrainstrength="1.0"
+        minchromaticaberration="1.0"
+        maxchromaticaberration="1.0"
+        resistancefor="damage,pressure,stun,incrementalstun,gunshotwound,gaze,fractures,arterialcut,t_amputation,s_amputation,pain,surgeryincision,clampedbleeders,retractedskin,poison,resistance,oxygenlow,bloodloss,organdamage,burn,chemaddiction,invertcontrols,nausea,alieninfection,paralysis,bleeding"
+        minresistance="1"
+        maxresistance="1"
+        multiplybymaxvitality="true"
+        minvitalitydecrease="500"
+        maxvitalitydecrease="500">
+        <StatValue stattype="SwimmingSpeed" minvalue="0.25" maxvalue="0.25" />
+        <StatValue stattype="WalkingSpeed" minvalue="0.25" maxvalue="0.25" />
+        <AbilityFlag flagtype="ImmuneToPressure" />
+      </Effect>
+      <Effect minstrength="1" maxstrength="180" strengthchange="-1"
+        mingrainstrength="1.0"
+        maxgrainstrength="1.0"
+        minchromaticaberration="1.0"
+        maxchromaticaberration="1.0"
+        resistancefor="damage,pressure,stun,incrementalstun,gunshotwound,gaze,fractures,arterialcut,t_amputation,s_amputation,pain,surgeryincision,clampedbleeders,retractedskin,poison,resistance,oxygenlow,bloodloss,organdamage,burn,chemaddiction,invertcontrols,nausea,alieninfection,paralysis,bleeding"
+        minresistance="1"
+        maxresistance="1"
+        multiplybymaxvitality="true"
+        minvitalitydecrease="0"
+        maxvitalitydecrease="0">
+        <StatValue stattype="SwimmingSpeed" minvalue="0.25" maxvalue="0.25" />
+        <StatValue stattype="WalkingSpeed" minvalue="0.25" maxvalue="0.25" />
+        <AbilityFlag flagtype="ImmuneToPressure" />
+      </Effect>
+      <icon texture="%ModDir:3045796581%/Content/Items/ER-ItemsAtlas.png" sourcerect="312,95,128,128" color="195,104,60,255" origin="0,0" />
     </Affliction>
   </Override>
 </Afflictions>
