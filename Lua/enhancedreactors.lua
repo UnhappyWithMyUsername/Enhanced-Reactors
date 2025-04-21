@@ -42,6 +42,12 @@ local fuelRods = {
         contaminated = 0.2,
         radiationSounds = 1.5,
         overheating = 0.2,
+    },
+    ["fuelrod_outpost"] = {
+        radiationSickness = 1,
+        contaminated = 1,
+        radiationSounds = 3.5,
+        overheating = 1
     }
 }
 
