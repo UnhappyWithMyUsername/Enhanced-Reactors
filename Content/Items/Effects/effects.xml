@@ -20,7 +20,7 @@
       </Holdable>
       <ElectricalDischarger duration="0.15" range="250" rangemultiplierinwalls="0.1" outdoorsonly="false" powerconsumption="0" pickkey="Select">
         <Attack targetimpulse="50">
-          <Affliction identifier="stun" strength="5"/>
+          <Affliction identifier="electricshock" strength="95"/>
           <Affliction identifier="shocked" strength="5"/>
           <Affliction identifier="burn" strength="10"/>
           <Affliction identifier="emp" strength="1" multiplybymaxvitality="true" />
