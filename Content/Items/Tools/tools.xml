@@ -1350,7 +1350,7 @@
     </Item>
     <!-- OUTPOST & ENEMY EXCLUSIVE FUEL ROD | Copy of "fuelrod" but uses name and sprite of "emptyfuelrod" -->
     <!-- Saves on performance by not having to spawn multiple rods into outpost (and enemy) reactors and also prevents issues with DynamicEuropa's outpost destruction feature of blowing up reactors -->
-    <!-- Turns into regular fuel rod when picked up -->
+    <!-- Turns into regular empty fuel rod when picked up -->
     <!-- cargoscooter tag is used to prevent storing the fuel rod in metal crates -->
     <Item hideinmenus="true" name="" nameidentifier="emptyfuelrod" identifier="fuelrod_outpost" Category="Fuel" Tags="fuelroditem,mediumitem,reactorfuel,fuelroduranium,divingsuitfuel,cargoscooter,mountableweapon" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" health="200" scale="0.5" impactsoundtag="impact_fuelrod">
       <Deconstruct time="10">
