@@ -12,4 +12,5 @@
 
 ------------------------------Changelog:------------------------------
 
-- Fixed outpost reactor showing the oxygen generator light sprite after the latest game update.
+- Implemented the electric shock state from the vanilla game when getting zapped
+- Fixed Decontamination Shower being categorized as "Decorative"
