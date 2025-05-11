@@ -14,6 +14,7 @@
       <AddedRecipe itemidentifier="nuclearcartridge" />
       <AddedRecipe itemidentifier="nuclearshellcheap" />
       <AddedRecipe itemidentifier="nucleardepthchargecheap" />
+      <AddedRecipe itemidentifier="nucleardepthdecoycheap" />
     </Talent>
     <Talent identifier="funwithfission">
     <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="2,7" sheetelementsize="128,128"/>
