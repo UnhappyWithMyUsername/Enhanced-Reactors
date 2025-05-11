@@ -14,3 +14,4 @@
 
 - Implemented the electric shock state from the vanilla game when getting zapped
 - Fixed Decontamination Shower being categorized as "Decorative"
+- Fixed "Nuclear Option" talent not unlocking the cheap variant of nuclear decoy depth charge
