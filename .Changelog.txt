@@ -15,3 +15,7 @@
 - Implemented the electric shock state from the vanilla game when getting zapped
 - Fixed Decontamination Shower being categorized as "Decorative"
 - Fixed "Nuclear Option" talent not unlocking the cheap variant of nuclear decoy depth charge
+- Adjusted "Nuclear Cartridge" recipes to only require the "Nuclear Option" talent for the variant made from thorium and fulgurium
+- Fixed "Nuclear Cartridge" recipe from thorium and fulgurium having their values mixed up
+- Changed "Nuclear Cartridge" the valid exosuit fuel
+- Changed all fuel rods to no longer be valid exosuit fuel
