@@ -252,7 +252,7 @@
       </ItemContainer>
     </Item>
     <!-- cargoscooter tag is used to prevent storing the fuel rod in metal crates -->
-    <Item name="" identifier="fuelrod" Category="Fuel" Tags="fuelroditem,mediumitem,reactorfuel,fuelroduranium,divingsuitfuel,cargoscooter,mountableweapon" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
+    <Item name="" identifier="fuelrod" Category="Fuel" Tags="fuelroditem,mediumitem,reactorfuel,fuelroduranium,cargoscooter,mountableweapon" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
       <PreferredContainer primary="fuelrodcrate" secondary="reactorcab"/>
       <PreferredContainer secondary="fuelrodcontainer" minamount="1" maxamount="3" spawnprobability="0.4"/>
       <PreferredContainer secondary="nucleargun" minamount="1" maxamount="1" spawnprobability="1"/>
@@ -483,7 +483,7 @@
       <AiTarget sightrange="4000"/>
     </Item>
     <!-- cargoscooter tag is used to prevent storing the fuel rod in metal crates -->
-    <Item name="" identifier="thoriumfuelrod" Category="Fuel" Tags="fuelroditem,mediumitem,reactorfuel,fuelrodthorium,divingsuitfuel,cargoscooter,mountableweapon" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" health="200" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
+    <Item name="" identifier="thoriumfuelrod" Category="Fuel" Tags="fuelroditem,mediumitem,reactorfuel,fuelrodthorium,cargoscooter,mountableweapon" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" health="200" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
       <PreferredContainer primary="fuelrodcrate" secondary="reactorcab"/>
       <PreferredContainer secondary="fuelrodcontainer" minamount="1" maxamount="2" spawnprobability="0.2"/>
       <PreferredContainer secondary="wreckreactorcab,abandonedreactorcab" amount="1" spawnprobability="0.1"/>
@@ -710,7 +710,7 @@
       <AiTarget sightrange="5000"/>
     </Item>
     <!-- cargoscooter tag is used to prevent storing the fuel rod in metal crates -->
-    <Item name="" identifier="fulguriumfuelrod" Category="Fuel" Tags="fuelroditem,mediumitem,reactorfuel,fuelrodfulgurium,divingsuitfuel,cargoscooter,mountableweapon" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" health="150" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
+    <Item name="" identifier="fulguriumfuelrod" Category="Fuel" Tags="fuelroditem,mediumitem,reactorfuel,fuelrodfulgurium,cargoscooter,mountableweapon" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" health="150" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
       <PreferredContainer primary="fuelrodcrate" secondary="reactorcab"/>
       <PreferredContainer secondary="fuelrodcontainer" amount="1" spawnprobability="0.1"/>
       <PreferredContainer secondary="wreckreactorcab,abandonedreactorcab" amount="1" spawnprobability="0.2"/>
@@ -938,7 +938,7 @@
       <AiTarget sightrange="6000"/>
     </Item>
     <!-- cargoscooter tag is used to prevent storing the fuel rod in metal crates -->
-    <Item name="" identifier="fulguriumfuelrodvolatile" category="Fuel" Tags="fuelroditem,mediumitem,reactorfuel,fuelrodvolatilefulgurium,divingsuitfuel,activefuelrod,cargoscooter,mountableweapon" maxstacksize="8" allowasextracargo="true" cargocontaineridentifier="fuelrodcrate" health="400" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
+    <Item name="" identifier="fulguriumfuelrodvolatile" category="Fuel" Tags="fuelroditem,mediumitem,reactorfuel,fuelrodvolatilefulgurium,activefuelrod,cargoscooter,mountableweapon" maxstacksize="8" allowasextracargo="true" cargocontaineridentifier="fuelrodcrate" health="400" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
       <PreferredContainer primary="fuelrodcrate" secondary="reactorcab"/>
       <Price baseprice="400" sold="false" displaynonempty="true">
         <Price storeidentifier="merchantoutpost" />
@@ -1162,7 +1162,7 @@
       <AiTarget sightrange="7000"/>
     </Item>
     <!-- cargoscooter tag is used to prevent storing the fuel rod in metal crates -->
-    <Item name="Empty Fuel Rod" identifier="emptyfuelrod" Category="Fuel" Tags="fuelroditem,mediumitem,emptyfuelrod,fuelroduranium,fuelrodthorium,fuelrodfulgurium,fuelrodvolatilefulgurium,divingsuitfuel,activefuelrod,cargoscooter,mountableweapon" description="An empty fuel rod. It's still irradiating a fair amount of warmth and radiation." maxstacksize="8" cargocontaineridentifier="fuelrodcrate" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
+    <Item name="Empty Fuel Rod" identifier="emptyfuelrod" Category="Fuel" Tags="fuelroditem,mediumitem,emptyfuelrod,fuelroduranium,fuelrodthorium,fuelrodfulgurium,fuelrodvolatilefulgurium,activefuelrod,cargoscooter,mountableweapon" description="An empty fuel rod. It's still irradiating a fair amount of warmth and radiation." maxstacksize="8" cargocontaineridentifier="fuelrodcrate" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
       <PreferredContainer primary="fuelrodcrate" secondary="reactorcab" />
       <PreferredContainer secondary="wreckreactor" amount="1" mincondition="0.5" maxcondition="0.99" spawnprobability="0.2"/>
       <Price baseprice="50" displaynonempty="true" sold="false">
@@ -1352,7 +1352,7 @@
     <!-- Saves on performance by not having to spawn multiple rods into outpost (and enemy) reactors and also prevents issues with DynamicEuropa's outpost destruction feature of blowing up reactors -->
     <!-- Turns into regular empty fuel rod when picked up -->
     <!-- cargoscooter tag is used to prevent storing the fuel rod in metal crates -->
-    <Item hideinmenus="true" name="" nameidentifier="emptyfuelrod" identifier="fuelrod_outpost" Category="Fuel" Tags="fuelroditem,mediumitem,reactorfuel,fuelroduranium,divingsuitfuel,cargoscooter,mountableweapon" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" health="200" scale="0.5" impactsoundtag="impact_fuelrod">
+    <Item hideinmenus="true" name="" nameidentifier="emptyfuelrod" identifier="fuelrod_outpost" Category="Fuel" Tags="fuelroditem,mediumitem,reactorfuel,fuelroduranium,cargoscooter,mountableweapon" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" health="200" scale="0.5" impactsoundtag="impact_fuelrod">
       <Deconstruct time="10">
         <Item identifier="steel" />
         <Item identifier="uranium" mincondition="0.95"/>
