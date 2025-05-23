@@ -197,7 +197,7 @@
     </Item>
   </Override>
   <Override>
-    <Item name="Nuclear Cartridge" identifier="nuclearcartridge" Category="Fuel" Tags="smallitem,nuclearcartridge" maxstacksize="8" maxstacksizecharacterinventory="2" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
+    <Item name="Nuclear Cartridge" identifier="nuclearcartridge" Category="Fuel" Tags="smallitem,nuclearcartridge,divingsuitfuel" maxstacksize="8" maxstacksizecharacterinventory="2" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="secarmcab" secondary="reactorcab"/>
       <Price baseprice="200" sold="false">
         <Price storeidentifier="merchantoutpost" />
@@ -208,18 +208,22 @@
         <Price storeidentifier="merchantengineering" />
       </Price>
       <Deconstruct time="10" />
-      <Fabricate suitablefabricators="fabricator" requiredtime="10" displayname="uraniumbased" requiresrecipe="true">
+      <!-- Can be crafted by anyone -->
+      <Fabricate suitablefabricators="fabricator" requiredtime="10" displayname="uraniumbased" requiresrecipe="false">
         <RequiredSkill identifier="electrical" level="75" />
         <RequiredItem identifier="fuelrod" mincondition="0.90" usecondition="true"/>
       </Fabricate>
+      <!-- Requires engineer "Nuclear Option" talent -->
       <Fabricate suitablefabricators="fabricator" requiredtime="10" displayname="thoriumbased" requiresrecipe="true">
         <RequiredSkill identifier="electrical" level="75" />
-        <RequiredItem identifier="thoriumfuelrod" mincondition="0.3" usecondition="true"/>
+        <RequiredItem identifier="thoriumfuelrod" mincondition="0.5" usecondition="true"/>
       </Fabricate>
+      <!-- Requires engineer "Nuclear Option" talent -->
       <Fabricate suitablefabricators="fabricator" requiredtime="10" displayname="fulguriumbased" requiresrecipe="true">
         <RequiredSkill identifier="electrical" level="75" />
-        <RequiredItem identifier="fulguriumfuelrod" mincondition="0.5" usecondition="true"/>
+        <RequiredItem identifier="fulguriumfuelrod" mincondition="0.3" usecondition="true"/>
       </Fabricate>
+      <!-- Requires engineer "Nuclear Option" talent -->
       <Fabricate suitablefabricators="fabricator" requiredtime="10" displayname="volatilefulguriumbased" requiresrecipe="true">
         <RequiredSkill identifier="electrical" level="75" />
         <RequiredItem identifier="fulguriumfuelrodvolatile" mincondition="0.15" usecondition="true"/>
