@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Talents>
   <Override>
+    <!-- Override to unlock the option to craft nuclear cartridges from fulgurium rods -->
     <Talent identifier="nuclearoption">
       <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="3,7" sheetelementsize="128,128"/>
       <Description tag="talentdescription.nuclearoption"/>
@@ -16,17 +17,18 @@
       <AddedRecipe itemidentifier="nucleardepthchargecheap" />
       <AddedRecipe itemidentifier="nucleardepthdecoycheap" />
     </Talent>
+    <!-- Override to allow crafting higher quality nuclear cartridges -->
     <Talent identifier="funwithfission">
-    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="2,7" sheetelementsize="128,128"/>
-    <Description tag="talentdescription.crafthighqualityfuelrods">
-      <Replace tag="[qualitybonus]" value="1" color="gui.green"/>
-    </Description>
-    <AbilityGroupEffect abilityeffecttype="None">
-      <Abilities>
-        <CharacterAbilityGivePermanentStat statidentifier="reactorfuel" stattype="IncreaseFabricationQuality" value="1" />
-        <CharacterAbilityGivePermanentStat statidentifier="nuclearcartridge" stattype="IncreaseFabricationQuality" value="1" />
-      </Abilities>
-    </AbilityGroupEffect>
-  </Talent>
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="2,7" sheetelementsize="128,128"/>
+      <Description tag="talentdescription.crafthighqualityfuelrods">
+        <Replace tag="[qualitybonus]" value="1" color="gui.green"/>
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="reactorfuel" stattype="IncreaseFabricationQuality" value="1" />
+          <CharacterAbilityGivePermanentStat statidentifier="nuclearcartridge" stattype="IncreaseFabricationQuality" value="1" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
   </Override>
 </Talents>
