@@ -208,19 +208,19 @@
       </LightComponent>
       <Holdable canbeselected="true" slots="RightHand,LeftHand" HoldPos="10,-40" aimable="true" handle1="-32,-5" handle2="-32,-5" holdangle="50" msg="ItemMsgPickUpSelect">
         <StatusEffect type="OnActive" target="This" LightColor="40,255,0,175" IsOn="true" tags="containing" setvalue="true" duration="0.1">
-          <RequiredItem identifier="fuelrod" type="Contained" />
+          <RequiredItem items="fuelrod" type="Contained" />
           <Conditional HasTag="activefuelrod" targetcontaineditem="true" />
         </StatusEffect>
         <StatusEffect type="OnActive" target="This" LightColor="255,125,30,175" IsOn="true" tags="containing" setvalue="true" duration="0.1">
-          <RequiredItem identifier="fulguriumfuelrod" type="Contained" />
+          <RequiredItem items="fulguriumfuelrod" type="Contained" />
           <Conditional HasTag="activefuelrod" targetcontaineditem="true" />
         </StatusEffect>
         <StatusEffect type="OnActive" target="This" LightColor="225,150,255,175" IsOn="true" tags="containing" setvalue="true" duration="0.1">
-          <RequiredItem identifier="thoriumfuelrod" type="Contained" />
+          <RequiredItem items="thoriumfuelrod" type="Contained" />
           <Conditional HasTag="activefuelrod" targetcontaineditem="true" />
         </StatusEffect>
         <StatusEffect type="OnActive" target="This" LightColor="60,200,255,200" IsOn="true" tags="containing" setvalue="true" duration="0.1">
-          <RequiredItem identifier="fulguriumfuelrodvolatile" type="Contained" />
+          <RequiredItem items="fulguriumfuelrodvolatile" type="Contained" />
           <Conditional HasTag="activefuelrod" targetcontaineditem="true" />
         </StatusEffect>
         <StatusEffect type="OnNotContained" target="This" interval="0.3">
@@ -251,8 +251,124 @@
         <Containable items="reactorfuel,emptyfuelrod"/>
       </ItemContainer>
     </Item>
+    <!-- vanilla fuelrod replaces itself with modded variant or nuclear cartridge, depending on where it is located for compatibility with preplaced items -->
+    <Item hideinmenus="true" name="" identifier="fuelrod" Category="Fuel" Tags="fuelroditem,smallitem,reactorfuel,nuclearcartridge,divingsuitfuel,mountableweapon" spritecolor="255,0,0,255" inventoryiconcolor="255,0,0,255" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="576,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" depth="0.55" sourcerect="410,1,19,68" />
+      <Body radius="6" height="55" density="13" />
+      <ItemComponent canbeselected="false" canbepicked="false" allowingameediting="false">
+        <!-- remove the fuelrod and spawn a nuclear cartridge in its place if it's contained in an exosuit or RFA gun -->
+        <StatusEffect type="OnContained" target="This" delay="0.1" disabledeltatime="true" stackable="false" oneshot="true">
+          <Conditional HasTag="deepdivinglarge" targetcontainer="true" />
+          <Conditional HasTag="gun" targetcontainer="true" />
+          <Remove />
+          <SpawnItem identifier="nuclearcartridge" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+        </StatusEffect>
+        <!-- remove the fuelrod and spawn a uraniumfuelrod in its place if it's contained in anything else -->
+        <StatusEffect type="OnContained" target="This" delay="0.1" disabledeltatime="true" comparison="And" stackable="false" oneshot="true">
+          <Conditional HasTag="neq deepdivinglarge" targetcontainer="true" />
+          <Conditional HasTag="neq gun" targetcontainer="true" />
+          <Remove />
+          <SpawnItem identifier="uraniumfuelrod_er" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+        </StatusEffect>
+        <!-- remove the fuelrod and spawn a uraniumfuelrod in its place if it's not contained -->
+        <StatusEffect type="OnNotContained" target="This" delay="0.1" disabledeltatime="true" stackable="false" oneshot="true">
+          <Remove />
+          <SpawnItem identifier="uraniumfuelrod_er" spawnposition="This" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+        </StatusEffect>
+      </ItemComponent>
+      <Holdable handle1="0,0" slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" canBeCombined="false" throwforce="3.5" aimpos="35,-10" />
+      <AiTarget sightrange="4000"/>
+    </Item>
+    <!-- vanilla fuelrod replaces itself with modded variant or nuclear cartridge, depending on where it is located for compatibility with preplaced items -->
+    <Item hideinmenus="true" name="" identifier="thoriumfuelrod" Category="Fuel" Tags="fuelroditem,smallitem,reactorfuel,nuclearcartridge,divingsuitfuel,mountableweapon" spritecolor="255,0,0,255" inventoryiconcolor="255,0,0,255" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="384,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" depth="0.55" sourcerect="452,1,19,68" />
+      <Body radius="6" height="55" density="13" />
+      <ItemComponent canbeselected="false" canbepicked="false" allowingameediting="false">
+        <!-- remove the fuelrod and spawn a nuclear cartridge in its place if it's contained in an exosuit or RFA gun -->
+        <StatusEffect type="OnContained" target="This" delay="0.1" disabledeltatime="true" stackable="false" oneshot="true">
+          <Conditional HasTag="deepdivinglarge" targetcontainer="true" />
+          <Conditional HasTag="gun" targetcontainer="true" />
+          <Remove />
+          <SpawnItem identifier="nuclearcartridge" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+        </StatusEffect>
+        <!-- remove the fuelrod and spawn a uraniumfuelrod in its place if it's contained in anything else -->
+        <StatusEffect type="OnContained" target="This" delay="0.1" disabledeltatime="true" comparison="And" stackable="false" oneshot="true">
+          <Conditional HasTag="neq deepdivinglarge" targetcontainer="true" />
+          <Conditional HasTag="neq gun" targetcontainer="true" />
+          <Remove />
+          <SpawnItem identifier="thoriumfuelrod_er" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+        </StatusEffect>
+        <!-- remove the fuelrod and spawn a uraniumfuelrod in its place if it's not contained -->
+        <StatusEffect type="OnNotContained" target="This" delay="0.1" disabledeltatime="true" stackable="false" oneshot="true">
+          <Remove />
+          <SpawnItem identifier="thoriumfuelrod_er" spawnposition="This" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+        </StatusEffect>
+      </ItemComponent>
+      <Holdable handle1="0,0" slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" canBeCombined="false" throwforce="3.5" aimpos="35,-10" />
+      <AiTarget sightrange="4000"/>
+    </Item>
+    <!-- vanilla fuelrod replaces itself with modded variant or nuclear cartridge, depending on where it is located for compatibility with preplaced items -->
+    <Item hideinmenus="true" name="" identifier="fulguriumfuelrod" Category="Fuel" Tags="fuelroditem,smallitem,reactorfuel,nuclearcartridge,divingsuitfuel,mountableweapon" spritecolor="255,0,0,255" inventoryiconcolor="255,0,0,255" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="640,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" depth="0.55" sourcerect="431,1,19,68" />
+      <Body radius="6" height="55" density="13" />
+      <ItemComponent canbeselected="false" canbepicked="false" allowingameediting="false">
+        <!-- remove the fuelrod and spawn a nuclear cartridge in its place if it's contained in an exosuit or RFA gun -->
+        <StatusEffect type="OnContained" target="This" delay="0.1" disabledeltatime="true" stackable="false" oneshot="true">
+          <Conditional HasTag="deepdivinglarge" targetcontainer="true" />
+          <Conditional HasTag="gun" targetcontainer="true" />
+          <Remove />
+          <SpawnItem identifier="nuclearcartridge" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+        </StatusEffect>
+        <!-- remove the fuelrod and spawn a uraniumfuelrod in its place if it's contained in anything else -->
+        <StatusEffect type="OnContained" target="This" delay="0.1" disabledeltatime="true" comparison="And" stackable="false" oneshot="true">
+          <Conditional HasTag="neq deepdivinglarge" targetcontainer="true" />
+          <Conditional HasTag="neq gun" targetcontainer="true" />
+          <Remove />
+          <SpawnItem identifier="fulguriumfuelrod_er" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+        </StatusEffect>
+        <!-- remove the fuelrod and spawn a uraniumfuelrod in its place if it's not contained -->
+        <StatusEffect type="OnNotContained" target="This" delay="0.1" disabledeltatime="true" stackable="false" oneshot="true">
+          <Remove />
+          <SpawnItem identifier="fulguriumfuelrod_er" spawnposition="This" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+        </StatusEffect>
+      </ItemComponent>
+      <Holdable handle1="0,0" slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" canBeCombined="false" throwforce="3.5" aimpos="35,-10" />
+      <AiTarget sightrange="4000"/>
+    </Item>
+    <!-- vanilla fuelrod replaces itself with modded variant or nuclear cartridge, depending on where it is located for compatibility with preplaced items -->
+    <Item hideinmenus="true" name="" identifier="fulguriumfuelrodvolatile" Category="Fuel" Tags="fuelroditem,smallitem,reactorfuel,nuclearcartridge,divingsuitfuel,mountableweapon" spritecolor="255,0,0,255" inventoryiconcolor="255,0,0,255" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
+      <InventoryIcon texture="Content/Items/JobGear/TalentGear.png" sourcerect="67,176,62,61" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/JobGear/TalentGear.png" depth="0.55" sourcerect="190,60,20,71" origin="0.5,0.5" />
+      <Body radius="6" height="55" density="13" />
+      <ItemComponent canbeselected="false" canbepicked="false" allowingameediting="false">
+        <!-- remove the fuelrod and spawn a nuclear cartridge in its place if it's contained in an exosuit or RFA gun -->
+        <StatusEffect type="OnContained" target="This" delay="0.1" disabledeltatime="true" stackable="false" oneshot="true">
+          <Conditional HasTag="deepdivinglarge" targetcontainer="true" />
+          <Conditional HasTag="gun" targetcontainer="true" />
+          <Remove />
+          <SpawnItem identifier="nuclearcartridge" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+        </StatusEffect>
+        <!-- remove the fuelrod and spawn a uraniumfuelrod in its place if it's contained in anything else -->
+        <StatusEffect type="OnContained" target="This" delay="0.1" disabledeltatime="true" comparison="And" stackable="false" oneshot="true">
+          <Conditional HasTag="neq deepdivinglarge" targetcontainer="true" />
+          <Conditional HasTag="neq gun" targetcontainer="true" />
+          <Remove />
+          <SpawnItem identifier="fulguriumfuelrodvolatile_er" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+        </StatusEffect>
+        <!-- remove the fuelrod and spawn a uraniumfuelrod in its place if it's not contained -->
+        <StatusEffect type="OnNotContained" target="This" delay="0.1" disabledeltatime="true" stackable="false" oneshot="true">
+          <Remove />
+          <SpawnItem identifier="fulguriumfuelrodvolatile_er" spawnposition="This" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+        </StatusEffect>
+      </ItemComponent>
+      <Holdable handle1="0,0" slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" canBeCombined="false" throwforce="3.5" aimpos="35,-10" />
+      <AiTarget sightrange="4000"/>
+    </Item>
     <!-- cargoscooter tag is used to prevent storing the fuel rod in metal crates -->
-    <Item name="" identifier="fuelrod" Category="Fuel" Tags="fuelroditem,mediumitem,reactorfuel,fuelroduranium,cargoscooter,mountableweapon" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
+    <Item name="" nameidentifier="fuelrod" descriptionidentifier="fuelrod" identifier="uraniumfuelrod_er" Category="Fuel" Tags="fuelrod,fuelroditem,mediumitem,reactorfuel,fuelroduranium,cargoscooter,mountableweapon" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
       <PreferredContainer primary="fuelrodcrate" secondary="reactorcab"/>
       <PreferredContainer secondary="fuelrodcontainer" minamount="1" maxamount="3" spawnprobability="0.4"/>
       <PreferredContainer secondary="nucleargun" minamount="1" maxamount="1" spawnprobability="1"/>
@@ -483,7 +599,7 @@
       <AiTarget sightrange="4000"/>
     </Item>
     <!-- cargoscooter tag is used to prevent storing the fuel rod in metal crates -->
-    <Item name="" identifier="thoriumfuelrod" Category="Fuel" Tags="fuelroditem,mediumitem,reactorfuel,fuelrodthorium,cargoscooter,mountableweapon" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" health="200" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
+    <Item name="" nameidentifier="thoriumfuelrod" descriptionidentifier="thoriumfuelrod" identifier="thoriumfuelrod_er" Category="Fuel" Tags="thoriumfuelrod,fuelroditem,mediumitem,reactorfuel,fuelrodthorium,cargoscooter,mountableweapon" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" health="200" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
       <PreferredContainer primary="fuelrodcrate" secondary="reactorcab"/>
       <PreferredContainer secondary="fuelrodcontainer" minamount="1" maxamount="2" spawnprobability="0.2"/>
       <PreferredContainer secondary="wreckreactorcab,abandonedreactorcab" amount="1" spawnprobability="0.1"/>
@@ -710,7 +826,7 @@
       <AiTarget sightrange="5000"/>
     </Item>
     <!-- cargoscooter tag is used to prevent storing the fuel rod in metal crates -->
-    <Item name="" identifier="fulguriumfuelrod" Category="Fuel" Tags="fuelroditem,mediumitem,reactorfuel,fuelrodfulgurium,cargoscooter,mountableweapon" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" health="150" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
+    <Item name="" nameidentifier="fulguriumfuelrod" descriptionidentifier="fulguriumfuelrod" identifier="fulguriumfuelrod_er" Category="Fuel" Tags="fulguriumfuelrod,fuelroditem,mediumitem,reactorfuel,fuelrodfulgurium,cargoscooter,mountableweapon" maxstacksize="8" cargocontaineridentifier="fuelrodcrate" health="150" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
       <PreferredContainer primary="fuelrodcrate" secondary="reactorcab"/>
       <PreferredContainer secondary="fuelrodcontainer" amount="1" spawnprobability="0.1"/>
       <PreferredContainer secondary="wreckreactorcab,abandonedreactorcab" amount="1" spawnprobability="0.2"/>
@@ -938,7 +1054,7 @@
       <AiTarget sightrange="6000"/>
     </Item>
     <!-- cargoscooter tag is used to prevent storing the fuel rod in metal crates -->
-    <Item name="" identifier="fulguriumfuelrodvolatile" category="Fuel" Tags="fuelroditem,mediumitem,reactorfuel,fuelrodvolatilefulgurium,activefuelrod,cargoscooter,mountableweapon" maxstacksize="8" allowasextracargo="true" cargocontaineridentifier="fuelrodcrate" health="400" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
+    <Item name="" nameidentifier="fulguriumfuelrodvolatile" descriptionidentifier="fulguriumfuelrodvolatile" identifier="fulguriumfuelrodvolatile_er" category="Fuel" Tags="fulguriumfuelrodvolatile,fuelroditem,mediumitem,reactorfuel,fuelrodvolatilefulgurium,activefuelrod,cargoscooter,mountableweapon" maxstacksize="8" allowasextracargo="true" cargocontaineridentifier="fuelrodcrate" health="400" scale="0.5" impactsoundtag="impact_fuelrod" requireaimtouse="true">
       <PreferredContainer primary="fuelrodcrate" secondary="reactorcab"/>
       <Price baseprice="400" sold="false" displaynonempty="true">
         <Price storeidentifier="merchantoutpost" />
