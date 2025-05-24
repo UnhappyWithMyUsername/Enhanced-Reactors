@@ -12,10 +12,13 @@
 
 ------------------------------Changelog:------------------------------
 
-- Implemented the electric shock state from the vanilla game when getting zapped
+- Adjusted "Nuclear Cartridge" recipes to only require the "Nuclear Option" talent for the variant made from thorium and fulgurium
+- Changed "Nuclear Cartridge" to be valid exosuit fuel
+- Changed all fuel rods to no longer be valid exosuit fuel
+- Changed the identifiers of the all fuel rods. This change was made for compatibility with existing items like exosuits and RFA weapons. Now if there are items loaded that contain a vanilla fuel rod, it will check where it is contained and convert to the appropriate fuel type. This will result in a one-time refresh of all your fuel rods in an ongoing campaign. Basically a one-time free extra fuel.
+- Fixed reactors sometimes exploding in critical mode too soon, not allowing you to get to it in time when you failed a repair while its condition was very low
 - Fixed Decontamination Shower being categorized as "Decorative"
 - Fixed "Nuclear Option" talent not unlocking the cheap variant of nuclear decoy depth charge
-- Adjusted "Nuclear Cartridge" recipes to only require the "Nuclear Option" talent for the variant made from thorium and fulgurium
 - Fixed "Nuclear Cartridge" recipe from thorium and fulgurium having their values mixed up
-- Changed "Nuclear Cartridge" the valid exosuit fuel
-- Changed all fuel rods to no longer be valid exosuit fuel
+- Fixed already existing Rapid Fissile Accelerators from before installing the mod not accepting nuclear cartridges as fuel
+- Implemented the electric shock state from the vanilla game when getting zapped (body twitching)
