@@ -170,7 +170,7 @@
         <Sound file="Content/Items/JobGear/Engineer/WEAPONS_rapidFissileAccelerator3.ogg" type="OnUse" range="3000" />
         <Sound file="Content/Items/JobGear/Engineer/WEAPONS_rapidFissileAccelerator4.ogg" type="OnUse" range="3000" />
         <ChargeSound file="Content/Items/JobGear/Engineer/WEAPONS_rapidFissileAcceleratorStartLoop.ogg" range="1000" />
-        <StatusEffect type="OnUse">
+        <StatusEffect type="OnUse" target="This">
           <Explosion range="150.0" force="3" shockwave="false" smoke="false" flash="true" sparks="false" flames="false" underwaterbubble="false" camerashake="6.0" />
         </StatusEffect>
         <StatusEffect type="OnUse" target="Contained">
@@ -180,6 +180,12 @@
         <RequiredSkill identifier="weapons" level="25" />
         <RequiredSkill identifier="electrical" level="45" />
       </RangedWeapon>
+      <!-- upgrade already existing instances of this item to accept the nuclear cartridge as fuel -->
+      <Upgrade gameversion="3.9.3.1">
+        <RangedWeapon>
+          <RequiredItems items="nuclearcartridge" type="Contained" msg="ItemMsgAmmoRequired" />
+        </RangedWeapon>
+      </Upgrade>
       <ItemContainer capacity="1" maxstacksize="1" hideitems="false" itempos="10,-5" containedspritedepths="0.562,0.561" containedstateindicatorstyle="default" containedstateindicatorslot="0">
         <Containable items="nuclearcartridge" rotation="90"/>
         <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="192,448,64,64" origin="0.5,0.5" />
