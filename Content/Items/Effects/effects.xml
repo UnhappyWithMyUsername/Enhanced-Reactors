@@ -66,6 +66,7 @@
       <Sprite texture="Content/Items/Tools/tools.png" depth="0.55" sourcerect="0,0,1,1" />
       <Body radius="1" density="10" />
       <Holdable handle1="0,0" slots="Any" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="Always" target="Parent" condition="40" setvalue="true" oneshot="true" />
         <StatusEffect type="Always" target="Parent" condition="-4.0" />
         <StatusEffect type="Always" target="Parent" oneshot="true">
           <Sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="6000" />
