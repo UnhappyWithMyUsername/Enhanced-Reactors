@@ -13,25 +13,25 @@ local reactors = {
 }
 
 local fuelRods = {
-    ["fuelrod"] = {
+    ["uraniumfuelrod_er"] = {
         radiationSickness = 1,
         contaminated = 1,
         radiationSounds = 3.5,
         overheating = 1
     },
-    ["thoriumfuelrod"] = {
+    ["thoriumfuelrod_er"] = {
         radiationSickness = 0.5,
         contaminated = 0.5,
         radiationSounds = 2.0,
         overheating = 1.5,
     },
-    ["fulguriumfuelrod"] = {
+    ["fulguriumfuelrod_er"] = {
         radiationSickness = 2,
         contaminated = 2,
         radiationSounds = 4.5,
         overheating = 2,
     },
-    ["fulguriumfuelrodvolatile"] = {
+    ["fulguriumfuelrodvolatile_er"] = {
         radiationSickness = 3,
         contaminated = 3,
         radiationSounds = 5.5,
