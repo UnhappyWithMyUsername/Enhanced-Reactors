@@ -126,8 +126,6 @@
       </ItemContainer>
       <aitarget maxsightrange="1500" />
     </Item>
-  </Override>
-  <Override>
     <Item name="" identifier="nucleargun" category="Weapon" cargocontaineridentifier="metalcrate" allowasextracargo="true" tags="mediumitem,weapon,gun,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_heavy">
       <PreferredContainer primary="secarmcab" secondary="weaponholder,armcab"/>
       <Price baseprice="900" sold="false">
@@ -201,8 +199,6 @@
       <SkillRequirementHint identifier="weapons" level="25" />
       <SkillRequirementHint identifier="electrical" level="45" />
     </Item>
-  </Override>
-  <Override>
     <Item name="Nuclear Cartridge" identifier="nuclearcartridge" Category="Fuel" Tags="smallitem,nuclearcartridge,divingsuitfuel" maxstacksize="8" maxstacksizecharacterinventory="2" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
       <PreferredContainer primary="secarmcab" secondary="reactorcab"/>
       <Price baseprice="200" sold="false">
@@ -249,6 +245,51 @@
         <QualityStat stattype="Condition" value="0.1"/>
       </Quality>
       <AiTarget sightrange="4000"/>
+    </Item>
+    <Item name="" identifier="nucleardepthchargecheap" variantof="nucleardepthcharge" hideineditors="true">
+      <Price baseprice="280" sold="false">
+        <Price sold="false" />
+        <Price sold="false" />
+        <Price sold="false" />
+        <Price sold="false" />
+        <Price sold="false" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+        <Item identifier="uranium" />
+        <!-- clear the rest of the deconstruction -->
+        <Item />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="30" requiresrecipe="true">
+        <RequiredSkill identifier="electrical" level="40" />
+        <RequiredItem identifier="iron" amount="2" />
+        <RequiredItem items="fuelrod" mincondition="0.8" usecondition="false" />
+        <RequiredItem identifier="uex" />
+      </Fabricate>
+    </Item>
+    <Item name="" identifier="nuclearshellcheap" variantof="nuclearshell" hideineditors="true">
+      <PreferredContainer spawnprobability="0" />
+      <PreferredContainer spawnprobability="0" />
+      <Price baseprice="300" sold="false">
+        <Price sold="false" />
+        <Price sold="false" />
+        <Price sold="false" />
+        <Price sold="false" />
+        <Price sold="false" />
+        <Price sold="false" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+        <Item identifier="uranium" />
+        <!-- clear the rest of the deconstruction -->
+        <Item />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="30" requiresrecipe="true">
+        <RequiredSkill identifier="electrical" level="40" />
+        <RequiredItem identifier="steel" />
+        <RequiredItem items="fuelrod" mincondition="0.8" usecondition="false" />
+        <RequiredItem identifier="uex" />
+      </Fabricate>
     </Item>
   </Override>
 </Items>
