@@ -23,4 +23,5 @@
   <Text file="%ModDir%/Content/Texts/German.xml" />
   <Text file="%ModDir%/Content/Texts/Russian.xml" />
   <Text file="%ModDir%/Content/Texts/SimplifiedChinese.xml" />
+  <Text file="%ModDir%/Content/Texts/TraditionalChinese.xml" />
 </contentpackage>

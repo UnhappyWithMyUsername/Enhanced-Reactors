@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Traditional Chinese" nowhitespace="true" translatedname="中文(繁體)">
+  <!-- Display Names -->
+  <displayname.uraniumbased>[itemname] (鈾)</displayname.uraniumbased>
+  <displayname.thoriumbased>[itemname] (釷)</displayname.thoriumbased>
+  <displayname.fulguriumbased>[itemname] (雷素)</displayname.fulguriumbased>
+  <displayname.volatilefulguriumbased>[itemname] (揮發性雷素)</displayname.volatilefulguriumbased>
+  <!-- Items -->
+  <entityname.deconshower>去汙染淋浴器</entityname.deconshower>
+  <entitydescription.deconshower>去除使用者身上的放射性汙染並在完全清除後自動關閉。需要去汙染溶劑將汙染洗去。</entitydescription.deconshower>
+  <entityname.hazmatsuit1>輻射防護服</entityname.hazmatsuit1>
+  <entitydescription.hazmatsuit1>處理燃料棒時必要的裝備。\n- 需要氧氣罐。\n- 不提供水壓保護。</entitydescription.hazmatsuit1>
+  <entityname.hazmatsuit2>輻射防護服（抗水壓）</entityname.hazmatsuit2>
+  <entitydescription.hazmatsuit2>經過改造的輻射防護服。\n其通過調整犧牲了部分輻射防護從而能夠抵禦最多6600米的水壓。</entitydescription.hazmatsuit2>
+  <entityname.fuelrodtongs>燃料棒鉗</entityname.fuelrodtongs>
+  <entitydescription.fuelrodtongs>用於移動激活的燃料棒，而在此過程中不燒傷你的手。可存放在工具帶中。</entitydescription.fuelrodtongs>
+  <entityname.geigercounter>蓋革計數器</entityname.geigercounter>
+  <entitydescription.geigercounter>能夠檢測輻射。可在醫療界面對角色使用。</entitydescription.geigercounter>
+  <entityname.fuelrodcrate>燃料棒箱</entityname.fuelrodcrate>
+  <entitydescription.fuelrodcrate>可安全儲存最多8根燃料棒，並防止它們輻射周圍環境。</entitydescription.fuelrodcrate>
+  <entityname.fuelrodcrateshelf>燃料棒箱儲存架</entityname.fuelrodcrateshelf>
+  <entitydescription.fuelrodcrateshelf>能容納最多2個燃料棒箱。</entitydescription.fuelrodcrateshelf>
+  <entityname.potassiumiodidetablets>碘化鉀片</entityname.potassiumiodidetablets>
+  <entitydescription.potassiumiodidetablets>提供微量的輻射保護，用於預防即將發生的低輻射危害十分有用。能夠降低少量的放射性汙染。</entitydescription.potassiumiodidetablets>
+  <entityname.activatedcarbontablets>活性炭片</entityname.activatedcarbontablets>
+  <entitydescription.activatedcarbontablets>用於治療少量中毒和輻射。清除放射性汙染十分有用。過量使用對人體有害。</entitydescription.activatedcarbontablets>
+  <entityname.radioactivematcrate>放射性物質箱</entityname.radioactivematcrate>
+  <entitydescription.radioactivematcrate>可安全儲存最多9組放射性礦石或礦物。</entitydescription.radioactivematcrate>
+  <entityname.radioactivematcontainer>放射性物質工具箱</entityname.radioactivematcontainer>
+  <entitydescription.radioactivematcontainer>可安全儲存最多6組放射性礦物。</entitydescription.radioactivematcontainer>
+  <entityname.nuclearcartridge>核能彈匣</entityname.nuclearcartridge>
+  <entitydescription.nuclearcartridge>快速裂變加速器所使用的彈匣。</entitydescription.nuclearcartridge>
+  <entityname.deconsoltank>去汙染溶劑</entityname.deconsoltank>
+  <entitydescription.deconsoltank>一罐去汙染溶劑。需要使用噴漆器將其噴灑在被放射性汙染的人身上。</entitydescription.deconsoltank>
+  <entityname.emptyfuelrod>空燃料棒</entityname.emptyfuelrod>
+  <entitydescription.emptyfuelrod>烧空的燃料棒。仍在散发着相当多的热量和辐射。</entitydescription.emptyfuelrod>
+  <!-- Afflictions -->
+  <afflictionname.radiationresistance>輻射抗性</afflictionname.radiationresistance>
+  <afflictiondescription.radiationresistance>你對輻射的抗性增加，但並不能對其完全免疫！</afflictiondescription.radiationresistance>
+  <afflictiondescription.radiationresistance.others>患者已對輻射建立了良好的抵抗力。</afflictiondescription.radiationresistance.others>
+  <afflictionname.contaminated>放射性汙染</afflictionname.contaminated>
+  <afflictiondescription.contaminated>患者正緩慢地對這片區域造成輻射。這種情況還是趁早治療為好。</afflictiondescription.contaminated>
+  <afflictiondescription.contaminated.high>患者受到嚴重的放射性汙染，將會對其他人的健康造成巨大危害。治療須謹慎!</afflictiondescription.contaminated.high>
+  <afflictioncauseofdeath.contaminated>死於輻射病。</afflictioncauseofdeath.contaminated>
+  <afflictioncauseofdeathself.contaminated>你因輻射病而死。</afflictioncauseofdeathself.contaminated>
+  <afflictionname.overheating>中暑風險</afflictionname.overheating>
+  <afflictiondescription.overheating.self>你正在出汗。周圍的空氣太熱了。最好不要在這裏待太久!</afflictiondescription.overheating.self>
+  <afflictiondescription.overheating>患者大汗淋漓！他們或許該離開該區域並涼快一會。</afflictiondescription.overheating>
+  <afflictioncauseofdeath.overheating>燒傷至死。</afflictioncauseofdeath.overheating>
+  <afflictioncauseofdeathself.overheating>你因燒傷過重，不治身亡。</afflictioncauseofdeathself.overheating>
+</infotexts>
