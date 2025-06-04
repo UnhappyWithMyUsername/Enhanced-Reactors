@@ -6,7 +6,6 @@
       name="Radiation sickness"
       identifier="radiationsickness"
       description="Burns and sores can be seen on patient's skin. They seem to be spreading."
-      type="poison"
       causeofdeathdescription="Died of radiation sickness."
       selfcauseofdeathdescription="You have died of radiation sickness."
       limbspecific="false"
