@@ -12,4 +12,5 @@
 
 ------------------------------Changelog:------------------------------
 
-- Fixed being unable to craft cheap variants of nuclear depth charges and shells
+- Fixed "Danger Zone" talent no longer unlocking volatile fulgurium fuel rods
+- Fixed "Radiation Sickness" still being considered a poison
