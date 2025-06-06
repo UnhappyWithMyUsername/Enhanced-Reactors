@@ -14,4 +14,5 @@
 
 - Fixed "Danger Zone" talent no longer unlocking volatile fulgurium fuel rods
 - Fixed "Radiation Sickness" still being considered a poison
-- Enemy submarines will now properly work when playing with the Reactor Management Add-On 
+- Enemy submarines will now properly work when playing with the Reactor Management Add-On
+- Updated chinese translations (thanks to Azure)
