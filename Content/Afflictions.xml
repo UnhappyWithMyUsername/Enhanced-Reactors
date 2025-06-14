@@ -42,9 +42,7 @@
         maxstrength="200"/>
       <!-- No effects at this level  -->
       <Effect minstrength="0" maxstrength="10" strengthchange="-0.07" />
-      <!-- Start to irradiate others -->
-      <Effect minstrength="10" maxstrength="25" strengthchange="0.0" >
-      </Effect>
+      <Effect minstrength="10" maxstrength="25" strengthchange="0.0" />
       <!-- Cause burns depending on strength -->
       <Effect
         minstrength="25"
@@ -55,6 +53,7 @@
         minvitalitydecrease="0"
         maxvitalitydecrease="10">
         <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" interval="0.2" disabledeltatime="true">
+          <Conditional stabilozineeffect="lte 0" />
           <Affliction identifier="burn" amount="0.003" />
         </StatusEffect>
       </Effect>
@@ -72,6 +71,7 @@
         minvitalitydecrease="10"
         maxvitalitydecrease="20">
         <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" interval="0.2" disabledeltatime="true">
+          <Conditional stabilozineeffect="lte 0" />
           <Affliction identifier="burn" amount="0.0057" />
           <Affliction identifier="nausea" amount="20.0" probability="0.01" />
         </StatusEffect>
@@ -90,6 +90,7 @@
         minvitalitydecrease="20"
         maxvitalitydecrease="30">
         <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" interval="0.2" disabledeltatime="true">
+          <Conditional stabilozineeffect="lte 0" />
           <Affliction identifier="burn" amount="0.0117" />
           <Affliction identifier="nausea" amount="20.0" probability="0.05" />
         </StatusEffect>
@@ -108,6 +109,7 @@
         minvitalitydecrease="30"
         maxvitalitydecrease="40">
         <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" interval="0.2" disabledeltatime="true">
+          <Conditional stabilozineeffect="lte 0" />
           <Affliction identifier="burn" amount="0.0197" />
           <Affliction identifier="nausea" amount="0.12" />
         </StatusEffect>
@@ -126,6 +128,7 @@
         minvitalitydecrease="40"
         maxvitalitydecrease="50">
         <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" interval="0.2" disabledeltatime="true">
+          <Conditional stabilozineeffect="lte 0" />
           <Affliction identifier="burn" amount="0.0277" />
           <Affliction identifier="nausea" amount="0.14" />
         </StatusEffect>
@@ -144,6 +147,7 @@
         minvitalitydecrease="50"
         maxvitalitydecrease="60">
         <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" interval="0.2" disabledeltatime="true">
+          <Conditional stabilozineeffect="lte 0" />
           <Affliction identifier="burn" amount="0.0357" />
           <Affliction identifier="nausea" amount="0.16" />
         </StatusEffect>
@@ -162,6 +166,7 @@
         minvitalitydecrease="60"
         maxvitalitydecrease="70">
         <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" interval="0.2" disabledeltatime="true">
+          <Conditional stabilozineeffect="lte 0" />
           <Affliction identifier="burn" amount="0.0437" />
           <Affliction identifier="nausea" amount="0.18" />
         </StatusEffect>
