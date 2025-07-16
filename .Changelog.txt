@@ -12,8 +12,4 @@
 
 ------------------------------Changelog:------------------------------
 
-- Fixed "Danger Zone" talent no longer unlocking volatile fulgurium fuel rods
-- Fixed "Radiation Sickness" still being considered a poison
-- Enemy submarines will now properly work when playing with the Reactor Management Add-On
-- Made the effect of Stabilozine prevent nausea and burns caused by radiation sickness from increasing while the effect lasts
-- Updated chinese translations (thanks to Azure)
+- TODO: Fixed being unable to craft quality volatile fulgurium fuel rods  
