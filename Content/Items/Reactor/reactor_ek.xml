@@ -183,6 +183,7 @@
         </input>
       </ConnectionPanel>
       <ItemContainer capacity="1" maxstacksize="1" canbeselected="true" hudpos="0.5,0.15" slotsperrow="1" uilabel="FuelRods">
+        <Containable items="reactoritem" />
         <Containable items="fuelrod_outpost">
           <StatusEffect type="OnContaining" target="This" AvailableFuel="100.0" disabledeltatime="true" />
         </Containable>
@@ -227,10 +228,10 @@
           <Affliction identifier="stun" strength="4" />
           <Affliction identifier="burn" strength="5" />
         </StatusEffect>
-        <!-- set reactor condition to 30 and spawn an item inside it which damages it every second if repaired while active -->
-        <StatusEffect type="OnSuccess" target="This,Character" condition="40.0" setvalue="true" comparison="And">
+        <!-- set reactor condition to 52 and spawn an item inside it which damages it every second if repaired while active -->
+        <StatusEffect type="OnSuccess" target="This,Character" condition="52.0" setvalue="true" comparison="And">
           <Conditional temperature="gt 1" />
-          <Conditional condition="gte 40" />
+          <Conditional condition="gte 52" />
           <Conditional isPlayer="eq true" />
         </StatusEffect>
         <StatusEffect type="OnSuccess" target="This,Character" comparison="And">
@@ -238,9 +239,9 @@
           <Conditional isPlayer="eq true" />
           <SpawnItem identifier="effect_reactorcritical" spawnposition="ThisInventory" spawnifinventoryfull="false" spawnifcantbecontained="false" />
         </StatusEffect>
-        <StatusEffect type="OnFailure" target="This,Character" condition="40.0" setvalue="true" comparison="And">
+        <StatusEffect type="OnFailure" target="This,Character" condition="52.0" setvalue="true" comparison="And">
           <Conditional temperature="gt 1" />
-          <Conditional condition="gte 40" />
+          <Conditional condition="gte 52" />
           <Conditional isPlayer="eq true" />
         </StatusEffect>
         <StatusEffect type="OnFailure" target="This,Character" comparison="And">
@@ -443,6 +444,7 @@
         </input>
       </ConnectionPanel>
       <ItemContainer capacity="2" maxstacksize="1" canbeselected="true" hudpos="0.5,0.15" slotsperrow="1" uilabel="FuelRods">
+        <Containable items="reactoritem" />
         <Containable items="fuelrod_outpost">
           <StatusEffect type="OnContaining" target="This" AvailableFuel="100.0" disabledeltatime="true" />
         </Containable>
@@ -487,10 +489,10 @@
           <Affliction identifier="stun" strength="4" />
           <Affliction identifier="burn" strength="5" />
         </StatusEffect>
-        <!-- set reactor condition to 30 and spawn an item inside it which damages it every second if repaired while active -->
-        <StatusEffect type="OnSuccess" target="This,Character" condition="40.0" setvalue="true" comparison="And">
+        <!-- set reactor condition to 52 and spawn an item inside it which damages it every second if repaired while active -->
+        <StatusEffect type="OnSuccess" target="This,Character" condition="52.0" setvalue="true" comparison="And">
           <Conditional temperature="gt 1" />
-          <Conditional condition="gte 40" />
+          <Conditional condition="gte 52" />
           <Conditional isPlayer="eq true" />
         </StatusEffect>
         <StatusEffect type="OnSuccess" target="This,Character" comparison="And">
@@ -498,9 +500,9 @@
           <Conditional isPlayer="eq true" />
           <SpawnItem identifier="effect_reactorcritical" spawnposition="ThisInventory" spawnifinventoryfull="false" spawnifcantbecontained="false" />
         </StatusEffect>
-        <StatusEffect type="OnFailure" target="This,Character" condition="40.0" setvalue="true" comparison="And">
+        <StatusEffect type="OnFailure" target="This,Character" condition="52.0" setvalue="true" comparison="And">
           <Conditional temperature="gt 1" />
-          <Conditional condition="gte 40" />
+          <Conditional condition="gte 52" />
           <Conditional isPlayer="eq true" />
         </StatusEffect>
         <StatusEffect type="OnFailure" target="This,Character" comparison="And">
@@ -703,6 +705,7 @@
         </input>
       </ConnectionPanel>
       <ItemContainer capacity="2" maxstacksize="1" canbeselected="true" hudpos="0.5,0.15" slotsperrow="1" uilabel="FuelRods">
+        <Containable items="reactoritem" />
         <Containable items="fuelrod_outpost">
           <StatusEffect type="OnContaining" target="This" AvailableFuel="100.0" disabledeltatime="true" />
         </Containable>
@@ -748,9 +751,9 @@
           <Affliction identifier="burn" strength="5" />
         </StatusEffect>
         <!-- set reactor condition to 30 and spawn an item inside it which damages it every second if repaired while active -->
-        <StatusEffect type="OnSuccess" target="This,Character" condition="40.0" setvalue="true" comparison="And">
+        <StatusEffect type="OnSuccess" target="This,Character" condition="52.0" setvalue="true" comparison="And">
           <Conditional temperature="gt 1" />
-          <Conditional condition="gte 40" />
+          <Conditional condition="gte 52" />
           <Conditional isPlayer="eq true" />
         </StatusEffect>
         <StatusEffect type="OnSuccess" target="This,Character" comparison="And">
@@ -758,9 +761,9 @@
           <Conditional isPlayer="eq true" />
           <SpawnItem identifier="effect_reactorcritical" spawnposition="ThisInventory" spawnifinventoryfull="false" spawnifcantbecontained="false" />
         </StatusEffect>
-        <StatusEffect type="OnFailure" target="This,Character" condition="40.0" setvalue="true" comparison="And">
+        <StatusEffect type="OnFailure" target="This,Character" condition="52.0" setvalue="true" comparison="And">
           <Conditional temperature="gt 1" />
-          <Conditional condition="gte 40" />
+          <Conditional condition="gte 52" />
           <Conditional isPlayer="eq true" />
         </StatusEffect>
         <StatusEffect type="OnFailure" target="This,Character" comparison="And">
