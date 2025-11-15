@@ -13,3 +13,7 @@
 ------------------------------Changelog:------------------------------
 
 - TODO: Fixed being unable to craft quality volatile fulgurium fuel rods  
+
+- Added support for the upcoming vanilla "reactoritem" item tag. Any item with the tag "reactoritem" can now be placed inside the reactors
+- Adjusted nuclear cartridge description to reflect them being fuel for exosuits
+- Increased reaction time to prevent a meltdown (spam-click repair) when reactor enters critical mode by 3 seconds
