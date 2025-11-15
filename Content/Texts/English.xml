@@ -29,7 +29,7 @@
 <entityname.radioactivematcontainer>Radioactive Material Container</entityname.radioactivematcontainer>
 <entitydescription.radioactivematcontainer>Can safely store up to 6 stacks of radioactive minerals.</entitydescription.radioactivematcontainer>
 <entityname.nuclearcartridge>Nuclear Cartridge</entityname.nuclearcartridge>
-<entitydescription.nuclearcartridge>A magazine for nuclear guns.</entitydescription.nuclearcartridge>
+<entitydescription.nuclearcartridge>Used as a magazine for nuclear guns and also as fuel for exosuits.</entitydescription.nuclearcartridge>
 <entityname.deconsoltank>Deconsol</entityname.deconsoltank>
 <entitydescription.deconsoltank>A decontamination solution. Needs to be sprayed onto a contaminated person by using a sprayer.</entitydescription.deconsoltank>
 <entityname.emptyfuelrod>Empty Fuel Rod</entityname.emptyfuelrod>
