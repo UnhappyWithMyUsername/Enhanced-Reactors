@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="Enhanced Reactors" modversion="1.0.34" corepackage="False" steamworkshopid="3045796581" gameversion="1.8.8.1">
+<contentpackage name="Enhanced Reactors" modversion="1.0.35" corepackage="False" steamworkshopid="3045796581" gameversion="1.10.7.2">
   <Afflictions file="%ModDir%/Content/Afflictions.xml" />
   <Item file="%ModDir%/Content/Items/Containers/containers.xml" />
   <Item file="%ModDir%/Content/Items/Effects/effects.xml" />
