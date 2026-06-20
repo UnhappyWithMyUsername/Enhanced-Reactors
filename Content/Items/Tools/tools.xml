@@ -230,6 +230,7 @@
           <Conditional HasTag="mediumitem" targetcontainer="true" />
           <Conditional HasTag="mobilecontainer" targetcontainer="true" />
           <Conditional HasTag="container" targetcontainer="true" />
+          <Conditional HasTag="clothing" targetcontainer="true" />
           <DropContainedItems />
         </StatusEffect>
         <!-- simulate throwing actions -->
