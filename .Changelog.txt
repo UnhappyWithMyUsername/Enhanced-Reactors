@@ -14,5 +14,6 @@
 
 - TODO: Fixed being unable to craft quality volatile fulgurium fuel rods  
 
+- Hazmat suits now have an extra inventory slot for tongs
 - Fixed deconstructors and fabricators not properly blocking radiation when actively crafting/deconstructing
-- Severely optimized fuel rods in their non-active state.
+- Optimized non-active fuel rods. Hoarding lots of fuel rods should no longer cause performance issues
