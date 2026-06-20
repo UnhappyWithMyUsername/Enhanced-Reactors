@@ -444,8 +444,11 @@
           <SpawnItem identifier="emptyfuelrod" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" condition="0" />
         </StatusEffect>
         <!-- slowly drain the fuel rod over time if the fission process was started | disabled inside reactors to allow reactors set to not consume fuel and beacon missions to play out normally unless condition is 0 -->
-        <StatusEffect type="OnActive" target="This" interval="1" condition="-0.05" disabledeltatime="true" comparison="Or">
+        <StatusEffect type="OnActive" target="This" interval="1" condition="-0.05" disabledeltatime="true" comparison="And">
           <Conditional HasTag="neq reactor" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" interval="1" condition="-0.05" disabledeltatime="true" comparison="Or">
+          <Conditional HasTag="eq wreckreactor" targetcontainer="true" />
           <Conditional HasStatusTag="eq wreckreactor" targetcontainer="true" />
         </StatusEffect>
         <!-- create smoke and underwater bubble particles and an explosion that deals high item and structure damage to anything within 1m, if fission process was started and the fuel rod is not contained and not in water -->
@@ -658,8 +661,11 @@
           <SpawnItem identifier="emptyfuelrod" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" condition="0" />
         </StatusEffect>
         <!-- slowly drain the fuel rod over time if the fission process was started | disabled inside reactors to allow reactors set to not consume fuel and beacon missions to play out normally unless condition is 0 -->
-        <StatusEffect type="OnActive" target="This" interval="1" condition="-0.05" disabledeltatime="true" comparison="Or">
+        <StatusEffect type="OnActive" target="This" interval="1" condition="-0.05" disabledeltatime="true" comparison="And">
           <Conditional HasTag="neq reactor" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" interval="1" condition="-0.05" disabledeltatime="true" comparison="Or">
+          <Conditional HasTag="eq wreckreactor" targetcontainer="true" />
           <Conditional HasStatusTag="eq wreckreactor" targetcontainer="true" />
         </StatusEffect>
         <!-- create smoke particles and an explosion that deals high item and structure damage to anything within 1m, if fission process was started and the fuel rod is not contained and not in water -->
@@ -869,8 +875,11 @@
           <SpawnItem identifier="emptyfuelrod" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" condition="0" />
         </StatusEffect>
         <!-- slowly drain the fuel rod over time if the fission process was started | disabled inside reactors to allow reactors set to not consume fuel and beacon missions to play out normally unless condition is 0 -->
-        <StatusEffect type="OnActive" target="This" interval="1" condition="-0.05" disabledeltatime="true" comparison="Or">
+        <StatusEffect type="OnActive" target="This" interval="1" condition="-0.05" disabledeltatime="true" comparison="And">
           <Conditional HasTag="neq reactor" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" interval="1" condition="-0.05" disabledeltatime="true" comparison="Or">
+          <Conditional HasTag="eq wreckreactor" targetcontainer="true" />
           <Conditional HasStatusTag="eq wreckreactor" targetcontainer="true" />
         </StatusEffect>
         <!-- create smoke and underwater bubble particles and an explosion that deals high item and structure damage to anything within 1m, if fission process was started and the fuel rod is not contained and not in water -->
@@ -1065,8 +1074,11 @@
           <SpawnItem identifier="emptyfuelrod" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" condition="0" />
         </StatusEffect>
         <!-- slowly drain the fuel rod over time if the fission process was started | disabled inside reactors to allow reactors set to not consume fuel and beacon missions to play out normally unless condition is 0 -->
-        <StatusEffect type="OnActive" target="This" interval="1" condition="-0.05" disabledeltatime="true" comparison="Or">
+        <StatusEffect type="OnActive" target="This" interval="1" condition="-0.05" disabledeltatime="true" comparison="And">
           <Conditional HasTag="neq reactor" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" interval="1" condition="-0.05" disabledeltatime="true" comparison="Or">
+          <Conditional HasTag="eq wreckreactor" targetcontainer="true" />
           <Conditional HasStatusTag="eq wreckreactor" targetcontainer="true" />
         </StatusEffect>
         <!-- create smoke and underwater bubble particles and an explosion that deals high item and structure damage to anything within 1m, if fission process was started and the fuel rod is not contained and not in water -->
@@ -1472,8 +1484,11 @@
           <SpawnItem identifier="emptyfuelrod" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" condition="0" />
         </StatusEffect>
         <!-- slowly drain the fuel rod over time if the fission process was started | disabled inside reactors to allow reactors set to not consume fuel and beacon missions to play out normally unless condition is 0 -->
-        <StatusEffect type="OnActive" target="This" interval="1" condition="-0.05" disabledeltatime="true" comparison="Or">
+        <StatusEffect type="OnActive" target="This" interval="1" condition="-0.05" disabledeltatime="true" comparison="And">
           <Conditional HasTag="neq reactor" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" interval="1" condition="-0.05" disabledeltatime="true" comparison="Or">
+          <Conditional HasTag="eq wreckreactor" targetcontainer="true" />
           <Conditional HasStatusTag="eq wreckreactor" targetcontainer="true" />
         </StatusEffect>
         <!-- check if near a character and tag the item to allow the StatusEffects to trigger | Prevents performance impact when far away from the item -->
