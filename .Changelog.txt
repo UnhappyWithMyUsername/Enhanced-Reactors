@@ -17,3 +17,4 @@
 - Hazmat suits now have an extra inventory slot for tongs
 - Fixed deconstructors and fabricators not properly blocking radiation when actively crafting/deconstructing
 - Optimized non-active fuel rods. Hoarding lots of fuel rods should no longer cause performance issues
+- Made geiger counter sounds not get muffled to allow hearing it easier when wreck diving
