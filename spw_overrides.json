@@ -1,0 +1,58 @@
+{
+    "CustomSounds": [
+        {
+        "Keyword": "lowradiation",
+        "GainMult": 1.0,
+        "RangeMult": 1.0,
+        "SidechainMult": 0,
+        "SidechainRelease": 0.0,
+        "Distortion": false,
+        "PitchMult": 1,
+        "MuffleInfluence": 0.2,
+        "KeywordExclusions": []
+        },
+        {
+        "Keyword": "mediumradiation",
+        "GainMult": 1.0,
+        "RangeMult": 1.0,
+        "SidechainMult": 0,
+        "SidechainRelease": 0.0,
+        "Distortion": false,
+        "PitchMult": 1,
+        "MuffleInfluence": 0.2,
+        "KeywordExclusions": []
+        },
+        {
+        "Keyword": "highradiation",
+        "GainMult": 0.5,
+        "RangeMult": 1.0,
+        "SidechainMult": 0,
+        "SidechainRelease": 0.0,
+        "Distortion": false,
+        "PitchMult": 1,
+        "MuffleInfluence": 0.2,
+        "KeywordExclusions": []
+        },
+        {
+        "Keyword": "extremeradiation",
+        "GainMult": 0.5,
+        "RangeMult": 1.0,
+        "SidechainMult": 0,
+        "SidechainRelease": 0.0,
+        "Distortion": false,
+        "PitchMult": 1,
+        "MuffleInfluence": 0.2,
+        "KeywordExclusions": []
+        }
+    ],
+    "WaterReverbIgnoredSounds": [
+        "items/alarmdivingloop.ogg",
+        "divingsuitloop",
+        "divingsuitoxygenleakloop",
+        "scooterloop",
+        "lowradiation",
+        "mediumradiation",
+        "highradiation",
+        "extremeradiation"
+    ]
+}
