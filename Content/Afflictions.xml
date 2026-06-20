@@ -304,27 +304,27 @@
           <Conditional radiationsounds="gte 0.1" />
           <Conditional radiationsounds="lt 1" />
           <ReduceAffliction identifier="radiationsounds" amount="1000" />
-          <Sound file="%ModDir:3045796581%/Content/Sounds/Damage/lowradiation.ogg" volume="1.0" loop="true" range="350" />
+          <Sound file="%ModDir:3045796581%/Content/Sounds/Damage/lowradiation.ogg" volume="1.0" loop="true" range="350" dontmuffle="true" />
         </StatusEffect>
         <StatusEffect target="Character" interval="0.0" duration="0.6" stackable="true" disabledeltatime="true" comparison="And">
           <Conditional HasStatusTag="hasgeigercounter" />
           <Conditional radiationsounds="gte 1" />
           <Conditional radiationsounds="lt 2" />
           <ReduceAffliction identifier="radiationsounds" amount="1000" />
-          <Sound file="%ModDir:3045796581%/Content/Sounds/Damage/mediumradiation.ogg" volume="1.0" loop="true" range="350" />
+          <Sound file="%ModDir:3045796581%/Content/Sounds/Damage/mediumradiation.ogg" volume="1.0" loop="true" range="350" dontmuffle="true" />
         </StatusEffect>
         <StatusEffect target="Character" interval="0.0" duration="0.6" stackable="true" disabledeltatime="true" comparison="And">
           <Conditional HasStatusTag="hasgeigercounter" />
           <Conditional radiationsounds="gte 2" />
           <Conditional radiationsounds="lt 3" />
           <ReduceAffliction identifier="radiationsounds" amount="1000" />
-          <Sound file="%ModDir:3045796581%/Content/Sounds/Damage/highradiation.ogg" volume="1.0" loop="true" range="350" />
+          <Sound file="%ModDir:3045796581%/Content/Sounds/Damage/highradiation.ogg" volume="1.0" loop="true" range="350" dontmuffle="true" />
         </StatusEffect>
         <StatusEffect target="Character" interval="0.0" duration="0.6" stackable="true" disabledeltatime="true" comparison="And">
           <Conditional HasStatusTag="hasgeigercounter" />
           <Conditional radiationsounds="gte 3" />
           <ReduceAffliction identifier="radiationsounds" amount="1000" />
-          <Sound file="%ModDir:3045796581%/Content/Sounds/Damage/extremeradiation.ogg" volume="1.0" loop="true" range="350" />
+          <Sound file="%ModDir:3045796581%/Content/Sounds/Damage/extremeradiation.ogg" volume="1.0" loop="true" range="350" dontmuffle="true" />
         </StatusEffect>
         <!-- remove small amounts of radiationsounds affliction to prevent it from building up and sounding the geiger counter through small amounts applying through walls/doors when it shouldn't be detected -->
         <StatusEffect target="Character" interval="0.1" stackable="false" disabledeltatime="true" comparison="And">
@@ -352,7 +352,7 @@
         <StatusEffect target="Character" interval="0.5" duration="0.6" comparison="And">
           <!--Conditional IsLocalPlayer="True" /-->
           <Conditional HasStatusTag="hasgeigercounter" />
-          <Sound file="%ModDir:3045796581%/Content/Sounds/Damage/lowradiation.ogg" volume="1.0" loop="true" range="350" />
+          <Sound file="%ModDir:3045796581%/Content/Sounds/Damage/lowradiation.ogg" volume="1.0" loop="true" range="350" dontmuffle="true" />
         </StatusEffect>
       </Effect>
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0"/>
@@ -373,7 +373,7 @@
         <StatusEffect target="Character" interval="0.5" duration="0.6" comparison="And">
           <!--Conditional IsLocalPlayer="True" /-->
           <Conditional HasStatusTag="hasgeigercounter" />
-          <Sound file="%ModDir:3045796581%/Content/Sounds/Damage/mediumradiation.ogg" volume="1.0" loop="true" range="350" />
+          <Sound file="%ModDir:3045796581%/Content/Sounds/Damage/mediumradiation.ogg" volume="1.0" loop="true" range="350" dontmuffle="true" />
         </StatusEffect>
       </Effect>
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0"/>
@@ -394,7 +394,7 @@
         <StatusEffect target="Character" interval="0.5" duration="0.6" comparison="And">
           <!--Conditional IsLocalPlayer="True" /-->
           <Conditional HasStatusTag="hasgeigercounter" />
-          <Sound file="%ModDir:3045796581%/Content/Sounds/Damage/highradiation.ogg" volume="1.0" loop="true" range="350" />
+          <Sound file="%ModDir:3045796581%/Content/Sounds/Damage/highradiation.ogg" volume="1.0" loop="true" range="350" dontmuffle="true" />
         </StatusEffect>
       </Effect>
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0"/>
@@ -415,7 +415,7 @@
         <StatusEffect target="Character" interval="0.5" duration="0.6" comparison="And">
           <!--Conditional IsLocalPlayer="True" /-->
           <Conditional HasStatusTag="hasgeigercounter" />
-          <Sound file="%ModDir:3045796581%/Content/Sounds/Damage/extremeradiation.ogg" volume="1.0" loop="true" range="350" />
+          <Sound file="%ModDir:3045796581%/Content/Sounds/Damage/extremeradiation.ogg" volume="1.0" loop="true" range="350" dontmuffle="true" />
         </StatusEffect>
       </Effect>
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0"/>
