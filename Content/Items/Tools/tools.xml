@@ -669,7 +669,7 @@
           <Conditional HasTag="eq wreckreactor" targetcontainer="true" />
           <Conditional HasStatusTag="eq wreckreactor" targetcontainer="true" />
         </StatusEffect>
-        <!-- create smoke particles and an explosion that deals high item and structure damage to anything within 1m, if fission process was started and the fuel rod is not contained and not in water -->
+        <!-- create particles and an explosion that deals high item and structure damage to anything within 1m, if fission process was started and the fuel rod is not contained and not in water -->
         <StatusEffect type="OnNotContained" target="This" interval="0.2" comparison="And">
           <Conditional HasTag="eq activefuelrod" />
           <Explosion range="100" itemdamage="1.5" structuredamage="1.5" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false" />
@@ -1344,20 +1344,12 @@
             <Affliction identifier="overheating" strength="0.06" />
           </Explosion>
         </StatusEffect>
-        <!-- create smoke particles and an explosion that deals high item and structure damage to anything within 1m, if fission process was started and the fuel rod is not contained and not in water -->
+        <!-- create particles and an explosion that deals high item and structure damage to anything within 1m, if fission process was started and the fuel rod is not contained and not in water -->
         <StatusEffect type="OnNotContained" target="This" interval="0.2" comparison="And" AllowWhenBroken="true">
-          <Conditional InWater="false" />
           <Conditional HasTag="eq activefuelrod" />
           <Conditional HasStatusTag="eq nearcharacter" />
           <Explosion range="100" itemdamage="0.15" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false" />
           <ParticleEmitter particle="smoke" particlespersecond="50" scalemin="0.2" scalemax="0.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" />
-        </StatusEffect>
-        <!-- create underwater bubble particles and an explosion that deals high item and structure damage to anything within 1m, if the fission process was started and the fuel rod is not contained and within water -->
-        <StatusEffect type="OnNotContained" target="This" interval="0.2" comparison="And" AllowWhenBroken="true">
-          <Conditional InWater="true" />
-          <Conditional HasTag="eq activefuelrod" />
-          <Conditional HasStatusTag="eq nearcharacter" />
-          <Explosion range="100" itemdamage="0.15" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false" />
           <ParticleEmitter particle="damagebubbles" particlespersecond="50" scalemin="0.2" scalemax="0.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" />
         </StatusEffect>
       </LightComponent>
