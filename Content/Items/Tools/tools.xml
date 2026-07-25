@@ -547,7 +547,7 @@
             <Conditional HasTag="neq deepdivinglarge" targetcontainer="true" />
             <Conditional HasTag="neq containradiation" targetcontainer="true" />
             <Conditional HasStatusTag="neq containradiation" targetcontainer="true" />
-            <Explosion range="1500" itemdamage="1.35" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
+            <Explosion range="999" itemdamage="1.35" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
               <Affliction identifier="radiationsickness" strength="3.0" />
               <Affliction identifier="contaminated" strength="3.0" />
               <Affliction identifier="radiationsounds" strength="5.0" />
@@ -1163,7 +1163,7 @@
             <Conditional HasTag="eq activefuelrod" />
             <Conditional HasTag="neq deepdivinglarge" targetcontainer="true" />
             <Conditional HasTag="neq containradiation" targetcontainer="true" />
-            <Explosion range="1500" itemdamage="1.5" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
+            <Explosion range="999" itemdamage="1.5" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
               <Affliction identifier="radiationsickness" strength="5.4" />
               <Affliction identifier="contaminated" strength="5.4" />
               <Affliction identifier="radiationsounds" strength="6.0" />
@@ -1279,7 +1279,7 @@
           <Conditional HasTag="neq deepdivinglarge" targetcontainer="true" />
           <Conditional HasTag="neq containradiation" targetcontainer="true" />
           <Conditional HasStatusTag="neq containradiation" targetcontainer="true" />
-          <Explosion range="1500" itemdamage="0.15" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
+          <Explosion range="999" itemdamage="0.15" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
             <Affliction identifier="radiationsickness" strength="0.2" />
             <Affliction identifier="contaminated" strength="0.5" />
             <Affliction identifier="radiationsounds" strength="2.0" />
@@ -1477,7 +1477,7 @@
           <Conditional HasTag="neq deepdivinglarge" targetcontainer="true" />
           <Conditional HasTag="neq containradiation" targetcontainer="true" />
           <Conditional HasStatusTag="neq containradiation" targetcontainer="true" />
-          <Explosion range="1500" itemdamage="1.35" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
+          <Explosion range="999" itemdamage="1.35" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
             <Affliction identifier="radiationsickness" strength="3.0" />
             <Affliction identifier="contaminated" strength="3.0" />
             <Affliction identifier="radiationsounds" strength="5.0" />
