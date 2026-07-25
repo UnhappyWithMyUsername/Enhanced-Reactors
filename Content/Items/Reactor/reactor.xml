@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
   <Override>
-    <Item name="" identifier="reactor1wrecked" nameidentifier="reactor1" variantof="reactor1" tags="wreckreactor" category="Wrecked" condition="0" spritecolor="200,150,100,255">
+    <Item name="" identifier="reactor1wrecked" nameidentifier="reactor1" variantof="reactor1" tags="reactor,wreckreactor" category="Wrecked" condition="0" spritecolor="200,150,100,255">
       <Upgrade gameversion="0.20.4.0" scale="0.5" condition="0" spritecolor="200,150,100,255" />
       <Sprite texture="Content/Items/Reactor/reactor.png" sourcerect="0,338,528,336" origin="0.5,0.45" depth="0.8" />
       <Reactor canbeselected="true" firedelay="20" meltdowndelay="120" maxpoweroutput="5000" fuelconsumptionrate="0.2" vulnerabletoemp="false" msg="ItemMsgInteractSelect">
