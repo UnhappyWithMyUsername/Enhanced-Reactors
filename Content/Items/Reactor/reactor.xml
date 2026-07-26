@@ -68,8 +68,7 @@
         <Containable items="reactoritem,fuelrod,fulguriumfuelrod,thoriumfuelrod,fulguriumfuelrodvolatile,emptyfuelrod,huskfigurine" />
       </ItemContainer>
     </Item>
-  </Override>
-  <Override>
+
     <Item name="" identifier="reactor1" tags="reactor,containradiation" type="Reactor" scale="0.5" linkable="true" category="Machine" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
       <trigger />
       <Sprite texture="Content/Items/Reactor/reactor.png" sourcerect="0,0,528,336" origin="0.5,0.45" depth="0.8" />
@@ -151,9 +150,12 @@
         </TempRangeIndicator>
         <RequiredSkill identifier="electrical" level="50" />
         <sound file="Content/Items/Reactor/Reactor.ogg" type="OnActive" range="600.0" volumeproperty="FissionRate" volume="0.02" loop="true" />
-        <!-- fuel rod explosion -->
-        <StatusEffect type="OnBroken" target="This" FissionRate="0.0" disabledeltatime="true">
-          <RequiredItem items="fuelrod,fuelrod_outpost" type="contained" />
+        
+        <!-- Explosions based on AvailableFuel thresholds (the sum of all fuel rod potency), the bigger it is the bigger the explosion -->
+        <!-- 1 small explosion -->
+        <StatusEffect type="OnBroken" target="This" FissionRate="0.0" disabledeltatime="true" comparison="And">
+          <Conditional AvailableFuel="gte 10" />
+          <Conditional AvailableFuel="lt 200" />
           <Conditional fissionrate="gt 1.0" />
           <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="50000" />
           <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="50000" />
@@ -169,16 +171,17 @@
           </Explosion>
           <ParticleEmitter particle="underwaterexplosion" anglemin="0" anglemax="360" particleamount="3" velocitymin="0" velocitymax="0" scalemin="15" scalemax="15" />
         </StatusEffect>
-        <!-- thorium fuel rod explosion -->
-        <StatusEffect type="OnBroken" target="This" FissionRate="0.0" disabledeltatime="true">
-          <RequiredItem items="thoriumfuelrod" type="contained" />
+        <!-- 2 medium explosion -->
+        <StatusEffect type="OnBroken" target="This" FissionRate="0.0" disabledeltatime="true" comparison="And">
+          <Conditional AvailableFuel="gte 200" />
+          <Conditional AvailableFuel="lt 300" />
           <Conditional fissionrate="gt 1.0" />
           <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="50000" />
           <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="50000" />
           <Explosion range="1500" ballastfloradamage="1000" structuredamage="600" itemdamage="1000" force="50.0" camerashake="0" flashrange="10000" flashduration="5.0" screencolor="225,150,255,255" screencolorrange="5000" screencolorduration="3.0" decal="explosion" decalsize="1">
-            <Affliction identifier="explosiondamage" strength="1000" />
-            <Affliction identifier="burn" strength="1000" />
-            <Affliction identifier="stun" strength="30" />
+            <Affliction identifier="explosiondamage" strength="500" />
+            <Affliction identifier="burn" strength="500" />
+            <Affliction identifier="stun" strength="15" />
           </Explosion>
           <Explosion range="2500" force="0.0" camerashake="200" camerashakerange="50000" showEffects="false" empstrength="1.25" applyfireeffects="false" ignorecover="true">
             <Affliction identifier="radiationsickness" strength="100" />
@@ -188,16 +191,16 @@
           </Explosion>
           <ParticleEmitter particle="underwaterexplosion" anglemin="0" anglemax="360" particleamount="3" velocitymin="0" velocitymax="0" scalemin="15" scalemax="15" />
         </StatusEffect>
-        <!-- fulgurium fuel rod explosion -->
-        <StatusEffect type="OnBroken" target="This" FissionRate="0.0" disabledeltatime="true">
-          <RequiredItem items="fulguriumfuelrod" type="contained" />
+        <!-- 3 big explosion -->
+        <StatusEffect type="OnBroken" target="This" FissionRate="0.0" disabledeltatime="true" comparison="And">
+          <Conditional AvailableFuel="gte 300" />
           <Conditional fissionrate="gt 1.0" />
           <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="50000" />
           <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="50000" />
           <Explosion range="2250" ballastfloradamage="1000" structuredamage="900" itemdamage="1500" force="75.0" camerashake="0" flashrange="10000" flashduration="5.0" screencolor="255,125,30,255" screencolorrange="5000" screencolorduration="3.0" decal="explosion" decalsize="1">
-            <Affliction identifier="explosiondamage" strength="1500" />
-            <Affliction identifier="burn" strength="1500" />
-            <Affliction identifier="stun" strength="45" />
+            <Affliction identifier="explosiondamage" strength="500" />
+            <Affliction identifier="burn" strength="500" />
+            <Affliction identifier="stun" strength="15" />
           </Explosion>
           <Explosion range="4500" force="0.0" camerashake="200" camerashakerange="50000" showEffects="false" empstrength="1.25" applyfireeffects="false" ignorecover="true">
             <Affliction identifier="radiationsickness" strength="125" />
@@ -207,25 +210,7 @@
           </Explosion>
           <ParticleEmitter particle="underwaterexplosion" anglemin="0" anglemax="360" particleamount="3" velocitymin="0" velocitymax="0" scalemin="15" scalemax="15" />
         </StatusEffect>
-        <!-- volatile fulgurium fuel rod explosion -->
-        <StatusEffect type="OnBroken" target="This" FissionRate="0.0" disabledeltatime="true">
-          <RequiredItem items="fulguriumfuelrodvolatile" type="contained" />
-          <Conditional fissionrate="gt 1.0" />
-          <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="100000" />
-          <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="100000" />
-          <Explosion range="3000" ballastfloradamage="1000" structuredamage="1200" itemdamage="2000" force="100.0" camerashake="0" flashrange="50000" flashduration="5.0" screencolor="60,200,255,255" screencolorrange="5000" screencolorduration="3.0" decal="explosion" decalsize="1">
-            <Affliction identifier="explosiondamage" strength="2000" />
-            <Affliction identifier="burn" strength="2000" />
-            <Affliction identifier="stun" strength="60" />
-          </Explosion>
-          <Explosion range="6000" force="0.0" camerashake="200" camerashakerange="50000" showEffects="false" empstrength="1.25" applyfireeffects="false" ignorecover="true">
-            <Affliction identifier="radiationsickness" strength="200" />
-            <Affliction identifier="contaminated" strength="200" />
-            <Affliction identifier="radiationsounds" strength="200" />
-            <Affliction identifier="emp" strength="50" multiplybymaxvitality="true" />
-          </Explosion>
-          <ParticleEmitter particle="underwaterexplosion" anglemin="0" anglemax="360" particleamount="3" velocitymin="0" velocitymax="0" scalemin="15" scalemax="15" />
-        </StatusEffect>
+        
         <StatusEffect type="OnBroken" target="This">
           <Conditional fissionrate="gt 1.0" />
           <sound file="Content/Items/Weapons/ExplosionDebris4.ogg" range="10000" />
@@ -310,6 +295,141 @@
         <Containable items="huskfigurine">
           <StatusEffect type="OnContaining" target="This" AvailableFuel="0" disabledeltatime="true" />
         </Containable>
+        
+      <!-- Reactor leaking radiation when damaged, based on availablefuel -->
+      <!-- 11 small fuel, small damage -->
+      <StatusEffect type="OnContaining" target="This" interval="0.3" AllowWhenBroken="true" comparison="And">
+        <Conditional AvailableFuel="gte 10" />
+        <Conditional AvailableFuel="lt 200" />
+        <Conditional HasTag="eq activefuelrod" targetcontaineditem="true" />
+        <Conditional conditionpercentage="lt 75" />
+        <Conditional conditionpercentage="gte 50" />
+        <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
+          <Affliction identifier="radiationsickness" strength="0.3" />
+          <Affliction identifier="contaminated" strength="0.3" />
+          <Affliction identifier="radiationsounds" strength="2" />
+          <Affliction identifier="overheating" strength="0.12" />
+        </Explosion>
+        <Sound file="Content/Items/Weapons/harpoongun1.ogg" range="1000" volume="2" />
+      </StatusEffect>
+      <!-- 12 small fuel, medium damage -->
+      <StatusEffect type="OnContaining" target="This" interval="0.3" AllowWhenBroken="true" comparison="And">
+        <Conditional AvailableFuel="gte 10" />
+        <Conditional AvailableFuel="lt 200" />
+        <Conditional HasTag="eq activefuelrod" targetcontaineditem="true" />
+        <Conditional conditionpercentage="lt 50" />
+        <Conditional conditionpercentage="gte 25" />
+        <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
+          <Affliction identifier="radiationsickness" strength="0.6" />
+          <Affliction identifier="contaminated" strength="0.6" />
+          <Affliction identifier="radiationsounds" strength="4" />
+          <Affliction identifier="overheating" strength="0.24" />
+        </Explosion>
+        <Sound file="Content/Items/Weapons/harpoongun1.ogg" range="1000" volume="2" />
+      </StatusEffect>
+      <!-- 13 small fuel, big damage -->
+      <StatusEffect type="OnContaining" target="This" interval="0.3" AllowWhenBroken="true" comparison="And">
+        <Conditional AvailableFuel="gte 10" />
+        <Conditional AvailableFuel="lt 200" />
+        <Conditional HasTag="eq activefuelrod" targetcontaineditem="true" />
+        <Conditional conditionpercentage="lt 25" />
+        <Conditional conditionpercentage="gt 0" />
+        <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
+          <Affliction identifier="radiationsickness" strength="0.9" />
+          <Affliction identifier="contaminated" strength="0.9" />
+          <Affliction identifier="radiationsounds" strength="6" />
+          <Affliction identifier="overheating" strength="0.36" />
+        </Explosion>
+        <Sound file="Content/Items/Weapons/harpoongun1.ogg" range="1000" volume="2" />
+      </StatusEffect>
+      <!-- 21 medium fuel, small damage -->
+      <StatusEffect type="OnContaining" target="This" interval="0.3" AllowWhenBroken="true" comparison="And">
+        <Conditional AvailableFuel="gte 200" />
+        <Conditional AvailableFuel="lt 300" />
+        <Conditional HasTag="eq activefuelrod" targetcontaineditem="true" />
+        <Conditional conditionpercentage="lt 75" />
+        <Conditional conditionpercentage="gte 50" />
+        <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
+          <Affliction identifier="radiationsickness" strength="0.450" />
+          <Affliction identifier="contaminated" strength="0.450" />
+          <Affliction identifier="radiationsounds" strength="4" />
+          <Affliction identifier="overheating" strength="0.3" />
+        </Explosion>
+        <Sound file="Content/Items/Weapons/harpoongun1.ogg" range="1000" volume="2" />
+      </StatusEffect>
+      <!-- 22 medium fuel, medium damage -->
+      <StatusEffect type="OnContaining" target="This" interval="0.3" AllowWhenBroken="true" comparison="And">
+        <Conditional AvailableFuel="gte 200" />
+        <Conditional AvailableFuel="lt 300" />
+        <Conditional HasTag="eq activefuelrod" targetcontaineditem="true" />
+        <Conditional conditionpercentage="lt 50" />
+        <Conditional conditionpercentage="gte 25" />
+        <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
+          <Affliction identifier="radiationsickness" strength="0.9" />
+          <Affliction identifier="contaminated" strength="0.9" />
+          <Affliction identifier="radiationsounds" strength="6" />
+          <Affliction identifier="overheating" strength="0.6" />
+        </Explosion>
+        <Sound file="Content/Items/Weapons/harpoongun1.ogg" range="1000" volume="2" />
+      </StatusEffect>
+      <!-- 23 medium fuel, big damage -->
+      <StatusEffect type="OnContaining" target="This" interval="0.3" AllowWhenBroken="true" comparison="And">
+        <Conditional AvailableFuel="gte 200" />
+        <Conditional AvailableFuel="lt 300" />
+        <Conditional HasTag="eq activefuelrod" targetcontaineditem="true" />
+        <Conditional conditionpercentage="lt 25" />
+        <Conditional conditionpercentage="gt 0" />
+        <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
+          <Affliction identifier="radiationsickness" strength="0.1350" />
+          <Affliction identifier="contaminated" strength="0.1350" />
+          <Affliction identifier="radiationsounds" strength="8" />
+          <Affliction identifier="overheating" strength="0.9" />
+        </Explosion>
+        <Sound file="Content/Items/Weapons/harpoongun1.ogg" range="1000" volume="2" />
+      </StatusEffect>
+      <!-- 31 big fuel, small damage -->
+      <StatusEffect type="OnContaining" target="This" interval="0.3" AllowWhenBroken="true" comparison="And">
+        <Conditional AvailableFuel="gte 300" />
+        <Conditional HasTag="eq activefuelrod" targetcontaineditem="true" />
+        <Conditional conditionpercentage="lt 75" />
+        <Conditional conditionpercentage="gte 50" />
+        <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
+          <Affliction identifier="radiationsickness" strength="1.2" />
+          <Affliction identifier="contaminated" strength="1.2" />
+          <Affliction identifier="radiationsounds" strength="8" />
+          <Affliction identifier="overheating" strength="0.48" />
+        </Explosion>
+        <Sound file="Content/Items/Weapons/harpoongun1.ogg" range="1000" volume="2" />
+      </StatusEffect>
+      <!-- 32 big fuel, medium damage -->
+      <StatusEffect type="OnContaining" target="This" interval="0.3" AllowWhenBroken="true" comparison="And">
+        <Conditional AvailableFuel="gte 300" />
+        <Conditional HasTag="eq activefuelrod" targetcontaineditem="true" />
+        <Conditional conditionpercentage="lt 50" />
+        <Conditional conditionpercentage="gte 25" />
+        <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
+          <Affliction identifier="radiationsickness" strength="2.4" />
+          <Affliction identifier="contaminated" strength="2.4" />
+          <Affliction identifier="radiationsounds" strength="16" />
+          <Affliction identifier="overheating" strength="0.96" />
+        </Explosion>
+        <Sound file="Content/Items/Weapons/harpoongun1.ogg" range="1000" volume="2" />
+      </StatusEffect>
+      <!-- 33 big fuel, big damage -->
+      <StatusEffect type="OnContaining" target="This" interval="0.3" AllowWhenBroken="true" comparison="And">
+        <Conditional AvailableFuel="gte 300" />
+        <Conditional HasTag="eq activefuelrod" targetcontaineditem="true" />
+        <Conditional conditionpercentage="lt 25" />
+        <Conditional conditionpercentage="gt 0" />
+        <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
+          <Affliction identifier="radiationsickness" strength="3.6" />
+          <Affliction identifier="contaminated" strength="3.6" />
+          <Affliction identifier="radiationsounds" strength="24" />
+          <Affliction identifier="overheating" strength="1.44" />
+        </Explosion>
+        <Sound file="Content/Items/Weapons/harpoongun1.ogg" range="1000" volume="2" />
+      </StatusEffect>
+          
       </ItemContainer>
       <!-- invisible inventory slot for the critical state effect item -->
       <ItemContainer capacity="1" maxstacksize="1" canbeselected="false">
@@ -363,10 +483,9 @@
           <Conditional temperature="gt 1" />
           <Conditional isPlayer="eq true" />
         </StatusEffect>-->
-      </Repairable>
+      </Repairable>     
     </Item>
-  </Override>
-  <Override>
+    
     <Item name="" nameidentifier="reactor1" identifier="outpostreactor" tags="reactor,containradiation" type="Reactor" linkable="true" category="Machine" damagedbyexplosions="true" scale="0.5" explosiondamagemultiplier="0.2">
       <trigger />
       <sprite texture="Content/Map/Outposts/Art/GenericAssets2.png" sourcerect="38,336,575,849" depth="0.8" origin="0.5,0.5" />

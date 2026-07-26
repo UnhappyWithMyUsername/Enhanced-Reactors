@@ -554,45 +554,6 @@
               <Affliction identifier="overheating" strength="0.7" />
             </Explosion>
           </StatusEffect>
-          <!-- create an invisible explosion to apply variable amount of afflictions to nearby characters depending on the condition of the reactor -->
-          <StatusEffect type="OnContaining" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
-            <Hook name="EnhancedReactors.Disable" />
-            <Conditional HasTag="eq activefuelrod" />
-            <Conditional HasTag="eq reactor" targetcontainer="true" />
-            <Conditional conditionpercentage="lt 75" targetcontainer="true" />
-            <Conditional conditionpercentage="gte 50" targetcontainer="true" />
-            <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
-              <Affliction identifier="radiationsickness" strength="0.15" />
-              <Affliction identifier="contaminated" strength="0.15" />
-              <Affliction identifier="radiationsounds" strength="0.9" />
-              <Affliction identifier="overheating" strength="0.06" />
-            </Explosion>
-          </StatusEffect>
-          <StatusEffect type="OnContaining" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
-            <Hook name="EnhancedReactors.Disable" />
-            <Conditional HasTag="eq activefuelrod" />
-            <Conditional HasTag="eq reactor" targetcontainer="true" />
-            <Conditional conditionpercentage="lt 50" targetcontainer="true" />
-            <Conditional conditionpercentage="gte 25" targetcontainer="true" />
-            <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
-              <Affliction identifier="radiationsickness" strength="0.3" />
-              <Affliction identifier="contaminated" strength="0.3" />
-              <Affliction identifier="radiationsounds" strength="1.9" />
-              <Affliction identifier="overheating" strength="0.12" />
-            </Explosion>
-          </StatusEffect>
-          <StatusEffect type="OnContaining" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
-            <Hook name="EnhancedReactors.Disable" />
-            <Conditional HasTag="eq activefuelrod" />
-            <Conditional HasTag="eq reactor" targetcontainer="true" />
-            <Conditional conditionpercentage="lt 25" targetcontainer="true" />
-            <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
-              <Affliction identifier="radiationsickness" strength="0.45" />
-              <Affliction identifier="contaminated" strength="0.45" />
-              <Affliction identifier="radiationsounds" strength="2.9" />
-              <Affliction identifier="overheating" strength="0.18" />
-            </Explosion>
-          </StatusEffect>
         </Containable>
       </ItemContainer>
     </Item>
@@ -762,45 +723,6 @@
               <Affliction identifier="contaminated" strength="1.5" />
               <Affliction identifier="radiationsounds" strength="5.0" />
               <Affliction identifier="overheating" strength="1.02" />
-            </Explosion>
-          </StatusEffect>
-          <!-- create an invisible explosion to apply variable amount of afflictions to nearby characters depending on the condition of the reactor -->
-          <StatusEffect type="OnContaining" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
-            <Hook name="EnhancedReactors.Disable" />
-            <Conditional HasTag="eq activefuelrod" />
-            <Conditional HasTag="eq reactor" targetcontainer="true" />
-            <Conditional conditionpercentage="lt 75" targetcontainer="true" />
-            <Conditional conditionpercentage="gte 50" targetcontainer="true" />
-            <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
-              <Affliction identifier="radiationsickness" strength="0.075" />
-              <Affliction identifier="contaminated" strength="0.075" />
-              <Affliction identifier="radiationsounds" strength="0.9" />
-              <Affliction identifier="overheating" strength="0.09" />
-            </Explosion>
-          </StatusEffect>
-          <StatusEffect type="OnContaining" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
-            <Hook name="EnhancedReactors.Disable" />
-            <Conditional HasTag="eq activefuelrod" />
-            <Conditional HasTag="eq reactor" targetcontainer="true" />
-            <Conditional conditionpercentage="lt 50" targetcontainer="true" />
-            <Conditional conditionpercentage="gte 25" targetcontainer="true" />
-            <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
-              <Affliction identifier="radiationsickness" strength="0.15" />
-              <Affliction identifier="contaminated" strength="0.15" />
-              <Affliction identifier="radiationsounds" strength="1.9" />
-              <Affliction identifier="overheating" strength="0.18" />
-            </Explosion>
-          </StatusEffect>
-          <StatusEffect type="OnContaining" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
-            <Hook name="EnhancedReactors.Disable" />
-            <Conditional HasTag="eq activefuelrod" />
-            <Conditional HasTag="eq reactor" targetcontainer="true" />
-            <Conditional conditionpercentage="lt 25" targetcontainer="true" />
-            <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
-              <Affliction identifier="radiationsickness" strength="0.225" />
-              <Affliction identifier="contaminated" strength="0.225" />
-              <Affliction identifier="radiationsounds" strength="2.9" />
-              <Affliction identifier="overheating" strength="0.27" />
             </Explosion>
           </StatusEffect>
         </Containable>
@@ -975,45 +897,6 @@
               <Affliction identifier="overheating" strength="1.2" />
             </Explosion>
           </StatusEffect>
-          <!-- create an invisible explosion to apply variable amount of afflictions to characters depending on the condition of the reactor -->
-          <StatusEffect type="OnContaining" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
-            <Hook name="EnhancedReactors.Disable" />
-            <Conditional HasTag="eq activefuelrod" />
-            <Conditional HasTag="eq reactor" targetcontainer="true" />
-            <Conditional conditionpercentage="lt 75" targetcontainer="true" />
-            <Conditional conditionpercentage="gte 50" targetcontainer="true" />
-            <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
-              <Affliction identifier="radiationsickness" strength="0.225" />
-              <Affliction identifier="contaminated" strength="0.225" />
-              <Affliction identifier="radiationsounds" strength="1.9" />
-              <Affliction identifier="overheating" strength="0.15" />
-            </Explosion>
-          </StatusEffect>
-          <StatusEffect type="OnContaining" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
-            <Hook name="EnhancedReactors.Disable" />
-            <Conditional HasTag="eq activefuelrod" />
-            <Conditional HasTag="eq reactor" targetcontainer="true" />
-            <Conditional conditionpercentage="lt 50" targetcontainer="true" />
-            <Conditional conditionpercentage="gte 25" targetcontainer="true" />
-            <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
-              <Affliction identifier="radiationsickness" strength="0.45" />
-              <Affliction identifier="contaminated" strength="0.45" />
-              <Affliction identifier="radiationsounds" strength="2.9" />
-              <Affliction identifier="overheating" strength="0.3" />
-            </Explosion>
-          </StatusEffect>
-          <StatusEffect type="OnContaining" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
-            <Hook name="EnhancedReactors.Disable" />
-            <Conditional HasTag="eq activefuelrod" />
-            <Conditional HasTag="eq reactor" targetcontainer="true" />
-            <Conditional conditionpercentage="lt 25" targetcontainer="true" />
-            <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
-              <Affliction identifier="radiationsickness" strength="0.675" />
-              <Affliction identifier="contaminated" strength="0.675" />
-              <Affliction identifier="radiationsounds" strength="3.9" />
-              <Affliction identifier="overheating" strength="0.45" />
-            </Explosion>
-          </StatusEffect>
         </Containable>
       </ItemContainer>
     </Item>
@@ -1168,45 +1051,6 @@
               <Affliction identifier="contaminated" strength="5.4" />
               <Affliction identifier="radiationsounds" strength="6.0" />
               <Affliction identifier="overheating" strength="1.44" />
-            </Explosion>
-          </StatusEffect>
-          <!-- create an invisible explosion to apply variable amount of afflictions to nearby characters depending on the condition of the reactor -->
-          <StatusEffect type="OnContaining" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
-            <Hook name="EnhancedReactors.Disable" />
-            <Conditional HasTag="eq activefuelrod" />
-            <Conditional HasTag="eq reactor" targetcontainer="true" />
-            <Conditional conditionpercentage="lt 75" targetcontainer="true" />
-            <Conditional conditionpercentage="gte 50" targetcontainer="true" />
-            <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
-              <Affliction identifier="radiationsickness" strength="0.3" />
-              <Affliction identifier="contaminated" strength="0.3" />
-              <Affliction identifier="radiationsounds" strength="1.9" />
-              <Affliction identifier="overheating" strength="0.21" />
-            </Explosion>
-          </StatusEffect>
-          <StatusEffect type="OnContaining" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
-            <Hook name="EnhancedReactors.Disable" />
-            <Conditional HasTag="eq activefuelrod" />
-            <Conditional HasTag="eq reactor" targetcontainer="true" />
-            <Conditional conditionpercentage="lt 50" targetcontainer="true" />
-            <Conditional conditionpercentage="gte 25" targetcontainer="true" />
-            <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
-              <Affliction identifier="radiationsickness" strength="0.6" />
-              <Affliction identifier="contaminated" strength="0.6" />
-              <Affliction identifier="radiationsounds" strength="2.9" />
-              <Affliction identifier="overheating" strength="0.42" />
-            </Explosion>
-          </StatusEffect>
-          <StatusEffect type="OnContaining" target="This" interval="0.3" comparison="And" AllowWhenBroken="true">
-            <Hook name="EnhancedReactors.Disable" />
-            <Conditional HasTag="eq activefuelrod" />
-            <Conditional HasTag="eq reactor" targetcontainer="true" />
-            <Conditional conditionpercentage="lt 25" targetcontainer="true" />
-            <Explosion range="1000" itemdamage="0.0" structuredamage="0.0" ballastfloradamage="0" camerashake="0" camerashakerange="0" explosiondamage="0" force="0" flames="false" smoke="false" shockwave="false" sparks="false" flash="false" underwaterbubble="false">
-              <Affliction identifier="radiationsickness" strength="0.9" />
-              <Affliction identifier="contaminated" strength="0.9" />
-              <Affliction identifier="radiationsounds" strength="3.9" />
-              <Affliction identifier="overheating" strength="0.63" />
             </Explosion>
           </StatusEffect>
         </Containable>
