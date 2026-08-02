@@ -455,21 +455,11 @@
           <ParticleEmitter particle="smoke" particlespersecond="50" scalemin="0.2" scalemax="0.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" />
           <ParticleEmitter particle="damagebubbles" particlespersecond="50" scalemin="0.2" scalemax="0.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" />
         </StatusEffect>
-        <!-- spawn items that delete themselves randomly with a chance of 1/20 each second for an item to spawn that causes a fire to make the fuel rod randomly start fires if it's not contained and the fission process was started -->
-        <StatusEffect type="OnNotContained" target="This" interval="1.0" SpawnItemRandomly="True" comparison="And">
+        <!-- spawn items that delete themselves randomly with a chance of 1/10 every 2 seconds for an item to spawn that causes a fire to make the fuel rod randomly start fires if it's not contained and the fission process was started -->
+        <StatusEffect type="OnNotContained" target="This" interval="2.0" SpawnItemRandomly="True" comparison="And">
           <!-- <Hook name="EnhancedReactors.Disable" /> -->
           <Conditional InWater="false" />
           <Conditional HasTag="eq activefuelrod" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
           <SpawnItem identifier="effect_none" spawnposition="This" />
           <SpawnItem identifier="effect_none" spawnposition="This" />
           <SpawnItem identifier="effect_none" spawnposition="This" />
@@ -629,21 +619,11 @@
           <ParticleEmitter particle="smoke" particlespersecond="50" scalemin="0.2" scalemax="0.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" />
           <ParticleEmitter particle="damagebubbles" particlespersecond="50" scalemin="0.2" scalemax="0.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" />
         </StatusEffect>
-        <!-- spawn items that delete themselves randomly with a chance of 1/20 each second for an item to spawn that causes a fire to make the fuel rod randomly start fires if it's not contained and the fission process was started -->
-        <StatusEffect type="OnNotContained" target="This" interval="1.0" SpawnItemRandomly="True" comparison="And">
+        <!-- spawn items that delete themselves randomly with a chance of 1/10 every 2 seconds for an item to spawn that causes a fire to make the fuel rod randomly start fires if it's not contained and the fission process was started -->
+        <StatusEffect type="OnNotContained" target="This" interval="2.0" SpawnItemRandomly="True" comparison="And">
           <!-- <Hook name="EnhancedReactors.Disable" /> -->
           <Conditional InWater="false" />
           <Conditional HasTag="eq activefuelrod" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
           <SpawnItem identifier="effect_none" spawnposition="This" />
           <SpawnItem identifier="effect_none" spawnposition="This" />
           <SpawnItem identifier="effect_none" spawnposition="This" />
@@ -800,21 +780,11 @@
           <ParticleEmitter particle="smoke" particlespersecond="75" scalemin="0.2" scalemax="0.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" />
           <ParticleEmitter particle="damagebubbles" particlespersecond="75" scalemin="0.2" scalemax="0.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" />
         </StatusEffect>
-        <!-- spawn items that delete themselves randomly with a chance of 1/20 each second for an item to spawn that causes a fire to make the fuel rod randomly start fires if it's not contained and the fission process was started -->
-        <StatusEffect type="OnNotContained" target="This" interval="1.0" SpawnItemRandomly="True" comparison="And">
+        <!-- spawn items that delete themselves randomly with a chance of 1/10 every 2 seconds for an item to spawn that causes a fire to make the fuel rod randomly start fires if it's not contained and the fission process was started -->
+        <StatusEffect type="OnNotContained" target="This" interval="2.0" SpawnItemRandomly="True" comparison="And">
           <!-- <Hook name="EnhancedReactors.Disable" /> -->
           <Conditional InWater="false" />
           <Conditional HasTag="eq activefuelrod" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
           <SpawnItem identifier="effect_none" spawnposition="This" />
           <SpawnItem identifier="effect_none" spawnposition="This" />
           <SpawnItem identifier="effect_none" spawnposition="This" />
@@ -957,21 +927,11 @@
           <ParticleEmitter particle="smoke" particlespersecond="50" scalemin="0.2" scalemax="0.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" />
           <ParticleEmitter particle="damagebubbles" particlespersecond="100" scalemin="0.2" scalemax="0.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" />
         </StatusEffect>
-        <!-- spawn items that delete themselves randomly with a chance of 1/20 each second for an item to spawn that causes a fire to make the fuel rod randomly start fires if it's not contained and the fission process was started -->
-        <StatusEffect type="OnNotContained" target="This" interval="1.0" SpawnItemRandomly="True" comparison="And">
+        <!-- spawn items that delete themselves randomly with a chance of 1/10 every 2 seconds for an item to spawn that causes a fire to make the fuel rod randomly start fires if it's not contained and the fission process was started -->
+        <StatusEffect type="OnNotContained" target="This" interval="2.0" SpawnItemRandomly="True" comparison="And">
           <!-- <Hook name="EnhancedReactors.Disable" /> -->
           <Conditional InWater="false" />
           <Conditional HasTag="eq activefuelrod" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
-          <SpawnItem identifier="effect_none" spawnposition="This" />
           <SpawnItem identifier="effect_none" spawnposition="This" />
           <SpawnItem identifier="effect_none" spawnposition="This" />
           <SpawnItem identifier="effect_none" spawnposition="This" />
